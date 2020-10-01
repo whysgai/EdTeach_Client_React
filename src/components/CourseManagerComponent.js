@@ -1,4 +1,5 @@
 import React from "react";
+import CourseTableComponent from "./CourseTableComponent";
 import CourseRowComponent from "./CourseRowComponent";
 
 
@@ -35,7 +36,8 @@ const CourseManagerComponent = ({instructor, term}) =>
         <form>
             <div className="form-group row bg-light">
                 <label htmlFor="newcourse" className="col-sm-6">
-                    <h1 className="title center-text bg-light wbdv-label wbdv-course-manager">{instructor}'s Course List - {term}</h1></label>
+                    <h1 className="title center-text bg-light wbdv-label wbdv-course-manager">{instructor}'s Course List - {term}</h1>
+                </label>
                 <div className="col-sm-5 title-align">
                     <input className="form-control btn-align-veritcal wbdv-field wbdv-new-course" id="newcourse" placeholder="Add a course"></input>
                 </div>
@@ -46,16 +48,17 @@ const CourseManagerComponent = ({instructor, term}) =>
                 </div>
             </div>
         </form>
-        <table className='table'>
-            <tr><td>Course 1</td></tr>
-            <tr><td>Course 2</td></tr>
-            <tr><td>Course 3</td></tr>
-            {
-                courses.map( (course, index) =>
-                    <CourseRowComponent course={course}/>
-                )
-            }
-        </table>
+        <CourseTableComponent courses={courses}/>
+        {/*<table className='table'>*/}
+        {/*    <tr><td>Course 1</td></tr>*/}
+        {/*    <tr><td>Course 2</td></tr>*/}
+        {/*    <tr><td>Course 3</td></tr>*/}
+        {/*    {*/}
+        {/*        courses.map( (course, index) =>*/}
+        {/*            <CourseRowComponent course={course}/>*/}
+        {/*        )*/}
+        {/*    }*/}
+        {/*</table>*/}
     </div>
 
 
