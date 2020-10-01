@@ -18,7 +18,7 @@ const CourseRowComponent = ({course}) =>
             <a href="../course_editor/editor.template.client.html" className="font-black">{course.title}</a>
         </td>
         <td className="wbdv-row wbdv-owner"><span className="d-none d-sm-table-cell">{course.owner}</span></td>
-        <td className="wbdv-row wbdv-modified-date">
+        <td className="wbdv-row wbdv-modified-date d-none d-md-table-cell">
             <time className="d-none d-sm-table-cell" dateTime="2008-02-14 20:00">{course.lastOpened}</time>
         </td>
         <td>&nbsp;</td>

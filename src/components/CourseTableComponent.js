@@ -7,9 +7,9 @@ const CourseTableComponent = ({courses}) =>
             <thead className="border-bottom border-secondary">
             <tr className="border border-secondary">
                 <th></th>
-                <th className="wbdv-header wbdv-title" scope="col">Title</th>
-                <th className="wbdv-header wbdv-owner d-none d-sm-table-cell" scope="col">Owned by</th>
-                <th className="wbdv-header wbdv-last-modified d-none d-sm-table-cell" scope="col">Last modified</th>
+                <th className="wbdv-header wbdv-title col-sm-4" scope="col">Title</th>
+                <th className="wbdv-header wbdv-owner d-none d-sm-table-cell col-sm-3" scope="col">Owned by</th>
+                <th className="wbdv-header wbdv-last-modified d-none d-md-table-cell col-sm-3" scope="col">Last modified</th>
                 <th className="wbdv-button wbdv-grid-layout d-none d-sm-table-cell" scope="col">
                     <i className="fa fa-th" aria-hidden="true"></i>
                 </th>
