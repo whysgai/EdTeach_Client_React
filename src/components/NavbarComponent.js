@@ -3,7 +3,7 @@ import React from "react"
 const NavbarComponent = () =>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="col-sm-1">
-            <button className="nav-elem btn btn-dark hide wbdv-field wbdv-hamburger">
+            <button className="nav-elem btn btn-dark wbdv-field wbdv-hamburger">
                 <span className="navbar-toggler-icon"></span>
             </button>
         </div>

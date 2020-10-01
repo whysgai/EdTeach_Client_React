@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import './index.css';
-import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
 import "./styles/styles.css"
 import App from './App';
 import CourseListComponent from "./components/CourseListComponent";
 import * as serviceWorker from './serviceWorker';
 import NavbarComponent from "./components/NavbarComponent";
+import CourseManagerComponent from "./components/CourseManagerComponent";
 
 ReactDOM.render(
   // <React.StrictMode>
@@ -15,7 +17,7 @@ ReactDOM.render(
     <div>
         <NavbarComponent/>,
         <div className="container">
-            <CourseListComponent instructor="Will" term="Fall 2020"/>
+            <CourseManagerComponent instructor="Will" term="Fall 2020"/>
         </div>
     </div>,
   document.getElementById('root')
