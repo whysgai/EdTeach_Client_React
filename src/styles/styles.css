@@ -1,0 +1,78 @@
+.abut-right {
+    padding-right: 0;
+    margin-left: 0;
+}
+
+.abut-left {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.btn {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.btn-align-veritcal {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.hide {
+    display: none;
+}
+
+.header-button {
+    padding: .5rem
+}
+
+.font-black {
+    color: black;
+}
+
+.font-white {
+    color: white;
+}
+
+.list-of-btns {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.login-label {
+    padding: 0 0 0 0;
+}
+
+.logo {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.marg-below {
+    margin-bottom: 1rem;
+}
+
+.pad-a-little {
+    padding: .5rem;
+}
+
+.title {
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+    margin-bottom: 0;
+}
+
+.title-align {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.nav-elem {
+    /*display: inline-block;*/
+    margin: 0 0 0 0;
+}
+
+.wbdv-hidden {
+    display: none;
+}

@@ -2,16 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css"
+import "./styles/styles.css"
 import App from './App';
 import CourseListComponent from "./components/CourseListComponent";
 import * as serviceWorker from './serviceWorker';
+import NavbarComponent from "./components/NavbarComponent";
 
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>,
-    <div className="container">
-        <CourseListComponent instructor="Will" term="Fall 2020"/>
+    <div>
+        <NavbarComponent/>,
+        <div className="container">
+            <CourseListComponent instructor="Will" term="Fall 2020"/>
+        </div>
     </div>,
   document.getElementById('root')
 );
