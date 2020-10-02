@@ -19,7 +19,7 @@ const CourseRowComponent = ({course}) =>
         </td>
         <td className="wbdv-row wbdv-owner"><span className="d-none d-sm-table-cell">{course.owner}</span></td>
         <td className="wbdv-row wbdv-modified-date d-none d-md-table-cell">
-            <time className="d-none d-sm-table-cell" dateTime="2008-02-14 20:00">{course.lastOpened}</time>
+            <time className="d-none d-sm-table-cell" dateTime="2008-02-14 20:00">{course.modified}</time>
         </td>
         {/*<td>&nbsp;</td>*/}
         {/*<td>&nbsp;</td>*/}
