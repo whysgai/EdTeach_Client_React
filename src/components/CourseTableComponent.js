@@ -11,8 +11,10 @@ const CourseTableComponent = ({courses}) =>
                 <th className="wbdv-header wbdv-owner d-none d-sm-table-cell col-sm-3" scope="col">Owned by</th>
                 <th className="wbdv-header wbdv-last-modified d-none d-md-table-cell col-sm-3" scope="col">Last modified</th>
                 <th className="wbdv-button wbdv-grid-layout d-none d-sm-table-cell" scope="col">
-                    <i className="fa fa-th" aria-hidden="true"></i>
-                    <i className="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+                    <i className="fa fa-th d-inline" aria-hidden="true"></i>
+                    <span>&nbsp;</span>
+                    <i className="fa fa-sort-alpha-asc d-inline" aria-hidden="true"></i>
+
                 </th>
                 {/*<th className="hide wbdv-button wbdv-list-layout d-none d-sm-table-cell" scope="col">*/}
                 {/*    */}
@@ -23,7 +25,7 @@ const CourseTableComponent = ({courses}) =>
                 {/*<th></th>*/}
             </tr>
             </thead>
-            <tbody>
+            <tbody className="table-hover">
             {
                 courses.map( (course, index) =>
                     <CourseRowComponent course={course}/>

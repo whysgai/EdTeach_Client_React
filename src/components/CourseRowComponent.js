@@ -21,18 +21,20 @@ const CourseRowComponent = ({course}) =>
         <td className="wbdv-row wbdv-modified-date d-none d-md-table-cell">
             <time className="d-none d-sm-table-cell" dateTime="2008-02-14 20:00">{course.lastOpened}</time>
         </td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td className="wbdv-row wbdv-button wbdv-edit">
-            <a href=""><i className="font-black fa fa-pencil" aria-hidden="true"></i></a>
+        {/*<td>&nbsp;</td>*/}
+        {/*<td>&nbsp;</td>*/}
+        {/*<td>&nbsp;</td>*/}
+        <td className="">
+            <a className="wbdv-button wbdv-edit" href=""><i className="font-black fa fa-pencil" aria-hidden="true"></i></a>
+            <a className="wbdv-button wbdv-delete" href=""><i className="font-black fa fa-trash" aria-hidden="true"></i></a>
+            <a className="wbdv-button wbdv-save hide" href=""><i className="font-black fa fa-check-circle" aria-hidden="true"></i></a>
         </td>
-        <td className="wbdv-row wbdv-button wbdv-delete">
-            <a href=""><i className="font-black fa fa-trash" aria-hidden="true"></i></a>
-        </td>
-        <td className="wbdv-row wbdv-button wbdv-save hide">
-            <a href=""><i className="font-black fa fa-check-circle" aria-hidden="true"></i></a>
-        </td>
+        {/*<td className="wbdv-row wbdv-button wbdv-delete">*/}
+        {/*    <a href=""><i className="font-black fa fa-trash" aria-hidden="true"></i></a>*/}
+        {/*</td>*/}
+        {/*<td className="wbdv-row wbdv-button wbdv-save hide">*/}
+        {/*    <a href=""><i className="font-black fa fa-check-circle" aria-hidden="true"></i></a>*/}
+        {/*</td>*/}
     </tr>
 
 export default CourseRowComponent;
