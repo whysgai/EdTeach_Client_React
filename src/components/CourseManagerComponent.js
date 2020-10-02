@@ -1,13 +1,24 @@
 import React from "react";
 import CourseTableComponent from "./CourseTableComponent";
+import {findAllCourses, createCourse, deleteCourse, updateCourse} from "../services/CourseService"
 import CourseRowComponent from "./CourseRowComponent";
 
 class CourseManagerComponent extends React.Component {
-        // Implicit Return Syntax
+
     state = {
         courses: [],
         showTable: true,
     }
+
+    componentDidMount() {
+        findAllCourses()
+            .then(courses => {
+                this.setState({
+                    courses: courses
+                })
+            })
+    }
+
     render() {
         return(<div className="CourseManager">
             <form>
