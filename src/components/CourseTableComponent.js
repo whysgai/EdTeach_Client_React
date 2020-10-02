@@ -18,7 +18,6 @@ class CourseTableComponent extends React.Component {
                             <i className="fa fa-th d-inline" aria-hidden="true"></i>
                             <span>&nbsp;</span>
                             <i className="fa fa-sort-alpha-asc d-inline" aria-hidden="true"></i>
-
                         </th>
                     </tr>
                     </thead>
