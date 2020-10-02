@@ -1,5 +1,6 @@
 import React from "react";
 import CourseTableComponent from "./CourseTableComponent";
+import CourseGridComponent from "./CourseGridComponent";
 import {findAllCourses, createCourse, deleteCourse, updateCourse,} from "../services/CourseService"
 import CourseRowComponent from "./CourseRowComponent";
 
@@ -72,6 +73,10 @@ class CourseManagerComponent extends React.Component {
             {
                 this.state.showTable &&
                     <CourseTableComponent courses={this.state.courses}/>
+            }
+            {
+                !this.state.showTable &&
+                    <CourseGridComponent/>
             }
 
         </div>
