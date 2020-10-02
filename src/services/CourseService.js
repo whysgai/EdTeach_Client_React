@@ -4,7 +4,7 @@ export const findAllCourses = () =>
     fetch(url)
         .then(response => response.json())
 
-export const findCourseById = () =>
+export const findCourseById = (course) =>
     fetch(`${url}/${course._id}`)
         .then(response => response.json())
 

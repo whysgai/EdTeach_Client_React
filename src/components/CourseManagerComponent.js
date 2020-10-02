@@ -1,6 +1,6 @@
 import React from "react";
 import CourseTableComponent from "./CourseTableComponent";
-import {findAllCourses, createCourse, deleteCourse, updateCourse} from "../services/CourseService"
+import {findAllCourses, createCourse, deleteCourse, updateCourse,} from "../services/CourseService"
 import CourseRowComponent from "./CourseRowComponent";
 
 class CourseManagerComponent extends React.Component {
@@ -19,6 +19,21 @@ class CourseManagerComponent extends React.Component {
             })
     }
 
+    addCourse = () => {
+        const newCourse = {
+            title: "New Course",
+            owner: this.props.instructor,
+            modified: (new Date()).toDateString()
+        }
+        createCourse(newCourse)
+            .then(serverCourse => this.setState(prevState => ({
+                courses : [
+                    ...prevState.courses, serverCourse
+                ]
+                })
+            ))
+    }
+
     render() {
         return(<div className="CourseManager">
             <form>
@@ -30,9 +45,9 @@ class CourseManagerComponent extends React.Component {
                         <input className="form-control btn-align-veritcal wbdv-field wbdv-new-course" id="newcourse" placeholder="Add a course"></input>
                     </div>
                     <div className="col-sm-1 title-align">
-                        <a href="#" className="btn btn-primary btn-block wbdv-button wbdv-add-course">
+                        <button className="btn btn-primary btn-block wbdv-button wbdv-add-course" onClick={this.addCourse}>
                             <i className="fa fa-plus-circle" aria-hidden="true"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </form>
