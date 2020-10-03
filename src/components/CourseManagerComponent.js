@@ -13,7 +13,8 @@ class CourseManagerComponent extends React.Component {
         this.state = {
             courses: [],
             view: 'table',
-            newTitle: ''
+            newTitle: '',
+            courseBeingRenamed: ''
         };
     }
 
@@ -26,7 +27,7 @@ class CourseManagerComponent extends React.Component {
             })
     }
 
-    captureTitleChange = (e) => {
+    captureNewCourseTitle = (e) => {
         this.setState({ newTitle: e.target.value });
     };
 
@@ -38,35 +39,65 @@ class CourseManagerComponent extends React.Component {
         }
     }
 
-    viewTable = (e) => {
-        this.setState({view: 'table'})
-    }
-
-    viewCards = (e) => {
-        this.setState({view: 'cards'})
-    }
-
     addCourse = (e) => {
         e.preventDefault();
-        console.log(this.state.newTitle)
+        console.log(this.state.newTitle);
         if (this.state.newTitle != "") {
             const newCourse = {
                 title: this.state.newTitle,
                 owner: this.props.instructor,
                 modified: (new Date()).toDateString()
-            }
+            };
             createCourse(newCourse)
                 .then(serverCourse => this.setState(prevState => ({
                         courses : [
                             ...prevState.courses, serverCourse
                         ]
                     })
-                ))
+                ));
+            this.state.newTitle = '';
+            console.log(this.state.newTitle);
         }
     }
 
+    renameCourse = (course) => {
+        this.setState({
+            courseBeingRenamed: course
+        });
+        console.log(this.state.courseBeingRenamed);
+    }
+
+    captureRenamedCourseTitle = (e) => {
+        e.preventDefault();
+        this.setState({ newTitle: e.target.value });
+    }
+
+    saveRenamedCourseTitle = (course) => {
+        console.log(this.state.newTitle);
+        const updatedCourse = course;
+        updatedCourse.title = this.state.newTitle;
+        updateCourse(course, updatedCourse)
+            .then(
+                console.log("Updated")
+            )
+            // .then(
+            //     findAllCourses()
+            //         .then(courses => {
+            //             this.setState({
+            //                 courses: courses
+            //             });
+            //         })
+            // );
+    }
+
+// .then(status => {
+//     this.setState({
+//                       courseBeingRenamed: {}
+//                   })
+// })
+
     deleteCourse = (course) => {
-        console.log("Delete: " + course._id)
+        console.log("Delete: " + course._id);
         deleteCourse(course)
             .then(status => {
                 this.setState(prevState => {
@@ -76,20 +107,10 @@ class CourseManagerComponent extends React.Component {
                             .filter(function(crs) {
                                 return crs._id !== course._id
                             })
-                    })
-                })
-            })
+                    });
+                });
+            });
     }
-
-
-// {this.state.editing && <input
-// onChange={(e) => this.props.updateForm({
-//     updatedCourseTitle: e.target.value
-// })}
-// value={this.props.passedState.updatedCourseTitle}
-// placeholder="Edited Course Title"/>
-// }
-    // onChange={e} => this.updateForm(newTitle = e.target.value)></input>
 
     modifyDOM = (e) => {
         e.preventDefault();
@@ -105,7 +126,7 @@ class CourseManagerComponent extends React.Component {
                     </label>
                     <div className="col-sm-5 title-align">
                         <input className="form-control btn-align-veritcal wbdv-field wbdv-new-course"
-                               id="newcourse" placeholder="Add a course" type="text" onChange={this.captureTitleChange}></input>
+                               id="newcourse" placeholder="Add a course" type="text" onChange={this.captureNewCourseTitle}></input>
 
                     </div>
                     <div className="col-sm-1 title-align">
@@ -137,7 +158,14 @@ class CourseManagerComponent extends React.Component {
 
             {
                 this.state.view === 'table' &&
-                    <CourseTableComponent courses={this.state.courses} deleteCourse={this.deleteCourse}/>
+                    <CourseTableComponent
+                        courses={this.state.courses}
+                        deleteCourse={this.deleteCourse}
+                        renameCourse={this.renameCourse}
+                        courseBeingRenamed={this.state.courseBeingRenamed}
+                        captureRenamedCourseTitle={this.captureRenamedCourseTitle}
+                        saveRenamedCourseTitle={this.saveRenamedCourseTitle}
+                    />
             }
             {
                 this.state.view === 'cards' &&
