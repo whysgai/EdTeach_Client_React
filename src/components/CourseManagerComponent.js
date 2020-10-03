@@ -12,13 +12,10 @@ class CourseManagerComponent extends React.Component {
         super();
         this.state = {
             courses: [],
-            showTable: true,
+            view: 'table',
+            newTitle: ''
         };
     }
-    // state = {
-    //     courses: [],
-    //     showTable: true,
-    // }
 
     componentDidMount() {
         findAllCourses()
@@ -29,7 +26,13 @@ class CourseManagerComponent extends React.Component {
             })
     }
 
-    addCourse = () => {
+    captureInput = (e) => {
+        this.setState({ newTitle: e.target.value });
+    };
+
+    addCourse = (e) => {
+        e.preventDefault();
+        console.log(this.state.newTitle)
         const newCourse = {
             title: "New Course",
             owner: this.props.instructor,
@@ -44,6 +47,25 @@ class CourseManagerComponent extends React.Component {
             ))
     }
 
+    updateForm = (newState) => {
+        this.setState(newState)
+    }
+
+
+// {this.state.editing && <input
+// onChange={(e) => this.props.updateForm({
+//     updatedCourseTitle: e.target.value
+// })}
+// value={this.props.passedState.updatedCourseTitle}
+// placeholder="Edited Course Title"/>
+// }
+    // onChange={e} => this.updateForm(newTitle = e.target.value)></input>
+
+    modifyDOM = (e) => {
+        e.preventDefault();
+        console.log("TEST CLICK")
+    }
+
     render() {
         return(<div className="CourseManager">
             <form>
@@ -52,7 +74,9 @@ class CourseManagerComponent extends React.Component {
                         <h1 className="title center-text bg-light wbdv-label wbdv-course-manager">{this.props.instructor}'s Course List - {this.props.term}</h1>
                     </label>
                     <div className="col-sm-5 title-align">
-                        <input className="form-control btn-align-veritcal wbdv-field wbdv-new-course" id="newcourse" placeholder="Add a course"></input>
+                        <input className="form-control btn-align-veritcal wbdv-field wbdv-new-course"
+                               id="newcourse" placeholder="Add a course" type="text" onChange={this.captureInput}></input>
+
                     </div>
                     <div className="col-sm-1 title-align">
                         <button className="btn btn-primary btn-block wbdv-button wbdv-add-course" onClick={this.addCourse}>
@@ -67,15 +91,17 @@ class CourseManagerComponent extends React.Component {
                             <input type="radio" name="options" id="option2" autoComplete="off"/> Cards
                         </label>
                     </div>
+
                 </div>
             </form>
+            <button className="btn btn-outline-info testBtn">TEST</button>
 
             {
-                this.state.showTable &&
+                this.state.view === 'table' &&
                     <CourseTableComponent courses={this.state.courses}/>
             }
             {
-                !this.state.showTable &&
+                !this.state.view === 'grid' &&
                     <CourseGridComponent/>
             }
 
