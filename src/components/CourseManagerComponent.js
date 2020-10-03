@@ -1,6 +1,6 @@
 import React from "react";
 import CourseTableComponent from "./CourseTableComponent";
-import CourseGridComponent from "./CourseGridComponent";
+import CourseDeckComponent from "./CourseDeckComponent";
 import {findAllCourses, createCourse, deleteCourse, updateCourse,} from "../services/CourseService"
 import CourseRowComponent from "./CourseRowComponent";
 
@@ -29,6 +29,22 @@ class CourseManagerComponent extends React.Component {
     captureTitleChange = (e) => {
         this.setState({ newTitle: e.target.value });
     };
+
+    changeView = () => {
+        if (this.state.view === 'cards') {
+            this.setState({view: 'table'})
+        } else if (this.state.view === 'table') {
+            this.setState({view: 'cards'})
+        }
+    }
+
+    viewTable = (e) => {
+        this.setState({view: 'table'})
+    }
+
+    viewCards = (e) => {
+        this.setState({view: 'cards'})
+    }
 
     addCourse = (e) => {
         e.preventDefault();
@@ -68,7 +84,7 @@ class CourseManagerComponent extends React.Component {
         return(<div className="CourseManager">
             <form>
                 <div className="form-group row bg-light">
-                    <label htmlFor="newcourse" className="col-sm-6">
+                    <label htmlFor="newcourse" className="col-sm-4">
                         <h1 className="title center-text bg-light wbdv-label wbdv-course-manager">{this.props.instructor}'s Course List - {this.props.term}</h1>
                     </label>
                     <div className="col-sm-5 title-align">
@@ -81,14 +97,23 @@ class CourseManagerComponent extends React.Component {
                             <i className="fa fa-plus-circle" aria-hidden="true"></i>
                         </button>
                     </div>
-                    <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label className="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autoComplete="off" checked/> Table
-                        </label>
-                        <label className="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autoComplete="off"/> Cards
-                        </label>
+                    <div className="col-sm-1 title-align">
+                        {
+                            this.state.view === 'cards' &&
+                                <button className="btn btn-primary btn-block wbdv-button " onClick={this.changeView}>
+                                    <i className="fa fa-list" aria-hidden="true"></i>
+                                </button>
+
+                        }
+                        {
+                            this.state.view === 'table' &&
+                            <button className="btn btn-primary btn-block wbdv-button " onClick={this.changeView}>
+                                <i className="fa fa-th " aria-hidden="true"></i>
+                            </button>
+                        }
                     </div>
+
+
 
                 </div>
             </form>
@@ -99,8 +124,8 @@ class CourseManagerComponent extends React.Component {
                     <CourseTableComponent courses={this.state.courses}/>
             }
             {
-                !this.state.view === 'grid' &&
-                    <CourseGridComponent/>
+                this.state.view === 'cards' &&
+                    <CourseDeckComponent/>
             }
 
         </div>

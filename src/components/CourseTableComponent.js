@@ -1,9 +1,7 @@
 import React from "react"
 import CourseRowComponent from "./CourseRowComponent";
 
-class CourseTableComponent extends React.Component {
-    render() {
-        return (
+const CourseTableComponent = (courses) =>
             <div className="form-group row">
                 <table className="table border border-dark">
                     <thead className="border-bottom border-secondary">
@@ -30,8 +28,7 @@ class CourseTableComponent extends React.Component {
                     </tbody>
                 </table>
             </div>
-        )
-    }
-}
+
+
 
 export default CourseTableComponent;
