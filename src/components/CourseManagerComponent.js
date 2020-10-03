@@ -26,29 +26,27 @@ class CourseManagerComponent extends React.Component {
             })
     }
 
-    captureInput = (e) => {
+    captureTitleChange = (e) => {
         this.setState({ newTitle: e.target.value });
     };
 
     addCourse = (e) => {
         e.preventDefault();
         console.log(this.state.newTitle)
-        const newCourse = {
-            title: "New Course",
-            owner: this.props.instructor,
-            modified: (new Date()).toDateString()
+        if (this.state.newTitle != "") {
+            const newCourse = {
+                title: this.state.newTitle,
+                owner: this.props.instructor,
+                modified: (new Date()).toDateString()
+            }
+            createCourse(newCourse)
+                .then(serverCourse => this.setState(prevState => ({
+                        courses : [
+                            ...prevState.courses, serverCourse
+                        ]
+                    })
+                ))
         }
-        createCourse(newCourse)
-            .then(serverCourse => this.setState(prevState => ({
-                courses : [
-                    ...prevState.courses, serverCourse
-                ]
-                })
-            ))
-    }
-
-    updateForm = (newState) => {
-        this.setState(newState)
     }
 
 
@@ -75,7 +73,7 @@ class CourseManagerComponent extends React.Component {
                     </label>
                     <div className="col-sm-5 title-align">
                         <input className="form-control btn-align-veritcal wbdv-field wbdv-new-course"
-                               id="newcourse" placeholder="Add a course" type="text" onChange={this.captureInput}></input>
+                               id="newcourse" placeholder="Add a course" type="text" onChange={this.captureTitleChange}></input>
 
                     </div>
                     <div className="col-sm-1 title-align">
