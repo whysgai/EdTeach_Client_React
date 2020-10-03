@@ -1,7 +1,7 @@
 import React from "react"
 import CourseRowComponent from "./CourseRowComponent";
 
-const CourseTableComponent = ({courses, deleteCourse, renameCourse, courseBeingRenamed}) =>
+const CourseTableComponent = ({courses, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle}) =>
             <div className="form-group row">
                 <table className="table border border-dark">
                     <thead className="border-bottom border-secondary">
@@ -27,6 +27,8 @@ const CourseTableComponent = ({courses, deleteCourse, renameCourse, courseBeingR
                                 deleteCourse={deleteCourse}
                                 renameCourse={renameCourse}
                                 courseBeingRenamed={courseBeingRenamed}
+                                captureRenamedCourseTitle={captureRenamedCourseTitle}
+                                saveRenamedCourseTitle={saveRenamedCourseTitle}
                             />
                         )
                     }
