@@ -1,7 +1,8 @@
 import React from "react"
 import CourseCardComponent from "./CourseCardComponent";
+import CourseRowComponent from "./CourseRowComponent";
 
-const CourseDeckComponent = () =>
+const CourseDeckComponent = ({courses, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle}) =>
     <div className="course-deck col-12">
         <h1>COURSE GRID HERE</h1>
         <div className="">
@@ -12,8 +13,18 @@ const CourseDeckComponent = () =>
             </div>
         </div>
         <div className="row">
-            <CourseCardComponent/>
-            <CourseCardComponent/>
+            {
+                courses.map((course, index) =>
+                    <CourseCardComponent
+                        course={course}
+                        deleteCourse={deleteCourse}
+                        renameCourse={renameCourse}
+                        courseBeingRenamed={courseBeingRenamed}
+                        captureRenamedCourseTitle={captureRenamedCourseTitle}
+                        saveRenamedCourseTitle={saveRenamedCourseTitle}
+                    />
+                )
+            }
         </div>
 
     </div>

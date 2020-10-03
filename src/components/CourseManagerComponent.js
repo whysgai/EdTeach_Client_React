@@ -169,7 +169,13 @@ class CourseManagerComponent extends React.Component {
             }
             {
                 this.state.view === 'cards' &&
-                    <CourseDeckComponent/>
+                    <CourseDeckComponent courses={this.state.courses}
+                                         deleteCourse={this.deleteCourse}
+                                         renameCourse={this.renameCourse}
+                                         courseBeingRenamed={this.state.courseBeingRenamed}
+                                         captureRenamedCourseTitle={this.captureRenamedCourseTitle}
+                                         saveRenamedCourseTitle={this.saveRenamedCourseTitle}
+                    />
             }
 
         </div>
