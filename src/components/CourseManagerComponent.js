@@ -26,7 +26,7 @@ class CourseManagerComponent extends React.Component {
             })
     }
 
-    captureTitleChange = (e) => {
+    captureNewCourseTitle = (e) => {
         this.setState({ newTitle: e.target.value });
     };
 
@@ -105,7 +105,7 @@ class CourseManagerComponent extends React.Component {
                     </label>
                     <div className="col-sm-5 title-align">
                         <input className="form-control btn-align-veritcal wbdv-field wbdv-new-course"
-                               id="newcourse" placeholder="Add a course" type="text" onChange={this.captureTitleChange}></input>
+                               id="newcourse" placeholder="Add a course" type="text" onChange={this.captureNewCourseTitle}></input>
 
                     </div>
                     <div className="col-sm-1 title-align">
