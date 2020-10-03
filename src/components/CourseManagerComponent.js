@@ -12,7 +12,7 @@ class CourseManagerComponent extends React.Component {
         super();
         this.state = {
             courses: [],
-            view: 'table',
+            view: 'cards',
             newTitle: '',
             courseBeingRenamed: ''
         };
