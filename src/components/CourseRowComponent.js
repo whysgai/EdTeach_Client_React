@@ -1,6 +1,6 @@
 import React from "react";
 
-const CourseRowComponent = ({course}) =>
+const CourseRowComponent = ({course, deleteCourse}) =>
     // <tr>
     //     <td>{course.title}</td>
     //     <td>{course.owner}</td>
@@ -25,9 +25,9 @@ const CourseRowComponent = ({course}) =>
         {/*<td>&nbsp;</td>*/}
         {/*<td>&nbsp;</td>*/}
         <td className="">
-            <a className="wbdv-button wbdv-edit" href=""><i className="font-black fa fa-pencil" aria-hidden="true"></i></a>
-            <a className="wbdv-button wbdv-delete" href=""><i className="font-black fa fa-trash" aria-hidden="true"></i></a>
-            <a className="wbdv-button wbdv-save hide" href=""><i className="font-black fa fa-check-circle" aria-hidden="true"></i></a>
+            <a className="wbdv-button wbdv-edit" href="#"><i className="font-black fa fa-pencil" aria-hidden="true"></i></a>
+            <a className="wbdv-button wbdv-delete" onClick={ () => deleteCourse(course)} href="#"><i className="font-black fa fa-trash" aria-hidden="true"></i></a>
+            <a className="wbdv-button wbdv-save hide" href="#"><i className="font-black fa fa-check-circle" aria-hidden="true"></i></a>
         </td>
         {/*<td className="wbdv-row wbdv-button wbdv-delete">*/}
         {/*    <a href=""><i className="font-black fa fa-trash" aria-hidden="true"></i></a>*/}

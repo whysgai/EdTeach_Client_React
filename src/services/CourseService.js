@@ -19,7 +19,7 @@ export const createCourse = (newCourse) =>
         .then(response => response.json())
 
 export const deleteCourse = (course) =>
-    fetch(`${url}/${course}`, {
+    fetch(`${url}/${course._id}`, {
         method: 'DELETE'
     })
         .then(response => response.json())

@@ -1,7 +1,7 @@
 import React from "react"
 import CourseRowComponent from "./CourseRowComponent";
 
-const CourseTableComponent = (courses) =>
+const CourseTableComponent = ({courses, deleteCourse}) =>
             <div className="form-group row">
                 <table className="table border border-dark">
                     <thead className="border-bottom border-secondary">
@@ -21,8 +21,8 @@ const CourseTableComponent = (courses) =>
                     </thead>
                     <tbody className="table-hover">
                     {
-                        this.props.courses.map((course, index) =>
-                            <CourseRowComponent course={course}/>
+                        courses.map((course, index) =>
+                            <CourseRowComponent course={course} deleteCourse={deleteCourse}/>
                         )
                     }
                     </tbody>

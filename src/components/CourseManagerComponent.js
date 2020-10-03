@@ -65,6 +65,22 @@ class CourseManagerComponent extends React.Component {
         }
     }
 
+    deleteCourse = (course) => {
+        console.log("Delete: " + course._id)
+        deleteCourse(course)
+            .then(status => {
+                this.setState(prevState => {
+                    return ({
+                        courses: prevState
+                            .courses
+                            .filter(function(crs) {
+                                return crs._id !== course._id
+                            })
+                    })
+                })
+            })
+    }
+
 
 // {this.state.editing && <input
 // onChange={(e) => this.props.updateForm({
@@ -121,7 +137,7 @@ class CourseManagerComponent extends React.Component {
 
             {
                 this.state.view === 'table' &&
-                    <CourseTableComponent courses={this.state.courses}/>
+                    <CourseTableComponent courses={this.state.courses} deleteCourse={this.deleteCourse}/>
             }
             {
                 this.state.view === 'cards' &&
