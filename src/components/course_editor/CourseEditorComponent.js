@@ -1,6 +1,6 @@
 import React from "react";
 
-const CourseEditorComponent = ({editorShowHide}) =>
+const CourseEditorComponent = ({editorShowHide, modules, lessons, topics}) =>
     <div>
         <h1>Course Editor</h1>
         <button onClick={editorShowHide}>Close</button>
@@ -12,7 +12,6 @@ const CourseEditorComponent = ({editorShowHide}) =>
                 </div>
             </div>
             <div className="col-sm-8 border">
-
                 <div className="border">
                     <p>List of lessons</p>
                     <div className="border">
