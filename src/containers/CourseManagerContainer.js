@@ -1,6 +1,7 @@
 import React from "react";
-import CourseTableComponent from "../components/CourseTableComponent";
-import CourseDeckComponent from "../components/CourseDeckComponent";
+import CourseEditorComponent from "../components/course_editor/CourseEditorComponent";
+import CourseTableComponent from "../components/course_manager/CourseTableComponent";
+import CourseDeckComponent from "../components/course_manager/CourseDeckComponent";
 import {findAllCourses, createCourse, deleteCourse, updateCourse,} from "../services/CourseService"
 
 class CourseManagerContainer extends React.Component {
@@ -11,7 +12,7 @@ class CourseManagerContainer extends React.Component {
         super();
         this.state = {
             courses: [],
-            view: 'table',
+            view: 'editor',
             newTitle: '',
             courseBeingRenamed: ''
         };
@@ -119,66 +120,77 @@ class CourseManagerContainer extends React.Component {
     render() {
         return(
             <div className="CourseManager">
-                <form>
-                    <div className="form-group row bg-light">
-                        <label htmlFor="newcourse" className="col-sm-4">
-                            <h1 className="title center-text bg-light wbdv-label wbdv-course-manager">{this.props.instructor}'s Course List - {this.props.term}</h1>
-                        </label>
-                        <div className="col-sm-5 title-align">
-                            <input className="form-control btn-align-veritcal wbdv-field wbdv-new-course"
-                                   id="newcourse" placeholder="Add a course" type="text" onChange={this.captureNewCourseTitle}></input>
+                {
+                    this.state.view === 'editor' &&
+                        <CourseEditorComponent/>
 
-                        </div>
-                        <div className="col-sm-1 title-align">
-                            <button className="btn btn-primary btn-block wbdv-button wbdv-add-course" onClick={this.addCourse}>
-                                <i className="fa fa-plus-circle" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                        <div className="col-sm-1 title-align">
-                            {
-                                this.state.view === 'cards' &&
-                                    <button className="btn btn-primary btn-block wbdv-button " onClick={this.changeView}>
-                                        <i className="fa fa-list" aria-hidden="true"></i>
+                }
+                {
+                    this.state.view !== 'editor' &&
+                    <div>
+                        <form>
+                            <div className="form-group row bg-light">
+                                <label htmlFor="newcourse" className="col-sm-4">
+                                    <h1 className="title center-text bg-light wbdv-label wbdv-course-manager">{this.props.instructor}'s
+                                        Course List - {this.props.term}</h1>
+                                </label>
+                                <div className="col-sm-5 title-align">
+                                    <input className="form-control btn-align-veritcal wbdv-field wbdv-new-course"
+                                           id="newcourse" placeholder="Add a course" type="text"
+                                           onChange={this.captureNewCourseTitle}></input>
+
+                                </div>
+                                <div className="col-sm-1 title-align">
+                                    <button className="btn btn-primary btn-block wbdv-button wbdv-add-course"
+                                            onClick={this.addCourse}>
+                                        <i className="fa fa-plus-circle" aria-hidden="true"></i>
                                     </button>
+                                </div>
+                                <div className="col-sm-1 title-align">
+                                    {
+                                        this.state.view === 'cards' &&
+                                        <button className="btn btn-primary btn-block wbdv-button "
+                                                onClick={this.changeView}>
+                                            <i className="fa fa-list" aria-hidden="true"></i>
+                                        </button>
 
-                            }
-                            {
-                                this.state.view === 'table' &&
-                                <button className="btn btn-primary btn-block wbdv-button " onClick={this.changeView}>
-                                    <i className="fa fa-th " aria-hidden="true"></i>
-                                </button>
-                            }
-                        </div>
+                                    }
+                                    {
+                                        this.state.view === 'table' &&
+                                        <button className="btn btn-primary btn-block wbdv-button "
+                                                onClick={this.changeView}>
+                                            <i className="fa fa-th " aria-hidden="true"></i>
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                        </form>
+                        {
+                            this.state.view === 'table' &&
+                                <CourseTableComponent
+                                courses={this.state.courses}
+                                deleteCourse={this.deleteCourse}
+                                renameCourse={this.renameCourse}
+                                courseBeingRenamed={this.state.courseBeingRenamed}
+                                captureRenamedCourseTitle={this.captureRenamedCourseTitle}
+                                saveRenamedCourseTitle={this.saveRenamedCourseTitle}
+                                />
+                        }
+                        {
+                            this.state.view === 'cards' &&
+                                <CourseDeckComponent courses={this.state.courses}
+                                deleteCourse={this.deleteCourse}
+                                renameCourse={this.renameCourse}
+                                courseBeingRenamed={this.state.courseBeingRenamed}
+                                captureRenamedCourseTitle={this.captureRenamedCourseTitle}
+                                saveRenamedCourseTitle={this.saveRenamedCourseTitle}
+                                />
+                        }
                     </div>
-                </form>
-                <button className="btn btn-outline-info testBtn">TEST</button>
-
-                {
-                    this.state.view === 'table' &&
-                        <CourseTableComponent
-                            courses={this.state.courses}
-                            deleteCourse={this.deleteCourse}
-                            renameCourse={this.renameCourse}
-                            courseBeingRenamed={this.state.courseBeingRenamed}
-                            captureRenamedCourseTitle={this.captureRenamedCourseTitle}
-                            saveRenamedCourseTitle={this.saveRenamedCourseTitle}
-                        />
                 }
-                {
-                    this.state.view === 'cards' &&
-                        <CourseDeckComponent courses={this.state.courses}
-                                             deleteCourse={this.deleteCourse}
-                                             renameCourse={this.renameCourse}
-                                             courseBeingRenamed={this.state.courseBeingRenamed}
-                                             captureRenamedCourseTitle={this.captureRenamedCourseTitle}
-                                             saveRenamedCourseTitle={this.saveRenamedCourseTitle}
-                        />
-                }
-
             </div>
         );
     }
-
 }
 
 export default CourseManagerContainer;
