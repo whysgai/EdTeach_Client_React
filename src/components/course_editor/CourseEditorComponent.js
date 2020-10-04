@@ -12,7 +12,7 @@ const CourseEditorComponent = ({editorShowHide, modules, lessons, topics, widget
     <div>
         <div className="row">
             <h1 className="col-11">Course Editor - Course Name</h1>
-            <button className="btn btn-outline-dark" onClick={editorShowHide}>
+            <button className="btn btn-outline-dark col-1" onClick={editorShowHide}>
                 <i className="fa fa-times-circle-o" aria-hidden="true"/>
             </button>
         </div>
