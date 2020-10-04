@@ -5,7 +5,6 @@ import "font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/styles.css"
 import App from './App';
-import CourseListComponent from "./components/course_manager/CourseListComponent";
 import * as serviceWorker from './serviceWorker';
 import NavbarComponent from "./components/NavbarComponent";
 import CourseManagerContainer from "./containers/CourseManagerContainer";

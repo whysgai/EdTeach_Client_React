@@ -12,7 +12,8 @@ class CourseManagerContainer extends React.Component {
         super();
         this.state = {
             courses: [],
-            view: 'editor',
+            view: 'table',
+            showEditor: true,
             newTitle: '',
             courseBeingRenamed: ''
         };
@@ -30,6 +31,14 @@ class CourseManagerContainer extends React.Component {
     captureNewCourseTitle = (e) => {
         this.setState({ newTitle: e.target.value });
     };
+
+    editorShowHide = () => {
+        if (this.state.showEditor) {
+            this.setState({showEditor: false})
+        } else {
+            this.setState({showEditor: true})
+        }
+    }
 
     changeView = () => {
         if (this.state.view === 'cards') {
@@ -121,12 +130,12 @@ class CourseManagerContainer extends React.Component {
         return(
             <div className="CourseManager">
                 {
-                    this.state.view === 'editor' &&
-                        <CourseEditorComponent/>
+                    this.state.showEditor &&
+                        <CourseEditorComponent editorShowHide={this.editorShowHide}/>
 
                 }
                 {
-                    this.state.view !== 'editor' &&
+                    !this.state.showEditor &&
                     <div>
                         <form>
                             <div className="form-group row bg-light">
