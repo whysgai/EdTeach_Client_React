@@ -1,7 +1,8 @@
 import React from "react";
-import CourseRowComponent from "../course_manager/CourseRowComponent";
 import CourseModuleItemComponent from "./CourseModuleItemComponent";
 import CourseLessonComponent from "./CourseLessonComponent";
+import CourseTopicComponent from "./CourseTopicComponent";
+import CourseEditorWidget from "./CourseEditorWidget";
 
 const CourseModuleComponent = ({modules, lessons, topics}) =>
     <div className="border row">
@@ -27,12 +28,15 @@ const CourseModuleComponent = ({modules, lessons, topics}) =>
                             topics={topics}
                         />
                     }
-                    <div className="border">
-                        <p>List of topics</p>
-                        <div className="border">
-                            <p>Widget stuff</p>
-                        </div>
-                    </div>
+                    {
+                        <CourseTopicComponent
+                            topics={topics}
+                        />
+                    }
+                    {
+                        <CourseEditorWidget/>
+                    }
+
                 </div>
             </div>
 

@@ -12,7 +12,6 @@ const CourseEditorComponent = ({editorShowHide, modules, lessons, topics}) =>
                 topics={topics}
                 className="row col-12 border"
             />
-
         </div>
     </div>
 
