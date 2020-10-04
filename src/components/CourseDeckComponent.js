@@ -1,6 +1,5 @@
 import React from "react"
 import CourseCardComponent from "./CourseCardComponent";
-import CourseRowComponent from "./CourseRowComponent";
 
 const CourseDeckComponent = ({courses, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle}) =>
     <div className="course-deck col-12">

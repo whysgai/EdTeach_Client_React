@@ -8,7 +8,7 @@ import App from './App';
 import CourseListComponent from "./components/CourseListComponent";
 import * as serviceWorker from './serviceWorker';
 import NavbarComponent from "./components/NavbarComponent";
-import CourseManagerComponent from "./components/CourseManagerComponent";
+import CourseManagerContainer from "./containers/CourseManagerContainer";
 
 ReactDOM.render(
   // <React.StrictMode>
@@ -17,7 +17,7 @@ ReactDOM.render(
     <div>
         <NavbarComponent/>,
         <div className="container">
-            <CourseManagerComponent instructor="Will" term="Fall 2020"/>
+            <CourseManagerContainer instructor="Will" term="Fall 2020"/>
         </div>
     </div>,
   document.getElementById('root')
