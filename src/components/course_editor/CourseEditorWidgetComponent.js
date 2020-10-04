@@ -13,11 +13,11 @@ const CourseEditorWidgetComponent = ({widget}) =>
                             <option>Widget Type 3</option>
                             <option>Widget Type 4</option>
                         </select>
-                        <div className="col-sm-3 pull-right">
-                            <button type="button" className="btn btn-warning">
+                        <div className="col-sm-3">
+                            <button type="button" className="btn btn-outline-dark">
                                 <i className="fa fa-arrow-up" aria-hidden="true"/>
                             </button>
-                            <button type="button" className="btn btn-warning">
+                            <button type="button" className="btn btn-outline-dark">
                                 <i className="fa fa-arrow-down" aria-hidden="true"/>
                             </button>
                             <button type="button" className="btn btn-danger">
@@ -25,7 +25,6 @@ const CourseEditorWidgetComponent = ({widget}) =>
                             </button>
                         </div>
                     </div>
-
                 </div>
                 <div className="">
                     <div className="form-group">
