@@ -1,5 +1,6 @@
 import React from "react";
 import CourseRowComponent from "../course_manager/CourseRowComponent";
+import CourseModuleItemComponent from "./CourseModuleItemComponent";
 
 const CourseModuleComponent = ({modules, lessons, topics}) =>
     <div className="border row">
@@ -12,17 +13,16 @@ const CourseModuleComponent = ({modules, lessons, topics}) =>
                 <div className="wbdv-module-list d-none d-sm-block ">
                     <ul className="list-of-btns ">
                         {
-                            // modules.map((module, index) =>
-                            //
-                            // )
+                            modules.map((module, index) =>
+                                <CourseModuleItemComponent
+                                    module={module}
+                                    lessons={lessons}
+                                    topics={topics}
+                                />
+                            )
                         }
 
-                        <li className="btn btn-dark btn-block wbdv-module-item">Module 1 -
-                            <span className="wbdv-module-item-title">Books</span>
-                            <a href="#" className="pull-right font-white wbdv-module-item-delete-btn">
-                                <i className="fa fa-times-circle" aria-hidden="true"/>
-                            </a>
-                        </li>
+
                         <li className="btn btn-dark btn-block wbdv-module-item">Module 2 -
                             <span className="wbdv-module-item-title">Novels</span>
                             <a href="#" className="pull-right font-white wbdv-module-item-delete-btn">
