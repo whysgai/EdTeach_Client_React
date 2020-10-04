@@ -3,8 +3,13 @@ import CourseModuleComponent from "./CourseModuleComponent";
 
 const CourseEditorComponent = ({editorShowHide, modules, lessons, topics}) =>
     <div>
-        <h1>Course Editor - Course Name</h1>
-        <button onClick={editorShowHide}>Close</button>
+        <div className="row">
+            <h1 className="col-11">Course Editor - Course Name</h1>
+            <button className="btn btn-outline-dark" onClick={editorShowHide}>
+                <i className="fa fa-times-circle-o" aria-hidden="true"/>
+            </button>
+        </div>
+
         <div >
             <CourseModuleComponent
                 modules={modules}

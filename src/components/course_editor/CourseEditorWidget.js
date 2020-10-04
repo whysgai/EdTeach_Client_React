@@ -6,24 +6,27 @@ const CourseEditorWidget = () =>
         <form>
             <div className="border border-med pad-a-little">
                 <div className="">
-                    <h3>Heading Widget</h3>
-                    <div className="pull-right">
-                        <button className="btn btn-warning">
-                            <i className="fa fa-arrow-up" aria-hidden="true"/>
-                        </button>
-                        <button className="btn btn-warning">
-                            <i className="fa fa-arrow-down" aria-hidden="true"/>
-                        </button>
-                        <button className="btn btn-danger">
-                            <i className="fa fa-trash" aria-hidden="true"/>
-                        </button>
+                    <h3>Widget 1</h3>
+                    <div className="form-inline">
+                        <select className="form-control col-sm-9">
+                            <option>Widget Type 1</option>
+                            <option>Widget Type 2</option>
+                            <option>Widget Type 3</option>
+                            <option>Widget Type 4</option>
+                        </select>
+                        <div className="col-sm-3 pull-right">
+                            <button type="button" className="btn btn-warning">
+                                <i className="fa fa-arrow-up" aria-hidden="true"/>
+                            </button>
+                            <button type="button" className="btn btn-warning">
+                                <i className="fa fa-arrow-down" aria-hidden="true"/>
+                            </button>
+                            <button type="button" className="btn btn-danger">
+                                <i className="fa fa-trash" aria-hidden="true"/>
+                            </button>
+                        </div>
                     </div>
-                    <select className="form-group form-control">
-                        <option>Widget Type 1</option>
-                        <option>Widget Type 2</option>
-                        <option>Widget Type 3</option>
-                        <option>Widget Type 4</option>
-                    </select>
+
                 </div>
                 <div className="">
                     <div className="form-group">
