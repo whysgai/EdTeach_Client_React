@@ -1,6 +1,6 @@
 import React from "react";
 
-const CourseModuleItemComponent = ({module, lessons, topics}) =>
+const CourseModuleItemComponent = ({module}) =>
     <div>
         <li className="btn btn-dark btn-block wbdv-module-item">{module.modname}
             <a href="#" className="pull-right font-white wbdv-module-item-delete-btn">
