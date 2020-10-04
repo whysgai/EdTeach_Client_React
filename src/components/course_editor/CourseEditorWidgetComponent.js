@@ -1,12 +1,11 @@
 import React from "react";
 
-const CourseEditorWidget = () =>
-    <div>
-        <button className="col-sm-12 btn btn-primary">Add Widget</button>
+const CourseEditorWidgetComponent = ({widget}) =>
+
         <form>
             <div className="border border-med pad-a-little">
                 <div className="">
-                    <h3>Widget 1</h3>
+                    <h3>{widget.widgetname} - <em>{widget.widgettype}</em></h3>
                     <div className="form-inline">
                         <select className="form-control col-sm-9">
                             <option>Widget Type 1</option>
@@ -55,12 +54,8 @@ const CourseEditorWidget = () =>
 
                 </div>
             </div>
-            <div className="pull-right">
-                <button className="btn btn-success">Save</button>
-                <button className="btn btn-outline-info">Preview</button>
-            </div>
         </form>
-    </div>
 
 
-export default CourseEditorWidget
+
+export default CourseEditorWidgetComponent

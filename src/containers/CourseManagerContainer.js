@@ -15,6 +15,7 @@ class CourseManagerContainer extends React.Component {
             modules: [{modname: 'Module 1'}, {modname: 'Module 2'}, {modname: 'Module 3'}, {modname: 'Module 4'}, {modname: 'Module 5'}],
             lessons: [{lessonname: 'Lesson 1'},{lessonname: 'Lesson 2'},{lessonname: 'Lesson 3'}],
             topics: [{topicname: 'Topic 1'}, {topicname: 'Topic 2'}, {topicname: 'Topic 3'}],
+            widgets: [{widgetname: 'Widget 1', widgettype: 'Heading'}],
             view: 'table',
             showEditor: true,
             newTitle: '',
@@ -139,6 +140,7 @@ class CourseManagerContainer extends React.Component {
                             modules={this.state.modules}
                             lessons={this.state.lessons}
                             topics={this.state.lessons}
+                            widgets={this.state.widgets}
                         />
                 }
                 {
