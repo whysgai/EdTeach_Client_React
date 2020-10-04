@@ -17,7 +17,7 @@ class CourseManagerContainer extends React.Component {
             topics: [{topicname: 'Topic 1'}, {topicname: 'Topic 2'}, {topicname: 'Topic 3'}],
             widgets: [{widgetname: 'Widget 1', widgettype: 'Heading'}],
             view: 'table',
-            showEditor: true,
+            showEditor: false,
             newTitle: '',
             courseBeingRenamed: ''
         };
@@ -155,21 +155,21 @@ class CourseManagerContainer extends React.Component {
                                 <div className="col-sm-5 title-align">
                                     <input className="form-control btn-align-veritcal wbdv-field wbdv-new-course"
                                            id="newcourse" placeholder="Add a course" type="text"
-                                           onChange={this.captureNewCourseTitle}></input>
+                                           onChange={this.captureNewCourseTitle}/>
 
                                 </div>
                                 <div className="col-sm-1 title-align">
                                     <button className="btn btn-primary btn-block wbdv-button wbdv-add-course"
                                             onClick={this.addCourse}>
-                                        <i className="fa fa-plus-circle" aria-hidden="true"></i>
+                                        <i className="fa fa-plus-circle" aria-hidden="true"/>
                                     </button>
                                 </div>
                                 <div className="col-sm-1 title-align">
                                     {
                                         this.state.view === 'cards' &&
-                                        <button className="btn btn-primary btn-block wbdv-button "
+                                        <button className="wbdv-button wbdv-grid-layout btn btn-primary btn-block wbdv-button "
                                                 onClick={this.changeView}>
-                                            <i className="fa fa-list" aria-hidden="true"></i>
+                                            <i className="fa fa-list" aria-hidden="true"/>
                                         </button>
 
                                     }
@@ -177,7 +177,7 @@ class CourseManagerContainer extends React.Component {
                                         this.state.view === 'table' &&
                                         <button className="btn btn-primary btn-block wbdv-button "
                                                 onClick={this.changeView}>
-                                            <i className="fa fa-th " aria-hidden="true"></i>
+                                            <i className="fa fa-th " aria-hidden="true"/>
                                         </button>
                                     }
                                 </div>
