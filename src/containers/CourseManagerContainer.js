@@ -24,6 +24,10 @@ class CourseManagerContainer extends React.Component {
     }
 
     componentDidMount() {
+        this.refreshCourses()
+    }
+
+    refreshCourses = () => {
         findAllCourses()
             .then(courses => {
                 this.setState({
@@ -86,10 +90,19 @@ class CourseManagerContainer extends React.Component {
         console.log(this.state.newTitle);
         const renamedCourse = course;
         renamedCourse.title = this.state.newTitle;
+        // Update Course
         updateCourse(course, renamedCourse)
-            .then(
-                console.log("Updated")
+            .then( status => {
+                    this.refreshCourses()
+                    this.setState({
+                        courseBeingRenamed: {}
+                    })
+                }
             )
+
+        // Refresh state courses
+        // Reset courseBeingRenamed state variable
+
             // .then(
             //     findAllCourses()
             //         .then(courses => {
