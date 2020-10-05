@@ -1,14 +1,14 @@
 import React from "react";
 
-const CourseRowComponent = ({course, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle}) =>
+const CourseRowComponent = ({course, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle, editorShowHide}) =>
     <tr className="course wbdv-row wbdv-course d-table-row">
         <td className="wbdv-row wbdv-icon d-table-cell">
-            <i className="fa fa-file-text-o" aria-hidden="true"></i>
+            <i className="text-info fa fa-file-text-o" aria-hidden="true"></i>
         </td>
         <td className="wbdv-row wbdv-title d-table-cell">
             {
                 course !== courseBeingRenamed &&
-                    <a className="font-black" href="#">{course.title}</a>
+                    <a className="font-black" href="#" onClick={editorShowHide}>{course.title}</a>
             }
             {
                 course === courseBeingRenamed &&
@@ -23,8 +23,8 @@ const CourseRowComponent = ({course, deleteCourse, renameCourse, courseBeingRena
             {
                 course !== courseBeingRenamed &&
                     <div>
-                        <a className="wbdv-button wbdv-rename" onClick={ () => renameCourse(course)} href="#"><i className="font-black fa fa-pencil" aria-hidden="true"/></a>
-                        <a className="wbdv-button wbdv-delete" onClick={ () => deleteCourse(course)} href="#"><i className="font-black fa fa-trash" aria-hidden="true"/></a>
+                        <a className="wbdv-button wbdv-rename pad-a-little" onClick={ () => renameCourse(course)} href="#"><i className="font-black fa fa-pencil" aria-hidden="true"/></a>
+                        <a className="wbdv-button wbdv-delete pad-a-little" onClick={ () => deleteCourse(course)} href="#"><i className="font-black fa fa-trash" aria-hidden="true"/></a>
                     </div>
             }
             {
@@ -33,7 +33,6 @@ const CourseRowComponent = ({course, deleteCourse, renameCourse, courseBeingRena
                         <a className="wbdv-button wbdv-save" onClick={ () => saveRenamedCourseTitle(course)} href="#"><i className="font-black fa fa-check-circle" aria-hidden="true"></i></a>
                     </div>
             }
-
         </td>
     </tr>
 

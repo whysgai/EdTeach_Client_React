@@ -16,7 +16,7 @@ class CourseManagerContainer extends React.Component {
             lessons: [{lessonname: 'Lesson 1'},{lessonname: 'Lesson 2'},{lessonname: 'Lesson 3'}],
             topics: [{topicname: 'Topic 1'}, {topicname: 'Topic 2'}, {topicname: 'Topic 3'}],
             widgets: [{widgetname: 'Widget 1', widgettype: 'Heading'}],
-            view: 'table',
+            view: 'cards',
             showEditor: false,
             newTitle: '',
             courseBeingRenamed: ''
@@ -37,10 +37,11 @@ class CourseManagerContainer extends React.Component {
     };
 
     editorShowHide = () => {
+        console.log("Switch editor display");
         if (this.state.showEditor) {
-            this.setState({showEditor: false})
+            this.setState({showEditor: false});
         } else {
-            this.setState({showEditor: true})
+            this.setState({showEditor: true});
         }
     }
 
@@ -186,22 +187,24 @@ class CourseManagerContainer extends React.Component {
                         {
                             this.state.view === 'table' &&
                                 <CourseTableComponent
-                                courses={this.state.courses}
-                                deleteCourse={this.deleteCourse}
-                                renameCourse={this.renameCourse}
-                                courseBeingRenamed={this.state.courseBeingRenamed}
-                                captureRenamedCourseTitle={this.captureRenamedCourseTitle}
-                                saveRenamedCourseTitle={this.saveRenamedCourseTitle}
+                                    courses={this.state.courses}
+                                    deleteCourse={this.deleteCourse}
+                                    renameCourse={this.renameCourse}
+                                    courseBeingRenamed={this.state.courseBeingRenamed}
+                                    captureRenamedCourseTitle={this.captureRenamedCourseTitle}
+                                    saveRenamedCourseTitle={this.saveRenamedCourseTitle}
+                                    editorShowHide={this.editorShowHide}
                                 />
                         }
                         {
                             this.state.view === 'cards' &&
                                 <CourseDeckComponent courses={this.state.courses}
-                                deleteCourse={this.deleteCourse}
-                                renameCourse={this.renameCourse}
-                                courseBeingRenamed={this.state.courseBeingRenamed}
-                                captureRenamedCourseTitle={this.captureRenamedCourseTitle}
-                                saveRenamedCourseTitle={this.saveRenamedCourseTitle}
+                                    deleteCourse={this.deleteCourse}
+                                    renameCourse={this.renameCourse}
+                                    courseBeingRenamed={this.state.courseBeingRenamed}
+                                    captureRenamedCourseTitle={this.captureRenamedCourseTitle}
+                                    saveRenamedCourseTitle={this.saveRenamedCourseTitle}
+                                    editorShowHide={this.editorShowHide}
                                 />
                         }
                     </div>

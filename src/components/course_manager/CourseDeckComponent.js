@@ -1,7 +1,7 @@
 import React from "react"
 import CourseCardComponent from "./CourseCardComponent";
 
-const CourseDeckComponent = ({courses, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle}) =>
+const CourseDeckComponent = ({courses, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle, editorShowHide}) =>
     <div className="course-deck col-12">
         <div className="">
             <div className="btn-group" role="group" aria-label="Sort options">
@@ -20,6 +20,7 @@ const CourseDeckComponent = ({courses, deleteCourse, renameCourse, courseBeingRe
                         courseBeingRenamed={courseBeingRenamed}
                         captureRenamedCourseTitle={captureRenamedCourseTitle}
                         saveRenamedCourseTitle={saveRenamedCourseTitle}
+                        editorShowHide={editorShowHide}
                     />
                 )
             }

@@ -1,12 +1,12 @@
 import React from "react";
 
-const CourseCardComponent = ({course, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle}) =>
-    <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+const CourseCardComponent = ({course, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle, editorShowHide}) =>
+    <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 pad-a-little">
         <div className="card">
             <div className="card-body">
                 {
                     course !== courseBeingRenamed &&
-                        <a className="font-black" href="#"><h5 className="card-title">{course.title}</h5></a>
+                        <a className="font-black" href="#" onClick={editorShowHide}><h5 className="card-title">{course.title}</h5></a>
                 }
                 {
                     course === courseBeingRenamed &&
@@ -15,17 +15,18 @@ const CourseCardComponent = ({course, deleteCourse, renameCourse, courseBeingRen
 
                 <h6 className="card-subtitle mb-2 text-muted">{course.owner}</h6>
                 <p className="card-text">{course.modified}</p>
+                <p className="card-text">Summary of course? List of modules?</p>
                 {
                     course !== courseBeingRenamed &&
                         <div>
-                            <button className="btn btn-primary wbdv-button wbdv-rename" onClick={ () => renameCourse(course)}><i className="fa fa-pencil" aria-hidden="true"></i></button>
-                            <button className="btn btn-danger wbdv-button wbdv-delete" onClick={ () => deleteCourse(course)}><i className="fa fa-trash" aria-hidden="true"></i></button>
+                            <button className="btn btn-primary btn-block wbdv-button wbdv-rename" onClick={ () => renameCourse(course)}><i className="fa fa-pencil" aria-hidden="true"></i></button>
+                            <button className="btn btn-danger btn-block wbdv-button wbdv-delete" onClick={ () => deleteCourse(course)}><i className="fa fa-trash" aria-hidden="true"></i></button>
                         </div>
                 }
                 {
                     course === courseBeingRenamed &&
                         <div>
-                            <button className="btn btn-success wbdv-button wbdv-save" onClick={ () => saveRenamedCourseTitle(course)}><i className="fa fa-check-circle" aria-hidden="true"></i></button>
+                            <button className="btn btn-success btn-block wbdv-button wbdv-save" onClick={ () => saveRenamedCourseTitle(course)}><i className="fa fa-check-circle" aria-hidden="true"></i></button>
                         </div>
                 }
 
