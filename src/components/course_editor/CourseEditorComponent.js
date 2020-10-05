@@ -8,11 +8,11 @@ import CourseLessonItemComponent from "./CourseLessonItemComponent";
 import CourseTopicItemComponent from "./CourseTopicItemComponent";
 import CourseEditorWidgetPaneComponent from "./CourseEditorWidgetPaneComponent";
 
-const CourseEditorComponent = ({editorShowHide, modules, lessons, topics, widgets}) =>
+const CourseEditorComponent = ({showEditor, modules, lessons, topics, widgets}) =>
     <div>
         <div className="row">
             <h1 className="col-11">Course Editor - Course Name</h1>
-            <button className="btn btn-outline-dark col-1" onClick={editorShowHide}>
+            <button className="btn btn-outline-dark col-1" onClick={() => showEditor(false)}>
                 <i className="fa fa-times-circle-o" aria-hidden="true"/>
             </button>
         </div>

@@ -36,13 +36,9 @@ class CourseManagerContainer extends React.Component {
         this.setState({ newTitle: e.target.value });
     };
 
-    editorShowHide = () => {
+    showEditor = (editorView) => {
         console.log("Switch editor display");
-        if (this.state.showEditor) {
-            this.setState({showEditor: false});
-        } else {
-            this.setState({showEditor: true});
-        }
+        this.setState({showEditor: editorView})
     }
 
     changeView = () => {
@@ -88,9 +84,9 @@ class CourseManagerContainer extends React.Component {
 
     saveRenamedCourseTitle = (course) => {
         console.log(this.state.newTitle);
-        const updatedCourse = course;
-        updatedCourse.title = this.state.newTitle;
-        updateCourse(course, updatedCourse)
+        const renamedCourse = course;
+        renamedCourse.title = this.state.newTitle;
+        updateCourse(course, renamedCourse)
             .then(
                 console.log("Updated")
             )
@@ -137,7 +133,7 @@ class CourseManagerContainer extends React.Component {
                 {
                     this.state.showEditor &&
                         <CourseEditorComponent
-                            editorShowHide={this.editorShowHide}
+                            showEditor={this.showEditor}
                             modules={this.state.modules}
                             lessons={this.state.lessons}
                             topics={this.state.lessons}
@@ -193,7 +189,7 @@ class CourseManagerContainer extends React.Component {
                                     courseBeingRenamed={this.state.courseBeingRenamed}
                                     captureRenamedCourseTitle={this.captureRenamedCourseTitle}
                                     saveRenamedCourseTitle={this.saveRenamedCourseTitle}
-                                    editorShowHide={this.editorShowHide}
+                                    editorShowHide={this.showEditor}
                                 />
                         }
                         {
@@ -204,7 +200,7 @@ class CourseManagerContainer extends React.Component {
                                     courseBeingRenamed={this.state.courseBeingRenamed}
                                     captureRenamedCourseTitle={this.captureRenamedCourseTitle}
                                     saveRenamedCourseTitle={this.saveRenamedCourseTitle}
-                                    editorShowHide={this.editorShowHide}
+                                    editorShowHide={this.showEditor}
                                 />
                         }
                     </div>

@@ -6,7 +6,7 @@ const CourseCardComponent = ({course, deleteCourse, renameCourse, courseBeingRen
             <div className="card-body">
                 {
                     course !== courseBeingRenamed &&
-                        <a className="font-black" href="#" onClick={editorShowHide}><h5 className="card-title">{course.title}</h5></a>
+                        <a className="font-black" href="#" onClick={() => editorShowHide(true)}><h5 className="card-title">{course.title}</h5></a>
                 }
                 {
                     course === courseBeingRenamed &&

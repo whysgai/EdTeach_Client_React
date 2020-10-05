@@ -8,7 +8,7 @@ const CourseRowComponent = ({course, deleteCourse, renameCourse, courseBeingRena
         <td className="wbdv-row wbdv-title d-table-cell">
             {
                 course !== courseBeingRenamed &&
-                    <a className="font-black" href="#" onClick={editorShowHide}>{course.title}</a>
+                    <a className="font-black" href="#" onClick={() => editorShowHide(true)}>{course.title}</a>
             }
             {
                 course === courseBeingRenamed &&
