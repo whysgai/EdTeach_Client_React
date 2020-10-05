@@ -1,8 +1,9 @@
 const url = "https://wbdv-generic-server.herokuapp.com/api/cohenw/courses"
 
-export const findAllCourses = () =>
-    fetch(url)
-        .then(response => response.json())
+export const findAllCourses = async () => {
+    const response = await fetch(url)
+    return await response.json()
+}
 
 export const findCourseById = (course) =>
     fetch(`${url}/${course._id}`)
