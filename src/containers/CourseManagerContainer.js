@@ -149,7 +149,7 @@ class CourseManagerContainer extends React.Component {
                             showEditor={this.showEditor}
                             modules={this.state.modules}
                             lessons={this.state.lessons}
-                            topics={this.state.lessons}
+                            topics={this.state.topics}
                             widgets={this.state.widgets}
                         />
                 }
