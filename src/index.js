@@ -14,7 +14,7 @@ ReactDOM.render(
   //   <App />
   // </React.StrictMode>,
     <div>
-        <NavbarComponent/>,
+        <NavbarComponent/>
         <div className="container">
             <CourseManagerContainer instructor="Will" term="Fall 2020"/>
         </div>
