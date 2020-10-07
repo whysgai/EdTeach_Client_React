@@ -7,6 +7,7 @@ import CourseEditorWidgetComponent from "../components/course_editor/CourseEdito
 import CourseLessonItemComponent from "../components/course_editor/CourseLessonItemComponent";
 import CourseTopicItemComponent from "../components/course_editor/CourseTopicItemComponent";
 import CourseEditorWidgetPaneComponent from "../components/course_editor/CourseEditorWidgetPaneComponent";
+import {Link} from "react-router-dom";
 
 //({showEditor, modules, lessons, topics, widgets})
 
@@ -29,7 +30,7 @@ class CourseEditorContainer extends React.Component {
             <div>
                 <div className="row">
                     <h1 className="col-11">Course Editor - Course Name</h1>
-                    <Link className="btn btn-outline-dark col-1" to='/course_manager' exact>
+                    <Link className="btn btn-outline-dark col-1" to='/course_manager'>
                         <i className="fa fa-times-circle-o" aria-hidden="true"/>
                     </Link>
                 </div>
@@ -37,7 +38,7 @@ class CourseEditorContainer extends React.Component {
                     <div className="border col-sm-4 wbdv-module-list d-none d-sm-block">
                         <ul className="list-of-btns ">
                             {
-                                modules.map((module, index) =>
+                                this.state.modules.map((module, index) =>
                                     <CourseModuleItemComponent
                                         module={module}
                                     />
@@ -50,7 +51,7 @@ class CourseEditorContainer extends React.Component {
                         <div>
                             <ul className="marg-below nav nav-tabs wbdv-lesson-tabs d-none d-sm-flex">
                                 {
-                                    lessons.map((lesson, index) =>
+                                    this.state.lessons.map((lesson, index) =>
                                         <CourseLessonItemComponent
                                             lesson={lesson}
                                         />
@@ -66,7 +67,7 @@ class CourseEditorContainer extends React.Component {
                         <div>
                             <ul className="marg-below nav nav-pills wbdv-topic-pill-list d-none d-sm-flex">
                                 {
-                                    topics.map((topic, index) =>
+                                    this.state.topics.map((topic, index) =>
                                         <CourseTopicItemComponent
                                             topic={topic}
                                         />
@@ -79,7 +80,7 @@ class CourseEditorContainer extends React.Component {
                         </div>
                         {
                             <CourseEditorWidgetPaneComponent
-                                widgets={widgets}
+                                widgets={this.state.widgets}
                             />
                         }
                     </div>
