@@ -11,14 +11,27 @@ import CourseEditorWidgetPaneComponent from "../components/course_editor/CourseE
 //({showEditor, modules, lessons, topics, widgets})
 
 class CourseEditorContainer extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {
+            course: 'Sample Course',
+            modules: [{modname: 'Module 1'}, {modname: 'Module 2'}, {modname: 'Module 3'}, {modname: 'Module 4'}, {modname: 'Module 5'}],
+            lessons: [{lessonname: 'Lesson 1'},{lessonname: 'Lesson 2'},{lessonname: 'Lesson 3'}],
+            topics: [{topicname: 'Topic 1'}, {topicname: 'Topic 2'}, {topicname: 'Topic 3'}],
+            widgets: [{widgetname: 'Widget 1', widgettype: 'Heading'}],
+        }
+    }
+
+
     render() {
         return (
             <div>
                 <div className="row">
                     <h1 className="col-11">Course Editor - Course Name</h1>
-                    <button className="btn btn-outline-dark col-1" onClick={() => showEditor(false)}>
+                    <Link className="btn btn-outline-dark col-1" to='/course_manager' exact>
                         <i className="fa fa-times-circle-o" aria-hidden="true"/>
-                    </button>
+                    </Link>
                 </div>
                 <div className="border row">
                     <div className="border col-sm-4 wbdv-module-list d-none d-sm-block">
