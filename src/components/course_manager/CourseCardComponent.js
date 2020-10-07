@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const CourseCardComponent = ({course, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle, editorShowHide}) =>
     <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 pad-a-little">
@@ -6,7 +7,7 @@ const CourseCardComponent = ({course, deleteCourse, renameCourse, courseBeingRen
             <div className="card-body">
                 {
                     course !== courseBeingRenamed &&
-                        <a className="font-black" href="#" onClick={() => editorShowHide(true)}><h5 className="card-title">{course.title}</h5></a>
+                        <Link className="font-black" to={`/course_editor/${course._id}`}><h5 className="card-title">{course.title}</h5></Link>
                 }
                 {
                     course === courseBeingRenamed &&

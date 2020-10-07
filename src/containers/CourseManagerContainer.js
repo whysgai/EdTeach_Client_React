@@ -17,14 +17,13 @@ class CourseManagerContainer extends React.Component {
             topics: [{topicname: 'Topic 1'}, {topicname: 'Topic 2'}, {topicname: 'Topic 3'}],
             widgets: [{widgetname: 'Widget 1', widgettype: 'Heading'}],
             view: 'cards',
-            showEditor: false,
             newTitle: '',
             courseBeingRenamed: ''
         };
     }
 
     componentDidMount() {
-        this.refreshCourses()
+        this.refreshCourses();
     }
 
     refreshCourses = () => {
@@ -40,10 +39,10 @@ class CourseManagerContainer extends React.Component {
         this.setState({ newTitle: e.target.value });
     };
 
-    showEditor = (editorView) => {
-        console.log("Switch editor display");
-        this.setState({showEditor: editorView})
-    }
+    // showEditor = (editorView) => {
+    //     console.log("Switch editor display");
+    //     this.setState({showEditor: editorView})
+    // }
 
     changeView = () => {
         if (this.state.view === 'cards') {
@@ -140,19 +139,22 @@ class CourseManagerContainer extends React.Component {
         console.log("TEST CLICK")
     }
 
+// {
+//     this.state.showEditor &&
+// <CourseEditorContainer
+// showEditor={this.showEditor}
+// modules={this.state.modules}
+// lessons={this.state.lessons}
+// topics={this.state.topics}
+// widgets={this.state.widgets}
+// />
+// }
+
+
     render() {
         return(
             <div className="CourseManager">
-                {
-                    this.state.showEditor &&
-                        <CourseEditorContainer
-                            showEditor={this.showEditor}
-                            modules={this.state.modules}
-                            lessons={this.state.lessons}
-                            topics={this.state.topics}
-                            widgets={this.state.widgets}
-                        />
-                }
+
                 {
                     !this.state.showEditor &&
                     <div>

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const CourseRowComponent = ({course, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle, editorShowHide}) =>
     <tr className="course wbdv-row wbdv-course d-table-row">
@@ -8,7 +9,7 @@ const CourseRowComponent = ({course, deleteCourse, renameCourse, courseBeingRena
         <td className="wbdv-row wbdv-title d-table-cell">
             {
                 course !== courseBeingRenamed &&
-                    <a className="font-black" href="#" onClick={() => editorShowHide(true)}>{course.title}</a>
+                    <Link className="font-black" to={`/course_editor/${course._id}`} >{course.title}</Link>
             }
             {
                 course === courseBeingRenamed &&

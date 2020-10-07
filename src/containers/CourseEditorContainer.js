@@ -8,6 +8,7 @@ import CourseLessonItemComponent from "../components/course_editor/CourseLessonI
 import CourseTopicItemComponent from "../components/course_editor/CourseTopicItemComponent";
 import CourseEditorWidgetPaneComponent from "../components/course_editor/CourseEditorWidgetPaneComponent";
 import {Link} from "react-router-dom";
+import {findAllCourses, findCourseById} from "../services/CourseService";
 
 //({showEditor, modules, lessons, topics, widgets})
 
@@ -16,7 +17,7 @@ class CourseEditorContainer extends React.Component {
     constructor() {
         super();
         this.state = {
-            course: 'Sample Course',
+            course: {},
             modules: [{modname: 'Module 1'}, {modname: 'Module 2'}, {modname: 'Module 3'}, {modname: 'Module 4'}, {modname: 'Module 5'}],
             lessons: [{lessonname: 'Lesson 1'},{lessonname: 'Lesson 2'},{lessonname: 'Lesson 3'}],
             topics: [{topicname: 'Topic 1'}, {topicname: 'Topic 2'}, {topicname: 'Topic 3'}],
@@ -24,12 +25,26 @@ class CourseEditorContainer extends React.Component {
         }
     }
 
+    componentDidMount() {
+        // console.log(this.props)
+        this.refreshCourse();
+    }
+
+    refreshCourse() {
+        console.log(this.props.match.params.courseId)
+        findCourseById(this.props.match.params.courseId)
+            .then(course => {
+                this.setState({
+                    course: course
+                })
+            })
+    }
 
     render() {
         return (
             <div>
                 <div className="row">
-                    <h1 className="col-11">Course Editor - Course Name</h1>
+                    <h1 className="col-11">{this.state.course.title}</h1>
                     <Link className="btn btn-outline-dark col-1" to='/course_manager'>
                         <i className="fa fa-times-circle-o" aria-hidden="true"/>
                     </Link>

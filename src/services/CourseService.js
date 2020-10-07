@@ -5,8 +5,8 @@ export const findAllCourses = async () => {
     return await response.json()
 }
 
-export const findCourseById = (course) =>
-    fetch(`${url}/${course._id}`)
+export const findCourseById = (courseId) =>
+    fetch(`${url}/${courseId}`)
         .then(response => response.json())
 
 export const createCourse = (newCourse) =>
