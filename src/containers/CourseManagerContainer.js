@@ -1,5 +1,5 @@
 import React from "react";
-import CourseEditorComponent from "../components/course_editor/CourseEditorComponent";
+import CourseEditorContainer from "./CourseEditorContainer";
 import CourseTableComponent from "../components/course_manager/CourseTableComponent";
 import CourseDeckComponent from "../components/course_manager/CourseDeckComponent";
 import {findAllCourses, createCourse, deleteCourse, updateCourse,} from "../services/CourseService"
@@ -145,7 +145,7 @@ class CourseManagerContainer extends React.Component {
             <div className="CourseManager">
                 {
                     this.state.showEditor &&
-                        <CourseEditorComponent
+                        <CourseEditorContainer
                             showEditor={this.showEditor}
                             modules={this.state.modules}
                             lessons={this.state.lessons}

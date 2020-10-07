@@ -10,7 +10,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import NavbarComponent from "./components/NavbarComponent";
 import CourseManagerContainer from "./containers/CourseManagerContainer";
-import CourseEditorComponent from "./components/course_editor/CourseEditorComponent";
+import CourseEditorContainer from "./containers/CourseEditorContainer";
 
 ReactDOM.render(
   // <React.StrictMode>
@@ -27,7 +27,7 @@ ReactDOM.render(
                     <CourseManagerContainer instructor="Will" term="Fall 2020"/>
                 </Route>
                 <Route path='/course_editor' exact>
-                    <CourseEditorComponent/>
+                    <CourseEditorContainer/>
                 </Route>
             </div>
         </BrowserRouter>
