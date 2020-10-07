@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter, Link, Route}
+    from 'react-router-dom'
 //import './index.css';
 import "font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,6 +10,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import NavbarComponent from "./components/NavbarComponent";
 import CourseManagerContainer from "./containers/CourseManagerContainer";
+import CourseEditorComponent from "./components/course_editor/CourseEditorComponent";
 
 ReactDOM.render(
   // <React.StrictMode>
@@ -15,9 +18,19 @@ ReactDOM.render(
   // </React.StrictMode>,
     <div>
         <NavbarComponent/>
-        <div className="container">
-            <CourseManagerContainer instructor="Will" term="Fall 2020"/>
-        </div>
+
+        <BrowserRouter>
+            <Link to='/course_manager'>Courses</Link>
+            <Link to='/course_editor'>Editor</Link>
+            <div className="container">
+                <Route path='/course_manager' exact>
+                    <CourseManagerContainer instructor="Will" term="Fall 2020"/>
+                </Route>
+                <Route path='/course_editor' exact>
+                    <CourseEditorComponent/>
+                </Route>
+            </div>
+        </BrowserRouter>
     </div>,
   document.getElementById('root')
 );
