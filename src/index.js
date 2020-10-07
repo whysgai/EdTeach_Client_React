@@ -26,7 +26,7 @@ ReactDOM.render(
                 <Route path='/course_manager' exact>
                     <CourseManagerContainer instructor="Will" term="Fall 2020"/>
                 </Route>
-                <Route path='/course_editor' exact>
+                <Route path='/course_editor/:courseId' exact>
                     <CourseEditorContainer/>
                 </Route>
             </div>
