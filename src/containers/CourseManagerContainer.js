@@ -75,7 +75,8 @@ class CourseManagerContainer extends React.Component {
 
     renameCourse = (course) => {
         this.setState({
-            courseBeingRenamed: course
+            courseBeingRenamed: course,
+            newTitle: course.title
         });
         console.log(this.state.courseBeingRenamed);
     }
@@ -94,29 +95,12 @@ class CourseManagerContainer extends React.Component {
             .then( status => {
                     this.refreshCourses()
                     this.setState({
-                        courseBeingRenamed: {}
+                        courseBeingRenamed: {},
+                        newTitle: ''
                     })
                 }
             )
-
-        // Refresh state courses
-        // Reset courseBeingRenamed state variable
-
-            // .then(
-            //     findAllCourses()
-            //         .then(courses => {
-            //             this.setState({
-            //                 courses: courses
-            //             });
-            //         })
-            // );
     }
-
-// .then(status => {
-//     this.setState({
-//                       courseBeingRenamed: {}
-//                   })
-// })
 
     deleteCourse = (course) => {
         console.log("Delete: " + course._id);
@@ -138,18 +122,6 @@ class CourseManagerContainer extends React.Component {
         e.preventDefault();
         console.log("TEST CLICK")
     }
-
-// {
-//     this.state.showEditor &&
-// <CourseEditorContainer
-// showEditor={this.showEditor}
-// modules={this.state.modules}
-// lessons={this.state.lessons}
-// topics={this.state.topics}
-// widgets={this.state.widgets}
-// />
-// }
-
 
     render() {
         return(
@@ -204,7 +176,6 @@ class CourseManagerContainer extends React.Component {
                                     courseBeingRenamed={this.state.courseBeingRenamed}
                                     captureRenamedCourseTitle={this.captureRenamedCourseTitle}
                                     saveRenamedCourseTitle={this.saveRenamedCourseTitle}
-                                    editorShowHide={this.showEditor}
                                 />
                         }
                         {
@@ -215,7 +186,6 @@ class CourseManagerContainer extends React.Component {
                                     courseBeingRenamed={this.state.courseBeingRenamed}
                                     captureRenamedCourseTitle={this.captureRenamedCourseTitle}
                                     saveRenamedCourseTitle={this.saveRenamedCourseTitle}
-                                    editorShowHide={this.showEditor}
                                 />
                         }
                     </div>

@@ -1,10 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const CourseRowComponent = ({course, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle, editorShowHide}) =>
-    <tr className="course wbdv-row wbdv-course d-table-row">
+// className = {`$courseBeingEditied === course? "table-active" : ""}`}
+const CourseRowComponent = ({course, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle}) =>
+
+    <tr className={`course wbdv-row wbdv-course d-table-row ${courseBeingRenamed === course? "bg-primary" : ""}`}>
         <td className="wbdv-row wbdv-icon d-table-cell">
-            <i className="text-info fa fa-file-text-o" aria-hidden="true"></i>
+            <i className={`fa fa-file-text-o ${courseBeingRenamed === course? "text-white" : "text-info"}`} aria-hidden="true"></i>
         </td>
         <td className="wbdv-row wbdv-title d-table-cell">
             {
@@ -31,7 +33,7 @@ const CourseRowComponent = ({course, deleteCourse, renameCourse, courseBeingRena
             {
                 course === courseBeingRenamed &&
                     <div>
-                        <a className="wbdv-button wbdv-save" onClick={ () => saveRenamedCourseTitle(course)} href="#"><i className="font-black fa fa-check-circle" aria-hidden="true"></i></a>
+                        <a className="wbdv-button wbdv-save" onClick={ () => saveRenamedCourseTitle(course)} href="#"><i className="font-white fa fa-check-circle" aria-hidden="true"></i></a>
                     </div>
             }
         </td>
