@@ -21,6 +21,9 @@ ReactDOM.render(
 
         <BrowserRouter>
             <div className="container">
+                <Route path='/' exact>
+                    <LandingPageContainer/>
+                </Route>
                 <Route path='/course_manager' exact>
                     <CourseManagerContainer instructor="Will" term="Fall 2020"/>
                 </Route>
