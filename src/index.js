@@ -9,6 +9,7 @@ import "./styles/styles.css"
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import NavbarComponent from "./components/NavbarComponent";
+import LandingPageContainer from "./containers/LandingPageContainer";
 import CourseManagerContainer from "./containers/CourseManagerContainer";
 import CourseEditorContainer from "./containers/CourseEditorContainer";
 
