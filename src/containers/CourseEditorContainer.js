@@ -49,7 +49,7 @@ class CourseEditorContainer extends React.Component {
                         <i className="fa fa-times-circle-o" aria-hidden="true"/>
                     </Link>
                 </div>
-                <div className="border row">
+                <div className="row">
                     <div className="border col-sm-4 wbdv-module-list d-none d-md-block">
                         <ul className="list-of-btns ">
                             {
@@ -62,7 +62,7 @@ class CourseEditorContainer extends React.Component {
                         </ul>
                         <button className="btn btn-primary btn-block wbdv-module-item-add-btn">Add Module</button>
                     </div>
-                    <div className="col-sm-8 border">
+                    <div className="col-md-8 border">
                         <div>
                             <ul className="marg-below nav nav-tabs wbdv-lesson-tabs d-none d-md-flex">
                                 {
