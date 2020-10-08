@@ -9,6 +9,7 @@ import CourseTopicItemComponent from "../components/course_editor/CourseTopicIte
 import CourseEditorWidgetPaneComponent from "../components/course_editor/CourseEditorWidgetPaneComponent";
 import {Link} from "react-router-dom";
 import {findAllCourses, findCourseById} from "../services/CourseService";
+import CourseEditorMobileNavComponent from "../components/course_editor/CourseEditorMobileNavComponent";
 
 //({showEditor, modules, lessons, topics, widgets})
 
@@ -48,6 +49,11 @@ class CourseEditorContainer extends React.Component {
                     <Link className="btn btn-outline-dark col-1" to='/course_manager'>
                         <i className="fa fa-times-circle-o" aria-hidden="true"/>
                     </Link>
+                </div>
+                <div className="editorMobileNav row">
+                    {
+                        <CourseEditorMobileNavComponent/>
+                    }
                 </div>
                 <div className="row">
                     <div className="border col-sm-4 wbdv-module-list d-none d-md-block">
