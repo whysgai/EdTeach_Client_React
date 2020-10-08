@@ -11,9 +11,9 @@ const CourseEditorWidgetPaneComponent = ({widgets}) =>
                 />
             )
         }
-        <div className="pull-right">
+        <div className="float-right">
             <button className="btn btn-success">Save</button>
-            <button className="btn btn-outline-info">Preview</button>
+            <button className="btn btn-outline-info ml-1">Preview</button>
         </div>
     </div>
 

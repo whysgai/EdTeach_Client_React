@@ -50,7 +50,7 @@ class CourseEditorContainer extends React.Component {
                     </Link>
                 </div>
                 <div className="border row">
-                    <div className="border col-sm-4 wbdv-module-list d-none d-sm-block">
+                    <div className="border col-sm-4 wbdv-module-list d-none d-md-block">
                         <ul className="list-of-btns ">
                             {
                                 this.state.modules.map((module, index) =>
@@ -64,7 +64,7 @@ class CourseEditorContainer extends React.Component {
                     </div>
                     <div className="col-sm-8 border">
                         <div>
-                            <ul className="marg-below nav nav-tabs wbdv-lesson-tabs d-none d-sm-flex">
+                            <ul className="marg-below nav nav-tabs wbdv-lesson-tabs d-none d-md-flex">
                                 {
                                     this.state.lessons.map((lesson, index) =>
                                         <CourseLessonItemComponent
@@ -80,7 +80,7 @@ class CourseEditorContainer extends React.Component {
                             </ul>
                         </div>
                         <div>
-                            <ul className="marg-below nav nav-pills wbdv-topic-pill-list d-none d-sm-flex">
+                            <ul className="marg-below nav nav-pills wbdv-topic-pill-list d-none d-md-flex">
                                 {
                                     this.state.topics.map((topic, index) =>
                                         <CourseTopicItemComponent

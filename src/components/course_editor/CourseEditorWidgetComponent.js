@@ -7,20 +7,20 @@ const CourseEditorWidgetComponent = ({widget}) =>
                 <div className="">
                     <h3>{widget.widgetname} - <em>{widget.widgettype}</em></h3>
                     <div className="form-inline">
-                        <select className="form-control col-sm-9">
+                        <select className="form-control col-8 col-md-7 col-lg-8 col-xl-9">
                             <option>Widget Type 1</option>
                             <option>Widget Type 2</option>
                             <option>Widget Type 3</option>
                             <option>Widget Type 4</option>
                         </select>
-                        <div className="col-sm-3">
-                            <button type="button" className="btn btn-outline-dark">
+                        <div className="col-4 col-md-5 col-lg-4 col-xl-3">
+                            <button type="button" className="btn btn-outline-dark ml-1">
                                 <i className="fa fa-arrow-up" aria-hidden="true"/>
                             </button>
-                            <button type="button" className="btn btn-outline-dark">
+                            <button type="button" className="btn btn-outline-dark ml-1">
                                 <i className="fa fa-arrow-down" aria-hidden="true"/>
                             </button>
-                            <button type="button" className="btn btn-danger">
+                            <button type="button" className="btn btn-outline-danger ml-1">
                                 <i className="fa fa-trash" aria-hidden="true"/>
                             </button>
                         </div>
