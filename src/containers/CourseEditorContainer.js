@@ -52,7 +52,11 @@ class CourseEditorContainer extends React.Component {
                 </div>
                 <div className="editorMobileNav row">
                     {
-                        <CourseEditorMobileNavComponent/>
+                        <CourseEditorMobileNavComponent
+                            modules={this.state.modules}
+                            lessons={this.state.lessons}
+                            topics={this.state.topics}
+                        />
                     }
                 </div>
                 <div className="row">
