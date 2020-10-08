@@ -148,7 +148,7 @@ class CourseManagerContainer extends React.Component {
                                     </button>
                                     {
                                         this.state.view === 'cards' &&
-                                        <button className="wbdv-grid-layout btn btn-primary mx-1 wbdv-button col-12 col-sm-5 col-md-4"
+                                        <button className="wbdv-button wbdv-grid-layout btn btn-primary mx-1 col-12 col-sm-5 col-md-4"
                                                 onClick={this.changeView}>
                                             <i className="fa fa-list" aria-hidden="true"/>
                                         </button>
@@ -156,7 +156,7 @@ class CourseManagerContainer extends React.Component {
                                     }
                                     {
                                         this.state.view === 'table' &&
-                                        <button className="btn btn-primary btn-block mx-1 wbdv-button col-12 col-sm-5 col-md-4"
+                                        <button className="wbdv-button btn btn-primary mx-1 col-12 col-sm-5 col-md-4"
                                                 onClick={this.changeView}>
                                             <i className="fa fa-th " aria-hidden="true"/>
                                         </button>
