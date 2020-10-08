@@ -20,8 +20,6 @@ ReactDOM.render(
         <NavbarComponent/>
 
         <BrowserRouter>
-            <Link to='/course_manager'>Courses</Link>
-            <Link to='/course_editor'>Editor</Link>
             <div className="container">
                 <Route path='/course_manager' exact>
                     <CourseManagerContainer instructor="Will" term="Fall 2020"/>
