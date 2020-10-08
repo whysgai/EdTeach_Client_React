@@ -10,6 +10,7 @@ const CourseEditorMobileNavComponent = () =>
                     <option value="Mod 2">Mod 2</option>
                     <option value="Mod 3">Mod 3</option>
                 </select>
+                <div className="col-1 d-none d-sm-inline"></div>
                 <button className="btn btn-primary col-2">
                     <i className="fa fa-plus-circle" aria-hidden="true"></i>
                 </button>
@@ -23,6 +24,7 @@ const CourseEditorMobileNavComponent = () =>
                     <option value="Lesson 2">Lesson 2</option>
                     <option value="Lesson 3">Lesson 3</option>
                 </select>
+                <div className="col-1 d-none d-sm-inline"></div>
                 <button className="btn btn-primary col-2">
                     <i className="fa fa-plus-circle" aria-hidden="true"></i>
                 </button>
@@ -36,6 +38,7 @@ const CourseEditorMobileNavComponent = () =>
                     <option value="Topic 2">Topic 2</option>
                     <option value="Topic 3">Topic 3</option>
                 </select>
+                <div className="col-1 d-none d-sm-inline"></div>
                 <button className="btn btn-primary col-2">
                     <i className="fa fa-plus-circle" aria-hidden="true"></i>
                 </button>
