@@ -24,7 +24,7 @@ class LandingPageContainer extends React.Component {
                                 <h5 className="card-title">Log In</h5>
                                 <p className="card-text">Log in with an existing account--logging in takes users to the
                                     course manager page, also links to the register page</p>
-                                <a href="login/login.template.client.html" className="btn btn-primary">Log in</a>
+                                <a href="#" className="btn btn-primary">Log in</a>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@ class LandingPageContainer extends React.Component {
                                 <h5 className="card-title">Register</h5>
                                 <p className="card-text">Create a new account--registering directs users to the profile
                                     page, also links to the login page</p>
-                                <a href="register/register.template.client.html"
+                                <a href="#"
                                    className="btn btn-primary">Register</a>
                             </div>
                         </div>
@@ -46,7 +46,7 @@ class LandingPageContainer extends React.Component {
                             <div className="card-body">
                                 <h5 className="card-title">Profile</h5>
                                 <p className="card-text">View and update your profile</p>
-                                <a href="profile/profile.template.client.html" className="btn btn-primary">See
+                                <a href="#" className="btn btn-primary">See
                                     profile</a>
                             </div>
                         </div>
@@ -56,7 +56,7 @@ class LandingPageContainer extends React.Component {
                             <div className="card-body">
                                 <h5 className="card-title">User Administration</h5>
                                 <p className="card-text">View and update user profiles</p>
-                                <a href="user_admin/user-admin.template.client.html" className="btn btn-primary">View
+                                <a href="#" className="btn btn-primary">View
                                     profile</a>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ class LandingPageContainer extends React.Component {
                                 <h5 className="card-title">Course Editor</h5>
                                 <p className="card-text">Edit the modules, topics, and lessons of a course using various
                                     widgets</p>
-                                <a href="course_editor/editor.template.client.html" className="btn btn-primary">Edit
+                                <a href="#" className="btn btn-primary">Edit
                                     courses</a>
                             </div>
                         </div>

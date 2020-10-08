@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom";
 
 const NavbarComponent = () =>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -7,7 +8,7 @@ const NavbarComponent = () =>
                 <span className="navbar-toggler-icon"></span>
             </button>
         </div>
-        <a href="../index.html" className="nav-elem navbar-brand col-sm-10 center-text logo">EdTeach Logo</a>
+        <Link to={'/git'} className="nav-elem navbar-brand col-sm-10 center-text logo">EdTeach Logo</Link>
         <div className="nav-elem col sm-1"></div>
     </nav>
 

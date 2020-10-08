@@ -18,9 +18,8 @@ ReactDOM.render(
   //   <App />
   // </React.StrictMode>,
     <div>
-        <NavbarComponent/>
-
         <BrowserRouter>
+            <NavbarComponent/>
             <div className="container">
                 <Route path='/' exact>
                     <LandingPageContainer/>
