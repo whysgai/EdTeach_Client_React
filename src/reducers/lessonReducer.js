@@ -24,7 +24,7 @@ const initialState = {
 }
 
 const lessonReducer = (state = initialState, action = action) => {
-    alert("Called lessonReducer");
+    //alert("Called lessonReducer");
     return state;
 }
 

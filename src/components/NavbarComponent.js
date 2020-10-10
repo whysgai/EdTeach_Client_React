@@ -8,7 +8,7 @@ const NavbarComponent = () =>
                 <span className="navbar-toggler-icon"></span>
             </button>
         </div>
-        <Link to={'/git'} className="nav-elem navbar-brand col-sm-10 center-text logo">EdTeach Logo</Link>
+        <Link to={'/'} className="nav-elem navbar-brand col-sm-10 center-text logo">EdTeach Logo</Link>
         <div className="nav-elem col sm-1"></div>
     </nav>
 

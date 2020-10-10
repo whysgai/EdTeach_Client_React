@@ -25,7 +25,7 @@ const initialState = {
 
 // Finite state machine
 const moduleReducer = (state = initialState, action = action) => {
-    alert("Called moduleREducer");
+    //alert("Called moduleREducer");
     return state;
 }
 
