@@ -4,7 +4,7 @@ import CourseLessonListComponent from "../components/course_editor/CourseLessonL
 import {createLesson, deleteLesson, editLesson, updateLesson, saveLesson} from "../actions/courseLessonActions";
 
 const stateToPropertyMapper = (state) => ({
-  modules: state.lessonReducer.modules
+  lessons: state.lessonReducer.lessons
 })
 
 const propertyToDispatchMapper = (dispatch) => ({

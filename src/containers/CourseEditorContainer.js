@@ -11,6 +11,7 @@ import {Link} from "react-router-dom";
 import {findAllCourses, findCourseById} from "../services/CourseService";
 import CourseEditorMobileNavComponent from "../components/course_editor/CourseEditorMobileNavComponent";
 import CourseModuleListContainer from "./CourseModuleListContainer";
+import CourseLessonListContainer from "./CourseLessonListContainer";
 
 //({showEditor, modules, lessons, topics, widgets})
 
@@ -63,7 +64,7 @@ class CourseEditorContainer extends React.Component {
                 <div className="row">
                     <CourseModuleListContainer/>
                     <div className="col-md-8 border">
-
+                        <CourseLessonListContainer/>
                         <div>
                             <ul className="marg-below nav nav-pills wbdv-topic-pill-list d-none d-md-flex">
                                 {

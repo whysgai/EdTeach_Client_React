@@ -6,7 +6,7 @@ export const editModule = (dispatch, module) =>
     dispatch({type: UPDATE_MODULE, module: {...module, editing: true}})
 
 export const saveModule = (dispatch, module) =>
-    dispatch({type: UPDATE_MODULE, widget: {...module, editing: false}})
+    dispatch({type: UPDATE_MODULE, module: {...module, editing: false}})
 
 export const updateModule = (dispatch, module) =>
     dispatch({type: UPDATE_MODULE, module})

@@ -1,26 +1,26 @@
-import {CREATE_MODULE, DELETE_MODULE, UPDATE_MODULE} from "../actions/courseModuleActions";
+import {CREATE_LESSON, DELETE_LESSON, UPDATE_LESSON} from "../actions/courseLessonActions";
 
 const initialState = {
-    lesson: [
+    lessons: [
         {
             _id: 1,
-            lessonname: 'Module 1'
+            lessonname: 'Lesson 1'
         },
         {
             _id: 2,
-            modname: 'Module 2'
+            lessonname: 'Lesson 2'
         },
         {
             _id: 3,
-            modname: 'Module 3'
+            lessonname: 'Lesson 3'
         },
         {
             _id: 4,
-            modname: 'Module 4'
+            lessonname: 'Lesson 4'
         },
         {
             _id: 5,
-            modname: 'Module 5'
+            lessonname: 'Lesson 5'
         }
     ]
 }
@@ -29,9 +29,9 @@ const lessonReducer = (state = initialState, action = action) => {
     switch (action.type) {
         case CREATE_LESSON:
             return {
-                lessons: [...state.lesson, {
+                lessons: [...state.lessons, {
                     _id: Date.now()+"",
-                    lessonname: "New Module"
+                    lessonname: "New Lesson"
                 }]
             }
         case UPDATE_LESSON:
