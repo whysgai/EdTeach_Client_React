@@ -23,8 +23,10 @@ const initialState = {
     ]
 }
 
-const CREATE_MODULE = (state = initialState, action = action) => {
-    alert("Called CREATE_MODULE")
+// Finite state machine
+const moduleReducer = (state = initialState, action = action) => {
+    alert("Called moduleREducer");
+    return state;
 }
 
-export default CREATE_MODULE;
+export default moduleReducer;

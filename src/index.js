@@ -12,11 +12,18 @@ import NavbarComponent from "./components/NavbarComponent";
 import LandingPageContainer from "./containers/LandingPageContainer";
 import CourseManagerContainer from "./containers/CourseManagerContainer";
 import CourseEditorContainer from "./containers/CourseEditorContainer";
-import CREATE_MODULE from "./reducers/moduleReducer";
-import {createStore} from "redux";
+import moduleReducer from "./reducers/moduleReducer";
+import lessonReducer from "./reducers/lessonReducer";
+import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
 
-const store = createStore(CREATE_MODULE)
+const reducers = combineReducers({
+    // Shorthand
+    moduleReducer,
+    // Longhand
+    lessonReducer: lessonReducer
+})
+const store = createStore(reducers)
 
 ReactDOM.render(
   // <React.StrictMode>

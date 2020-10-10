@@ -5,7 +5,7 @@ import CourseTopicComponent from "./CourseTopicComponent";
 import CourseEditorWidgetComponent from "./CourseEditorWidgetComponent";
 
 const CourseModuleComponent = ({modules, lessons, topics}) =>
-    <div className="border row">
+    <div className="row">
         <div className="border col-sm-4">
             <div className="wbdv-module-list d-none d-sm-block ">
                 <ul className="list-of-btns ">
