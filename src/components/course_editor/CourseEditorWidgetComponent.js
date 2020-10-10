@@ -6,7 +6,7 @@ const CourseEditorWidgetComponent = ({widget}) =>
             <div className="border border-med pad-a-little">
                 <div className="">
                     <h3>{widget.widgetname} - <em>{widget.widgettype}</em></h3>
-                    <div className="form-inline">
+                    <div className="form-inline form-group">
                         <select className="form-control col-6 col-sm-7 col-lg-8 col-xl-9">
                             <option>Widget Type 1</option>
                             <option>Widget Type 2</option>

@@ -2,7 +2,7 @@ import React from "react";
 
 const CourseModuleItemComponent = ({module, deleteModule, updateModule, editModule, saveModule}) =>
     <div>
-        <li className="btn btn-dark btn-block wbdv-module-item">
+        <li className="btn btn-dark btn-block wbdv-module-item btn-align-veritcal">
 
             {
                 !module.editing &&

@@ -3,7 +3,7 @@ import CourseEditorWidgetComponent from "./CourseEditorWidgetComponent";
 
 const CourseEditorWidgetPaneComponent = ({widgets}) =>
     <div>
-        <button className="btn btn-primary btn-block">Add Widget</button>
+        <button className="btn btn-primary btn-block btn-align-veritcal">Add Widget</button>
         {
             widgets.map((widget, index) =>
                 <CourseEditorWidgetComponent
