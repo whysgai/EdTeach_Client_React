@@ -1,3 +1,5 @@
+import {CREATE_MODULE, DELETE_MODULE, UPDATE_MODULE} from "../actions/courseModuleActions";
+
 const initialState = {
     lesson: [
         {
@@ -24,8 +26,27 @@ const initialState = {
 }
 
 const lessonReducer = (state = initialState, action = action) => {
-    //alert("Called lessonReducer");
-    return state;
+    switch (action.type) {
+        case CREATE_LESSON:
+            return {
+                lessons: [...state.lesson, {
+                    _id: Date.now()+"",
+                    lessonname: "New Module"
+                }]
+            }
+        case UPDATE_LESSON:
+            return {
+                lessons: state.lessons.map(
+                    lesson => lesson._id === action.lesson._id ? action.lesson : lesson
+                )
+            }
+        case DELETE_LESSON:
+            return {
+                lessons: state.lessons.filter(lesson => lesson !== action.lesson)
+            }
+        default:
+            return state;
+    }
 }
 
 export default lessonReducer;
