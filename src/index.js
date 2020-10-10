@@ -14,12 +14,14 @@ import CourseManagerContainer from "./containers/CourseManagerContainer";
 import CourseEditorContainer from "./containers/CourseEditorContainer";
 import moduleReducer from "./reducers/moduleReducer";
 import lessonReducer from "./reducers/lessonReducer";
+import topicReducer from "./reducers/topicReducer";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
 
 const reducers = combineReducers({
     // Shorthand
     moduleReducer,
+    topicReducer,
     // Longhand
     lessonReducer: lessonReducer
 })

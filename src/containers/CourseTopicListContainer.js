@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import CourseTopicListComponent from "../components/course_editor/CourseTopcListComponent";
+import CourseTopicListComponent from "../components/course_editor/CourseTopicListComponent";
 import {createTopic, deleteTopic, editTopic, updateTopic, saveTopic} from "../actions/courseTopicActions";
 
 const stateToPropertyMapper = (state) => ({
@@ -18,4 +18,4 @@ const propertyToDispatchMapper = (dispatch) => ({
 export default connect(
     stateToPropertyMapper,
     propertyToDispatchMapper)
-(CourseLessonListComponent)
+(CourseTopicListComponent)

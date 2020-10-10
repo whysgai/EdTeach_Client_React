@@ -21,13 +21,13 @@ const initialState = {
     ]
 }
 
-const lessonReducer = (state = initialState, action = action) => {
+const topicReducer = (state = initialState, action = action) => {
     switch (action.type) {
         case CREATE_TOPIC:
             return {
                 topics: [...state.topics, {
                     _id: Date.now()+"",
-                    topicname: "New Lesson"
+                    topicname: "New Topic"
                 }]
             }
         case UPDATE_TOPIC:

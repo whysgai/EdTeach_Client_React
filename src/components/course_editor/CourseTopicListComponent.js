@@ -1,13 +1,18 @@
 import React from "react";
 import CourseTopicItemComponent from "./CourseTopicItemComponent";
+import CourseLessonItemComponent from "./CourseLessonItemComponent";
 
-const CourseTopicListComponent = ({topics}) =>
+const CourseTopicListComponent = ({topics=[]}) =>
     <div>
         <ul className="marg-below nav nav-pills wbdv-topic-pill-list d-none d-md-flex">
             {
-                this.state.topics.map((topic, index) =>
+                topics.map((topic, index) =>
                     <CourseTopicItemComponent
                         topic={topic}
+                        deleteTopic={deleteTopic}
+                        updateTopic={updateTopic}
+                        editTopic={editTopic}
+                        saveTopic={saveTopic}
                     />
                 )
             }
