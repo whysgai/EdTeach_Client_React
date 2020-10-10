@@ -1,12 +1,11 @@
 import React from "react";
 import CourseTopicItemComponent from "./CourseTopicItemComponent";
-import CourseLessonItemComponent from "./CourseLessonItemComponent";
 
-const CourseTopicComponent = ({topics}) =>
+const CourseTopicListComponent = ({topics}) =>
     <div>
-        <ul className="marg-below nav nav-pills wbdv-topic-pill-list d-none d-sm-flex">
+        <ul className="marg-below nav nav-pills wbdv-topic-pill-list d-none d-md-flex">
             {
-                topics.map((topic, index) =>
+                this.state.topics.map((topic, index) =>
                     <CourseTopicItemComponent
                         topic={topic}
                     />
@@ -18,4 +17,6 @@ const CourseTopicComponent = ({topics}) =>
         </ul>
     </div>
 
-export default CourseTopicComponent;
+export default CourseTopicListComponent;
+
+

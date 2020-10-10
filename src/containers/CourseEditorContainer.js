@@ -2,7 +2,7 @@ import React from "react";
 import CourseModuleListComponent from "../components/course_editor/CourseModuleListComponent";
 import CourseModuleItemComponent from "../components/course_editor/CourseModuleItemComponent";
 import CourseLessonListComponent from "../components/course_editor/CourseLessonListComponent";
-import CourseTopicComponent from "../components/course_editor/CourseTopicComponent";
+import CourseTopicListComponent from "../components/course_editor/CourseTopicListComponent";
 import CourseEditorWidgetComponent from "../components/course_editor/CourseEditorWidgetComponent";
 import CourseLessonItemComponent from "../components/course_editor/CourseLessonItemComponent";
 import CourseTopicItemComponent from "../components/course_editor/CourseTopicItemComponent";
@@ -12,6 +12,7 @@ import {findAllCourses, findCourseById} from "../services/CourseService";
 import CourseEditorMobileNavComponent from "../components/course_editor/CourseEditorMobileNavComponent";
 import CourseModuleListContainer from "./CourseModuleListContainer";
 import CourseLessonListContainer from "./CourseLessonListContainer";
+import CourseTopicListContainer from "./CourseTopicListContainer";
 
 //({showEditor, modules, lessons, topics, widgets})
 
@@ -65,20 +66,7 @@ class CourseEditorContainer extends React.Component {
                     <CourseModuleListContainer/>
                     <div className="col-md-8 border">
                         <CourseLessonListContainer/>
-                        <div>
-                            <ul className="marg-below nav nav-pills wbdv-topic-pill-list d-none d-md-flex">
-                                {
-                                    this.state.topics.map((topic, index) =>
-                                        <CourseTopicItemComponent
-                                            topic={topic}
-                                        />
-                                    )
-                                }
-                                <li className="nav-item wbdv-topic-add-btn">
-                                    <a className="nav-link" href="#">Add Topic</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <CourseTopicListContainer/>
                         {
                             <CourseEditorWidgetPaneComponent
                                 widgets={this.state.widgets}
