@@ -1,7 +1,7 @@
 import React from "react";
 import CourseModuleListComponent from "../components/course_editor/CourseModuleListComponent";
 import CourseModuleItemComponent from "../components/course_editor/CourseModuleItemComponent";
-import CourseLessonComponent from "../components/course_editor/CourseLessonComponent";
+import CourseLessonListComponent from "../components/course_editor/CourseLessonListComponent";
 import CourseTopicComponent from "../components/course_editor/CourseTopicComponent";
 import CourseEditorWidgetComponent from "../components/course_editor/CourseEditorWidgetComponent";
 import CourseLessonItemComponent from "../components/course_editor/CourseLessonItemComponent";
@@ -63,22 +63,7 @@ class CourseEditorContainer extends React.Component {
                 <div className="row">
                     <CourseModuleListContainer/>
                     <div className="col-md-8 border">
-                        <div>
-                            <ul className="marg-below nav nav-tabs wbdv-lesson-tabs d-none d-md-flex">
-                                {
-                                    this.state.lessons.map((lesson, index) =>
-                                        <CourseLessonItemComponent
-                                            lesson={lesson}
-                                        />
-                                    )
-                                }
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link wbdv-lesson-add-btn">
-                                        <i className="fa fa-plus-circle" aria-hidden="true"/>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+
                         <div>
                             <ul className="marg-below nav nav-pills wbdv-topic-pill-list d-none d-md-flex">
                                 {

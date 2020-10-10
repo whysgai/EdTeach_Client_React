@@ -1,9 +1,9 @@
 import React from "react";
 import CourseLessonItemComponent from "./CourseLessonItemComponent";
 
-const CourseLessonComponent = ({lessons, topics}) =>
+const CourseLessonListComponent = ({lessons=[]}) =>
     <div>
-        <ul className="marg-below nav nav-tabs wbdv-lesson-tabs d-none d-sm-flex">
+        <ul className="marg-below nav nav-tabs wbdv-lesson-tabs d-none d-md-flex">
             {
                 lessons.map((lesson, index) =>
                     <CourseLessonItemComponent
@@ -19,4 +19,4 @@ const CourseLessonComponent = ({lessons, topics}) =>
         </ul>
     </div>
 
-export default CourseLessonComponent;
+export default CourseLessonListComponent;
