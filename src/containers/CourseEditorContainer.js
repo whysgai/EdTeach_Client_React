@@ -1,5 +1,5 @@
 import React from "react";
-import CourseModuleComponent from "../components/course_editor/CourseModuleComponent";
+import CourseModuleListComponent from "../components/course_editor/CourseModuleListComponent";
 import CourseModuleItemComponent from "../components/course_editor/CourseModuleItemComponent";
 import CourseLessonComponent from "../components/course_editor/CourseLessonComponent";
 import CourseTopicComponent from "../components/course_editor/CourseTopicComponent";
@@ -60,18 +60,9 @@ class CourseEditorContainer extends React.Component {
                     }
                 </div>
                 <div className="row">
-                    <div className="border col-sm-4 wbdv-module-list d-none d-md-block">
-                        <ul className="list-of-btns ">
-                            {
-                                this.state.modules.map((module, index) =>
-                                    <CourseModuleItemComponent
-                                        module={module}
-                                    />
-                                )
-                            }
-                        </ul>
-                        <button className="btn btn-primary btn-block wbdv-module-item-add-btn">Add Module</button>
-                    </div>
+                    <CourseModuleListComponent
+                        modules={this.state.modules}
+                    />
                     <div className="col-md-8 border">
                         <div>
                             <ul className="marg-below nav nav-tabs wbdv-lesson-tabs d-none d-md-flex">
