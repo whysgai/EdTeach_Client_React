@@ -12,27 +12,34 @@ import NavbarComponent from "./components/NavbarComponent";
 import LandingPageContainer from "./containers/LandingPageContainer";
 import CourseManagerContainer from "./containers/CourseManagerContainer";
 import CourseEditorContainer from "./containers/CourseEditorContainer";
+import CREATE_MODULE from "./reducers/moduleReducer";
+import {createStore} from "redux";
+import {Provider} from "react-redux";
+
+const store = createStore(CREATE_MODULE)
 
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>,
-    <div>
-        <BrowserRouter>
-            <NavbarComponent/>
-            <div className="container">
-                <Route path='/' exact>
-                    <LandingPageContainer/>
-                </Route>
-                <Route path='/course_manager' exact>
-                    <CourseManagerContainer instructor="Will" term="Fall 2020"/>
-                </Route>
-                <Route path='/course_editor/:courseId' exact component={CourseEditorContainer}>
-                    {/*<CourseEditorContainer/>*/}
-                </Route>
-            </div>
-        </BrowserRouter>
-    </div>,
+    <Provider store={store}>
+        <div>
+            <BrowserRouter>
+                <NavbarComponent/>
+                <div className="container">
+                    <Route path='/' exact>
+                        <LandingPageContainer/>
+                    </Route>
+                    <Route path='/course_manager' exact>
+                        <CourseManagerContainer instructor="Will" term="Fall 2020"/>
+                    </Route>
+                    <Route path='/course_editor/:courseId' exact component={CourseEditorContainer}>
+                        {/*<CourseEditorContainer/>*/}
+                    </Route>
+                </div>
+            </BrowserRouter>
+        </div>
+    </Provider>    ,
   document.getElementById('root')
 );
 
