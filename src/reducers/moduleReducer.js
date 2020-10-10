@@ -21,6 +21,10 @@ const initialState = {
         {
             _id: 5,
             modname: 'Module 5'
+        },
+        {
+            _id: 6,
+            modname: 'Module 6'
         }
     ]
 }
