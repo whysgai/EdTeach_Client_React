@@ -1,7 +1,7 @@
 import React from "react";
 import CourseModuleItemComponent from "./CourseModuleItemComponent";
 
-const CourseModuleListComponent = ({modules}) =>
+const CourseModuleListComponent = ({modules=[], createModule, deleteModule, updateModule}) =>
     <div className="border col-sm-4 wbdv-module-list d-none d-md-block">
         <ul className="list-of-btns ">
             {
