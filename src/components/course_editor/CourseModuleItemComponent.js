@@ -4,6 +4,13 @@ const CourseModuleItemComponent = ({module, deleteModule, updateModule}) =>
     <div>
         <li className="btn btn-dark btn-block wbdv-module-item">
             {module.modname}
+            <input value={module.modname}
+                   onChange={(event) => updateModule({
+                       ...module,
+                       modname: event.target.value
+                   })}
+
+            />
             <a href="#" className="float-right font-white wbdv-module-item-delete-btn"
                onClick={() => deleteModule(module)}>
                 <i className="fa fa-times-circle" aria-hidden="true"/>

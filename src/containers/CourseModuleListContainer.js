@@ -11,7 +11,7 @@ const stateToPropertyMapper = (state) => ({
 const propertyToDispatchMapper = (dispatch) => ({
   deleteModule: (module) => deleteModule(dispatch, module),
   createModule: () => createModule(dispatch),
-  updateModule: () => {}
+  updateModule: (module) => {updateModule(dispatch, module)}
 })
 
 export default connect(

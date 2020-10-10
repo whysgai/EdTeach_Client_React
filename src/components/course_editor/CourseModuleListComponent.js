@@ -9,6 +9,9 @@ const CourseModuleListComponent = ({modules=[], createModule, deleteModule, upda
                     <CourseModuleItemComponent
                         module={module}
                         deleteModule={deleteModule}
+                        updateModule={updateModule}
+
+
                     />
                 )
             }

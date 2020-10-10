@@ -15,4 +15,4 @@ export const deleteModule = (dispatch, module) =>
     dispatch({type: DELETE_MODULE, module})
 
 export const createModule = (dispatch) =>
-    dispatch({type: "CREATE_MODULE"})
+    dispatch({type: CREATE_MODULE})

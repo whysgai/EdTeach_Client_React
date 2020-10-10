@@ -1,3 +1,5 @@
+import {CREATE_MODULE, DELETE_MODULE, UPDATE_MODULE} from "../actions/courseModuleActions";
+
 const initialState = {
     modules: [
         {
@@ -26,15 +28,20 @@ const initialState = {
 // Finite state machine
 const moduleReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "CREATE_MODULE":
+        case CREATE_MODULE:
             return {
                 modules: [...state.modules, {
                     _id: Date.now()+"",
                     modname: "New Module"
                 }]
             }
-        case "UPDATE_MODULE":
-        case "DELETE_MODULE":
+        case UPDATE_MODULE:
+            return {
+                modules: state.modules.map(
+                    module => module._id === action.module._id ? action.module : module
+                )
+            }
+        case DELETE_MODULE:
             return {
                 modules: state.modules.filter(module => module !== action.module)
             }
