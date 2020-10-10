@@ -8,11 +8,11 @@ const stateToPropertyMapper = (state) => ({
 })
 
 const propertyToDispatchMapper = (dispatch) => ({
-  deleteLesson: (topic) => deleteTopic(dispatch, topic),
-  createLesson: () => createTopic(dispatch),
-  updateLesson: (topic) => updateTopic(dispatch, topic),
-  editLesson: (topic) => editTopic(dispatch, topic),
-  saveLesson: (topic) => saveTopic(dispatch, topic)
+  deleteTopic: (topic) => deleteTopic(dispatch, topic),
+  createTopic: () => createTopic(dispatch),
+  updateTopic: (topic) => updateTopic(dispatch, topic),
+  editTopic: (topic) => editTopic(dispatch, topic),
+  saveTopic: (topic) => saveTopic(dispatch, topic)
 })
 
 export default connect(
