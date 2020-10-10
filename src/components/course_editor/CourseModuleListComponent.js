@@ -8,11 +8,12 @@ const CourseModuleListComponent = ({modules=[], createModule, deleteModule, upda
                 modules.map((module, index) =>
                     <CourseModuleItemComponent
                         module={module}
+                        deleteModule={deleteModule}
                     />
                 )
             }
         </ul>
-        <button className="btn btn-primary btn-block wbdv-module-item-add-btn">Add Module</button>
+        <button className="btn btn-primary btn-block wbdv-module-item-add-btn" onClick={createModule}>Add Module</button>
     </div>
 
 export default CourseModuleListComponent

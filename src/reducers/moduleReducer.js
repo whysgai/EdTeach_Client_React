@@ -24,9 +24,23 @@ const initialState = {
 }
 
 // Finite state machine
-const moduleReducer = (state = initialState, action = action) => {
-    //alert("Called moduleREducer");
-    return state;
+const moduleReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case "CREATE_MODULE":
+            return {
+                modules: [...state.modules, {
+                    _id: Date.now()+"",
+                    modname: "New Module"
+                }]
+            }
+        case "UPDATE_MODULE":
+        case "DELETE_MODULE":
+            return {
+                modules: state.modules.filter(module => module !== action.module)
+            }
+        default:
+            return state;
+    }
 }
 
 export default moduleReducer;
