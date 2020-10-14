@@ -17,13 +17,15 @@ import lessonReducer from "./reducers/lessonReducer";
 import topicReducer from "./reducers/topicReducer";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
+import courseReducer from "./reducers/courseReducer";
 
 const reducers = combineReducers({
     // Shorthand
     moduleReducer,
     topicReducer,
+    lessonReducer,
     // Longhand
-    lessonReducer: lessonReducer
+    courseReducer: courseReducer
 })
 const store = createStore(reducers)
 
