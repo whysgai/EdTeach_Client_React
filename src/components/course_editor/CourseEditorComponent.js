@@ -6,7 +6,7 @@ import CourseLessonListContainer from "../../containers/CourseLessonListContaine
 import CourseTopicListContainer from "../../containers/CourseTopicListContainer";
 import CourseEditorWidgetPaneComponent from "./CourseEditorWidgetPaneComponent";
 
-const CourseEditorComponent = ({course, courses=[], modules, lessons, topics, widgets}) =>
+const CourseEditorComponent = ({course, modules, lessons, topics, widgets}) =>
     <div>
         <div className="row">
             <h1 className="col-11">{course.title}</h1>

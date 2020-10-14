@@ -4,7 +4,8 @@ import CourseModuleListComponent from "../components/course_editor/CourseModuleL
 import {createModule, deleteModule, editModule, updateModule, saveModule} from "../actions/courseModuleActions";
 
 const stateToPropertyMapper = (state) => ({
-  modules: state.moduleReducer.modules
+  modules: state.moduleReducer.modules,
+  course: state.courseReducer.course
 })
 
 const propertyToDispatchMapper = (dispatch) => ({
