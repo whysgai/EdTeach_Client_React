@@ -6,6 +6,7 @@ import CourseEditorMobileNavComponent from "../components/course_editor/CourseEd
 import CourseModuleListContainer from "./CourseModuleListContainer";
 import CourseLessonListContainer from "./CourseLessonListContainer";
 import CourseTopicListContainer from "./CourseTopicListContainer";
+import {connect} from "react-redux";
 
 //({showEditor, modules, lessons, topics, widgets})
 
@@ -41,7 +42,8 @@ class CourseEditorContainer extends React.Component {
         return (
             <div>
                 <div className="row">
-                    <h1 className="col-11">{this.state.course.title}</h1>
+                    {/*<h1 className="col-11">From local state: {this.state.course.title}</h1>*/}
+                    <h1 className="col-11">From props: {this.props.course.title}</h1>
                     <Link className="btn btn-outline-dark col-1 btn-align-veritcal" to='/course_manager'>
                         <i className="fa fa-times-circle-o" aria-hidden="true"/>
                     </Link>
@@ -74,4 +76,18 @@ class CourseEditorContainer extends React.Component {
 
 // export default CourseEditorContainer
 
-connect
+const stateToPropertyMapper = (state) => ({
+    course: state.courseReducer.course
+})
+
+const propertyToDispatchMapper = (dispatch) => ({
+    foo: () => findCourseById(this.props.match.params.courseId)
+        .then(course => dispatch({
+            type: "SET_COURSES",
+            course: course
+        }))
+})
+
+export default connect
+(stateToPropertyMapper)
+(CourseEditorContainer)
