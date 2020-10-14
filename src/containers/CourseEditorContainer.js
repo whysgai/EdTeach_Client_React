@@ -30,12 +30,7 @@ class CourseEditorContainer extends React.Component {
 
     refreshCourse() {
         console.log(this.props.match.params.courseId)
-        findCourseById(this.props.match.params.courseId)
-            .then(course => {
-                this.setState({
-                    course: course
-                })
-            })
+        this.props.findCourseById(this.props.match.params.courseId)
     }
 
     render() {
@@ -81,7 +76,7 @@ const stateToPropertyMapper = (state) => ({
 })
 
 const propertyToDispatchMapper = (dispatch) => ({
-    foo: () => findCourseById(this.props.match.params.courseId)
+    findCourseById: (courseId) => findCourseById(courseId)
         .then(course => dispatch({
             type: "SET_COURSES",
             course: course
@@ -89,5 +84,5 @@ const propertyToDispatchMapper = (dispatch) => ({
 })
 
 export default connect
-(stateToPropertyMapper)
+(stateToPropertyMapper, propertyToDispatchMapper)
 (CourseEditorContainer)
