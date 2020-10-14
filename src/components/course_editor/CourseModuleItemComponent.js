@@ -7,7 +7,7 @@ const CourseModuleItemComponent = ({module, deleteModule, updateModule, editModu
             {
                 !module.editing &&
                 <span>
-                    {module.modname}
+                    {module.title}
                     <a href="#" className="float-right font-white wbdv-module-item-edit-btn"
                        onClick={() => editModule(module)}>
                         <i className="fa fa-pencil" aria-hidden="true"/>
@@ -17,10 +17,10 @@ const CourseModuleItemComponent = ({module, deleteModule, updateModule, editModu
             {
                 module.editing &&
                     <span>
-                        <input value={module.modname}
+                        <input value={module.title}
                                onChange={(event) => updateModule({
                                    ...module,
-                                   modname: event.target.value
+                                   title: event.target.value
                                })}
                         />
                         <a href="#" className="float-right font-white wbdv-module-item-delete-btn"

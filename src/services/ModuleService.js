@@ -5,6 +5,17 @@ export const findModulesForCourse = (courseId) =>
     fetch(`${courseUrl}/${courseId}/modules`)
         .then(response => response.json())
 
+export const createModuleForCourse = (courseId, newModule) =>
+    fetch(`${courseUrl}/${courseId}/modules`, {
+        method: "POST",
+        body: JSON.stringify(newModule),
+        headers: {
+            "content-type": "application/json"
+        }
+    })
+        .then(response => response.json())
+
+
 export default {
-    findModulesForCourse
+    findModulesForCourse, createModuleForCourse
 }

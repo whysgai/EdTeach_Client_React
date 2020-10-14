@@ -10,7 +10,7 @@ const stateToPropertyMapper = (state) => ({
 
 const propertyToDispatchMapper = (dispatch) => ({
   deleteModule: (module) => deleteModule(dispatch, module),
-  createModule: () => createModule(dispatch),
+  createModule: (courseId, newModule) => createModule(dispatch, courseId, newModule),
   updateModule: (module) => updateModule(dispatch, module),
   editModule: (module) => editModule(dispatch, module),
   saveModule: (module) => saveModule(dispatch, module)

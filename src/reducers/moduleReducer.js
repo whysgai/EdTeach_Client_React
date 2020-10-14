@@ -39,10 +39,15 @@ const moduleReducer = (state = initialState, action) => {
             }
         case CREATE_MODULE:
             return {
-                modules: [...state.modules, {
-                    _id: Date.now()+"",
-                    modname: "New Module"
-                }]
+                ...state,
+                modules: [... state.modules,
+                    action.module
+
+                ]
+                // modules: [...state.modules, {
+                //     _id: Date.now()+"",
+                //     modname: "New Module"
+                // }]
             }
         case UPDATE_MODULE:
             return {
