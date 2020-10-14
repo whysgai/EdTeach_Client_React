@@ -1,11 +1,4 @@
 import React from "react";
-import CourseModuleListComponent from "../components/course_editor/CourseModuleListComponent";
-import CourseModuleItemComponent from "../components/course_editor/CourseModuleItemComponent";
-import CourseLessonListComponent from "../components/course_editor/CourseLessonListComponent";
-import CourseTopicListComponent from "../components/course_editor/CourseTopicListComponent";
-import CourseEditorWidgetComponent from "../components/course_editor/CourseEditorWidgetComponent";
-import CourseLessonItemComponent from "../components/course_editor/CourseLessonItemComponent";
-import CourseTopicItemComponent from "../components/course_editor/CourseTopicItemComponent";
 import CourseEditorWidgetPaneComponent from "../components/course_editor/CourseEditorWidgetPaneComponent";
 import {Link} from "react-router-dom";
 import {findAllCourses, findCourseById} from "../services/CourseService";
@@ -79,4 +72,6 @@ class CourseEditorContainer extends React.Component {
     }
 }
 
-export default CourseEditorContainer
+// export default CourseEditorContainer
+
+connect
