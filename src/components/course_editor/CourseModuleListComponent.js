@@ -17,7 +17,7 @@ const CourseModuleListComponent = ({course, modules, createModule, deleteModule,
             }
         </ul>
         <button className="btn btn-primary btn-block wbdv-module-item-add-btn" onClick={() =>
-            createModule(course._id, {title: "MODNAME"})}>Add Module</button>
+            createModule(course._id, {title: "New Module"})}>Add Module</button>
     </div>
 
 export default CourseModuleListComponent

@@ -6,13 +6,31 @@ export const UPDATE_MODULE = "UPDATE_MODULE"
 
 
 export const editModule = (dispatch, module) =>
-    dispatch({type: UPDATE_MODULE, module: {...module, editing: true}})
+    ModuleService.updateModule(module._id, {...module, editing: true})
+        .then(status => dispatch({
+            type: UPDATE_MODULE,
+            module: {...module, editing: true}
+        }))
 
 export const saveModule = (dispatch, module) =>
-    dispatch({type: UPDATE_MODULE, module: {...module, editing: false}})
+    ModuleService.updateModule(module._id, {...module, editing: false})
+        .then(status => dispatch({
+            type: UPDATE_MODULE,
+            module: {...module, editing: false}
+        }))
+
+    // dispatch({type: UPDATE_MODULE, module: {...module, editing: false}})
 
 export const updateModule = (dispatch, module) =>
-    dispatch({type: UPDATE_MODULE, module})
+    ModuleService.updateModule(module._id, module)
+        .then(status => dispatch({
+            type: UPDATE_MODULE,
+            module: module
+        }))
+
+
+    // ModuleService.updateModule(module._id, newModule)
+    //     .then(actualModule =>  dispatch({type: UPDATE_MODULE, actualModule}))
 
 export const deleteModule = (dispatch, module) =>
     ModuleService.deleteModule(module._id)

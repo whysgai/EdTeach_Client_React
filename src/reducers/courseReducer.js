@@ -1,9 +1,6 @@
 const initialState = {
     courses: [],
-    course: {
-        _id: "1337",
-        title: "Reducer Course"
-    }
+    course: { }
 }
 
 const courseReducer = (state = initialState, action) => {
