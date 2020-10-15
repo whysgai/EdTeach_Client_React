@@ -1,4 +1,4 @@
-import {CREATE_MODULE, DELETE_MODULE, UPDATE_MODULE} from "../actions/courseModuleActions";
+import {CREATE_MODULE, READ_MODULES, UPDATE_MODULE, DELETE_MODULE} from "../actions/courseModuleActions";
 
 const initialState = {
     modules: []
@@ -7,7 +7,7 @@ const initialState = {
 // Finite state machine
 const moduleReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "FIND_MODULES_FOR_COURSE":
+        case READ_MODULES:
             return {
                 ...state,
                 modules: action.modules

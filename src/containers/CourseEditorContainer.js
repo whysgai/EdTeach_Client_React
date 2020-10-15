@@ -8,6 +8,7 @@ import CourseLessonListContainer from "./CourseLessonListContainer";
 import CourseTopicListContainer from "./CourseTopicListContainer";
 import {connect} from "react-redux";
 import moduleService from "../services/ModuleService"
+import {READ_MODULES} from "../actions/courseModuleActions";
 
 //({showEditor, modules, lessons, topics, widgets})
 
@@ -84,7 +85,7 @@ const propertyToDispatchMapper = (dispatch) => ({
         })),
     findModulesForCourse: (courseId) => moduleService.findModulesForCourse(courseId)
         .then(modules => dispatch({
-            type: "FIND_MODULES_FOR_COURSE",
+            type: READ_MODULES,
             modules: modules
         }))
 })
