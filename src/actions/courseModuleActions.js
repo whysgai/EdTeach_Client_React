@@ -15,9 +15,9 @@ export const updateModule = (dispatch, module) =>
     dispatch({type: UPDATE_MODULE, module})
 
 export const deleteModule = (dispatch, module) =>
-    dispatch({type: DELETE_MODULE, module})
+    ModuleService.deleteModule(module._id)
+        .then(status => dispatch({type: DELETE_MODULE, module}))
 
 export const createModule = (dispatch, courseId, newModule) =>
     ModuleService.createModuleForCourse(courseId, newModule)
-        .then(actualModule => dispatch({type: CREATE_MODULE, module: actualModule})
-        )
+        .then(actualModule => dispatch({type: CREATE_MODULE, module: actualModule}))

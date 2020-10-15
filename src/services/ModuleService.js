@@ -15,7 +15,12 @@ export const createModuleForCourse = (courseId, newModule) =>
     })
         .then(response => response.json())
 
+export const deleteModule = (moduleId) =>
+    fetch(`${moduleUrl}/${moduleId}`, {
+        method: "DELETE"
+    })
+        .then(response => response.json())
 
 export default {
-    findModulesForCourse, createModuleForCourse
+    findModulesForCourse, createModuleForCourse, deleteModule
 }

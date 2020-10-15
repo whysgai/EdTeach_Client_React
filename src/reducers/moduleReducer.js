@@ -42,7 +42,6 @@ const moduleReducer = (state = initialState, action) => {
                 ...state,
                 modules: [... state.modules,
                     action.module
-
                 ]
                 // modules: [...state.modules, {
                 //     _id: Date.now()+"",
@@ -57,6 +56,7 @@ const moduleReducer = (state = initialState, action) => {
             }
         case DELETE_MODULE:
             return {
+                ...state,
                 modules: state.modules.filter(module => module !== action.module)
             }
         default:
