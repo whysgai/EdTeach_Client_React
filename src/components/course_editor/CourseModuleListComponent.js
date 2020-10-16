@@ -7,6 +7,7 @@ const CourseModuleListComponent = ({course, modules, createModule, deleteModule,
             {
                 modules.map((module, index) =>
                     <CourseModuleItemComponent
+                        course={{course}}
                         module={module}
                         deleteModule={deleteModule}
                         updateModule={updateModule}

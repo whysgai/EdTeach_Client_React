@@ -44,9 +44,10 @@ ReactDOM.render(
                     <Route path='/course_manager' exact>
                         <CourseManagerContainer instructor="Will" term="Fall 2020"/>
                     </Route>
-                    <Route path='/course_editor/:courseId' exact component={CourseEditorContainer}>
-                        {/*<CourseEditorContainer/>*/}
-                    </Route>
+                    <Route path={[
+                        '/course_editor/:courseId',
+                        '/course_editor/:courseId/modules/:moduleId'
+                    ]} exact component={CourseEditorContainer}/>
                 </div>
             </BrowserRouter>
         </div>

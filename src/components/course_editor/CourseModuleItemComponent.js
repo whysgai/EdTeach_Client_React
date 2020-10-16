@@ -1,18 +1,22 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-const CourseModuleItemComponent = ({module, deleteModule, updateModule, editModule, saveModule}) =>
+const CourseModuleItemComponent = ({course, module, deleteModule, updateModule, editModule, saveModule}) =>
     <div>
         <li className="btn btn-dark btn-block wbdv-module-item btn-align-veritcal">
 
             {
                 !module.editing &&
-                <span>
-                    {module.title}
-                    <a href="#" className="float-right font-white wbdv-module-item-edit-btn"
-                       onClick={() => editModule(module)}>
-                        <i className="fa fa-pencil" aria-hidden="true"/>
-                    </a>
-                </span>
+                    <span>
+                        <Link to={`${course._id}/modules/${module._id}`}>
+                            {module.title}
+                        </Link>
+                        <a href="#" className="float-right font-white wbdv-module-item-edit-btn"
+                           onClick={() => editModule(module)}>
+                            <i className="fa fa-pencil" aria-hidden="true"/>
+                        </a>
+
+                    </span>
             }
             {
                 module.editing &&
