@@ -6,8 +6,8 @@ import {createTopic, deleteTopic, editTopic, updateTopic, saveTopic} from "../ac
 const stateToPropertyMapper = (state) => ({
   topics: state.topicReducer.topics,
   lessonId: state.topicReducer.lessonId,
-  moduleId: state.topicReducer.moduleId,
-  courseId: state.topicReducer.courseId
+  moduleId: state.lessonReducer.moduleId,
+  course: state.courseReducer.course
 })
 
 const propertyToDispatchMapper = (dispatch) => ({

@@ -1,11 +1,14 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-const CourseTopicItemComponent = ({topic, deleteTopic, editTopic, updateTopic, saveTopic}) =>
+const CourseTopicItemComponent = ({course, moduleId, lessonId, topic, deleteTopic, editTopic, updateTopic, saveTopic}) =>
     <li className="nav-item mr-1 nav-link active wbdv-topic-pill">
         {
             !topic.editing &&
                 <span>
-                    <span className="text-white">{topic.title}</span>
+                    <Link to={`/course_editor/${course._id}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}>
+                        <span className="text-white">{topic.title}</span>
+                    </Link>
                     <a href="#" className="float-right text-white wbdv-lesson-item-edit-btn ml-2"
                        onClick={() => editTopic(topic)}>
                         <i className="fa fa-pencil" aria-hidden="true"/>

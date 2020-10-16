@@ -36,9 +36,10 @@ class CourseEditorContainer extends React.Component {
         this.props.findModulesForCourse(courseId)
         if(moduleId) {
             this.props.findLessonsForModule(moduleId)
-        }
-        if(lessonId) {
-            this.props.findTopicsForLesson(lessonId)
+            if(lessonId) {
+                this.props.findTopicsForLesson(lessonId)
+            }
+
         }
 
 
@@ -51,8 +52,7 @@ class CourseEditorContainer extends React.Component {
         //const topicId = this.props.match.params.topicId
         if(moduleId !== prevProps.match.params.moduleId) {
             this.props.findLessonsForModule(moduleId)
-        }
-        if(lessonId !== prevProps.match.params.lessonId) {
+        } else if(lessonId !== prevProps.match.params.lessonId) {
             this.props.findTopicsForLesson(lessonId)
         }
     }
@@ -113,8 +113,7 @@ const propertyToDispatchMapper = (dispatch) => ({
         .then(lessons => dispatch({
             type: READ_LESSONS,
             lessons: lessons,
-            moduleId: moduleId,
-            courseId: courseId
+            moduleId: moduleId
         })),
     findTopicsForLesson: (lessonId, moduleId, courseId) => topicService.findTopicsForLesson(lessonId)
         .then(topics => dispatch({
