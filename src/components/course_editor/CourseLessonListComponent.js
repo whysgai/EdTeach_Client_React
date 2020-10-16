@@ -1,12 +1,15 @@
 import React from "react";
 import CourseLessonItemComponent from "./CourseLessonItemComponent";
 
-const CourseLessonListComponent = ({courseId, moduleId, lessons, createLesson, deleteLesson, updateLesson, editLesson, saveLesson}) =>
+const CourseLessonListComponent = ({course, courseId, moduleId, lessons, createLesson, deleteLesson, updateLesson, editLesson, saveLesson}) =>
     <div>
         <ul className="marg-below nav nav-tabs wbdv-lesson-tabs d-none d-md-flex">
+        <h3>{course.title}</h3>
+        <h3>{courseId}</h3>
             {
                 lessons.map((lesson, index) =>
                     <CourseLessonItemComponent
+                        course={course}
                         courseId={courseId}
                         moduleId={moduleId}
                         lesson={lesson}

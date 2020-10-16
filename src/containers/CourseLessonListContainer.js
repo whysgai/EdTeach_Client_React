@@ -7,7 +7,7 @@ const stateToPropertyMapper = (state) => ({
   lessons: state.lessonReducer.lessons,
   moduleId: state.lessonReducer.moduleId,
   courseId: state.lessonReducer.courseId,
-
+  course: state.courseReducer.course
 })
 
 const propertyToDispatchMapper = (dispatch) => ({

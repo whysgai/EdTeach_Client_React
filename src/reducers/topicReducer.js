@@ -10,7 +10,7 @@ const topicReducer = (state = initialState, action = action) => {
             return {
                 ...state,
                 topics: [...state.topics,
-                    action.topics
+                    action.topic
                 ]
             }
         case READ_TOPICS:

@@ -1,12 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const CourseLessonItemComponent = ({courseId, moduleId, lesson, deleteLesson, updateLesson, editLesson, saveLesson}) =>
+const CourseLessonItemComponent = ({course, courseId, moduleId, lesson, deleteLesson, updateLesson, editLesson, saveLesson}) =>
     <li className="nav-item nav-link">
         {
             !lesson.editing &&
             <span>
-                <Link to={`/course_editor/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}>
+                <Link to={`/course_editor/${course._id}/modules/${moduleId}/lessons/${lesson._id}`}>
                     <span className="text-primary">{lesson.title}</span>
                 </Link>
                 <a href="#" className="float-right text-primary wbdv-lesson-item-edit-btn ml-2"
