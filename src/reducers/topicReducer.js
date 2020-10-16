@@ -8,20 +8,27 @@ const topicReducer = (state = initialState, action = action) => {
     switch (action.type) {
         case CREATE_TOPIC:
             return {
-                topics: [...state.topics, {
-                    _id: Date.now()+"",
-                    topicname: "New Topic"
-                }]
+                ...state,
+                topics: [...state.topics,
+                    action.lesson
+                ]
             }
         case READ_TOPICS:
+            return {
+                ...state,
+                topics: action.topics,
+                lessonId: action.lessonId
+            }
         case UPDATE_TOPIC:
             return {
+                ...state,
                 topics: state.topics.map(
                     topic => topic._id === action.topic._id ? action.topic : topic
                 )
             }
         case DELETE_TOPIC:
             return {
+                ...state,
                 topics: state.topics.filter(topic => topic !== action.topic)
             }
         default:
