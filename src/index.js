@@ -22,8 +22,8 @@ import courseReducer from "./reducers/courseReducer";
 const reducers = combineReducers({
     // Shorthand
     moduleReducer,
-    topicReducer,
     lessonReducer,
+    topicReducer,
     // Longhand
     courseReducer: courseReducer
 })
@@ -46,7 +46,9 @@ ReactDOM.render(
                     </Route>
                     <Route path={[
                         '/course_editor/:courseId',
-                        '/course_editor/:courseId/modules/:moduleId'
+                        '/course_editor/:courseId/modules/:moduleId',
+                        '/course_editor/:courseId/modules/:moduleId/lessons/:lessonId',
+                        '/course_editor/:courseId/modules/:moduleId/lessons/:lessonId/topics/:topicId',
                     ]} exact component={CourseEditorContainer}/>
                 </div>
             </BrowserRouter>
