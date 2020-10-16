@@ -1,4 +1,4 @@
-import {CREATE_LESSON, DELETE_LESSON, UPDATE_LESSON} from "../actions/courseLessonActions";
+import {CREATE_LESSON, READ_LESSON, UPDATE_LESSON, DELETE_LESSON} from "../actions/courseLessonActions";
 
 const initialState = {
     lessons: [
@@ -33,6 +33,11 @@ const lessonReducer = (state = initialState, action = action) => {
                     _id: Date.now()+"",
                     lessonname: "New Lesson"
                 }]
+            }
+        case READ_LESSON:
+            return {
+                ...state,
+                lessons: action.lessons
             }
         case UPDATE_LESSON:
             return {
