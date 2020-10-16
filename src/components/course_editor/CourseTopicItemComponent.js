@@ -5,7 +5,7 @@ const CourseTopicItemComponent = ({topic, deleteTopic, editTopic, updateTopic, s
         {
             !topic.editing &&
                 <span>
-                    <span className="text-white">{topic.topicname}</span>
+                    <span className="text-white">{topic.title}</span>
                     <a href="#" className="float-right text-white wbdv-lesson-item-edit-btn ml-2"
                        onClick={() => editTopic(topic)}>
                         <i className="fa fa-pencil" aria-hidden="true"/>
@@ -18,10 +18,10 @@ const CourseTopicItemComponent = ({topic, deleteTopic, editTopic, updateTopic, s
                     <input
                         className="form-control"
                         type="text"
-                        value={topic.topicname}
+                        value={topic.title}
                         onChange={(event) => updateTopic({
                             ...topic,
-                            topicname: event.target.value
+                            title: event.target.value
                         })}
                     />
                     <div className="input-group-append">

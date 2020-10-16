@@ -9,10 +9,10 @@ import CourseTopicListContainer from "./CourseTopicListContainer";
 import {connect} from "react-redux";
 import moduleService from "../services/ModuleService"
 import lessonService from "../services/LessonService"
+import topicService from "../services/TopicService"
 import {READ_MODULES} from "../actions/courseModuleActions";
 import {READ_LESSONS} from "../actions/courseLessonActions";
-
-//({showEditor, modules, lessons, topics, widgets})
+import {READ_TOPICS} from "../actions/courseTopicActions";
 
 class CourseEditorContainer extends React.Component {
 
@@ -28,8 +28,18 @@ class CourseEditorContainer extends React.Component {
     }
 
     componentDidMount() {
-        // console.log(this.props)
-        this.refreshCourse();
+        const courseId = this.props.match.params.courseId
+        const moduleId = this.props.match.params.moduleId
+        const lessonId = this.props.match.params.lessonId
+        const topicId = this.props.match.params.topicId
+        this.props.findCourseById(courseId)
+        this.props.findModulesForCourse(courseId)
+        if(moduleId) {
+            this.props.findLessonsForModule(moduleId)
+            if(lessonId) {
+                this.props.findTopicsForLesson(lessonId)
+            }
+        }
 
     }
 
@@ -43,34 +53,6 @@ class CourseEditorContainer extends React.Component {
             }
 
         }
-    }
-
-    // refreshView(moduleId, lessonId) {
-    //     if(moduleId !== prevProps.match.params.module) {
-    //         this.props.findLessonsForModule(moduleId)
-    //         if(lessonId !== prevProps.mathc.params.lesson) {
-    //             this.props.findTopicsForLesson(lessonId)
-    //         }
-    //
-    //     }
-    // }
-
-    refreshCourse() {
-        // console.log(this.props.match.params.courseId)
-        const courseId = this.props.match.params.courseId
-        const moduleId = this.props.match.params.moduleId
-        const lessonId = this.props.match.params.lessonId
-        const topicId = this.props.match.params.topicId
-        this.props.findCourseById(courseId)
-        this.props.findModulesForCourse(courseId)
-        if(moduleId) {
-            this.props.findLessonsForModule(moduleId)
-
-            if(lessonId) {
-                this.props.findTopicsForLesson(lessonId)
-            }
-        }
-
     }
 
     render() {
@@ -130,7 +112,14 @@ const propertyToDispatchMapper = (dispatch) => ({
             type: READ_LESSONS,
             lessons: lessons,
             moduleId: moduleId
+        })),
+    findTopicsForLesson: (lessonId) => topicService.findTopicsForLesson(lessonId)
+        .then(topics => dispatch({
+            type: READ_TOPICS,
+            topics: topics,
+            lessonId: lessonId
         }))
+
 })
 
 export default connect
