@@ -32,8 +32,14 @@ class CourseEditorContainer extends React.Component {
 
     refreshCourse() {
         // console.log(this.props.match.params.courseId)
-        this.props.findCourseById(this.props.match.params.courseId)
-        this.props.findModulesForCourse(this.props.match.params.courseId)
+        const courseId = this.props.match.params.courseId
+        const moduleId = this.props.match.params.moduleId
+        this.props.findCourseById(courseId)
+        this.props.findModulesForCourse(courseId)
+        if(moduleId) {
+
+        }
+
     }
 
     render() {
