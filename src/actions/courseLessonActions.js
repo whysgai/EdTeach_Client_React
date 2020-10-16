@@ -13,14 +13,26 @@ export const createLesson = (dispatch, moduleId, newLesson) =>
         .then(actualLesson => dispatch({type: CREATE_LESSON, lesson: actualLesson}))
 
 export const editLesson = (dispatch, lesson) =>
-    dispatch({type: UPDATE_LESSON, lesson: {...lesson, editing: true}})
+    LessonService.updateLesson(lesson._id, {...lesson, editing: true})
+        .then(status => dispatch({
+            type: UPDATE_LESSON,
+            lesson: {...lesson, editing: true}
+        }))
+
+
+    // dispatch({type: UPDATE_LESSON, lesson: {...lesson, editing: true}})
 
 export const saveLesson = (dispatch, lesson) =>
-    dispatch({type: UPDATE_LESSON, lesson: {...lesson, editing: false}})
+    LessonService.updateLesson(lesson._id, {...lesson, editing: false})
+        .then(status => dispatch({
+            type: UPDATE_LESSON,
+            lesson: {...lesson, editing: false}
+        }))
+
 
 export const updateLesson = (dispatch, lesson) =>
     dispatch({type: UPDATE_LESSON, lesson})
 
 export const deleteLesson = (dispatch, lesson) =>
-    LessonService.deleteLesson(less._id)
+    LessonService.deleteLesson(lesson._id)
         .then(status => dispatch({type: DELETE_LESSON, lesson}))

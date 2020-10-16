@@ -10,11 +10,12 @@ export const createModule = (dispatch, courseId, newModule) =>
         .then(actualModule => dispatch({type: CREATE_MODULE, module: actualModule}))
 
 export const editModule = (dispatch, module) =>
-    ModuleService.updateModule(module._id, {...module, editing: true})
-        .then(status => dispatch({
-            type: UPDATE_MODULE,
-            module: {...module, editing: true}
-        }))
+    dispatch({type: UPDATE_MODULE, module: {...module, editing: true}})
+// ModuleService.updateModule(module._id, {...module, editing: true})
+    //     .then(status => dispatch({
+    //         type: UPDATE_MODULE,
+    //         module: {...module, editing: true}
+    //     }))
 
 export const saveModule = (dispatch, module) =>
     ModuleService.updateModule(module._id, {...module, editing: false})

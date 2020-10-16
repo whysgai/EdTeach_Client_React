@@ -27,6 +27,7 @@ const lessonReducer = (state = initialState, action = action) => {
             }
         case DELETE_LESSON:
             return {
+                ...state,
                 lessons: state.lessons.filter(lesson => lesson !== action.lesson)
             }
         default:
