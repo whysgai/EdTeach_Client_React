@@ -21,8 +21,8 @@ class CourseEditorContainer extends React.Component {
         this.state = {
             // course: {},
             // modules: [{modname: 'Module 1'}, {modname: 'Module 2'}, {modname: 'Module 3'}, {modname: 'Module 4'}, {modname: 'Module 5'}],
-            lessons: [{lessonname: 'Lesson 1'},{lessonname: 'Lesson 2'},{lessonname: 'Lesson 3'}],
-            topics: [{topicname: 'Topic 1'}, {topicname: 'Topic 2'}, {topicname: 'Topic 3'}],
+            // lessons: [{lessonname: 'Lesson 1'},{lessonname: 'Lesson 2'},{lessonname: 'Lesson 3'}],
+            // topics: [{topicname: 'Topic 1'}, {topicname: 'Topic 2'}, {topicname: 'Topic 3'}],
             widgets: [{widgetname: 'Widget 1', widgettype: 'Heading'}],
         }
     }
@@ -31,27 +31,29 @@ class CourseEditorContainer extends React.Component {
         const courseId = this.props.match.params.courseId
         const moduleId = this.props.match.params.moduleId
         const lessonId = this.props.match.params.lessonId
-        const topicId = this.props.match.params.topicId
+        //const topicId = this.props.match.params.topicId
         this.props.findCourseById(courseId)
         this.props.findModulesForCourse(courseId)
         if(moduleId) {
             this.props.findLessonsForModule(moduleId)
-            if(lessonId) {
-                this.props.findTopicsForLesson(lessonId)
-            }
         }
+        if(lessonId) {
+            this.props.findTopicsForLesson(lessonId)
+        }
+
 
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
+        const courseId = this.props.match.params.courseId
         const moduleId = this.props.match.params.moduleId
         const lessonId = this.props.match.params.lessonId
+        //const topicId = this.props.match.params.topicId
         if(moduleId !== prevProps.match.params.moduleId) {
             this.props.findLessonsForModule(moduleId)
-            if(lessonId !== prevProps.match.params.lessonId) {
-                this.props.findTopicsForLesson(lessonId)
-            }
-
+        }
+        if(lessonId !== prevProps.match.params.lessonId) {
+            //this.props.findTopicsForLesson(lessonId)
         }
     }
 
@@ -107,17 +109,20 @@ const propertyToDispatchMapper = (dispatch) => ({
             type: READ_MODULES,
             modules: modules
         })),
-    findLessonsForModule: (moduleId) => lessonService.findLessonsForModule(moduleId)
+    findLessonsForModule: (moduleId, courseId) => lessonService.findLessonsForModule(moduleId)
         .then(lessons => dispatch({
             type: READ_LESSONS,
             lessons: lessons,
-            moduleId: moduleId
+            moduleId: moduleId,
+            courseId: courseId
         })),
-    findTopicsForLesson: (lessonId) => topicService.findTopicsForLesson(lessonId)
+    findTopicsForLesson: (lessonId, moduleId, courseId) => topicService.findTopicsForLesson(lessonId)
         .then(topics => dispatch({
             type: READ_TOPICS,
             topics: topics,
-            lessonId: lessonId
+            lessonId: lessonId,
+            moduleId: moduleId,
+            courseId: courseId
         }))
 
 })

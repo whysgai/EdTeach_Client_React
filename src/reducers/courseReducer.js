@@ -1,6 +1,5 @@
 const initialState = {
-    courses: [],
-    course: { }
+    course: {}
 }
 
 const courseReducer = (state = initialState, action) => {

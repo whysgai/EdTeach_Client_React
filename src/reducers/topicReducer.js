@@ -17,7 +17,9 @@ const topicReducer = (state = initialState, action = action) => {
             return {
                 ...state,
                 topics: action.topics,
-                lessonId: action.lessonId
+                lessonId: action.lessonId,
+                moduleId: action.moduleId,
+                courseId: action.courseId
             }
         case UPDATE_TOPIC:
             return {

@@ -6,7 +6,8 @@ import {createLesson, deleteLesson, editLesson, updateLesson, saveLesson} from "
 const stateToPropertyMapper = (state) => ({
   lessons: state.lessonReducer.lessons,
   moduleId: state.lessonReducer.moduleId,
-  module: state.moduleReducer.module
+  courseId: state.lessonReducer.courseId,
+
 })
 
 const propertyToDispatchMapper = (dispatch) => ({

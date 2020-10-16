@@ -18,10 +18,6 @@ const moduleReducer = (state = initialState, action) => {
                 modules: [... state.modules,
                     action.module
                 ]
-                // modules: [...state.modules, {
-                //     _id: Date.now()+"",
-                //     modname: "New Module"
-                // }]
             }
         case UPDATE_MODULE:
             return {

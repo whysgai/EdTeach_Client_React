@@ -5,7 +5,6 @@ export const READ_LESSONS = "READ_LESSON"
 export const UPDATE_LESSON = "UPDATE_LESSON"
 export const DELETE_LESSON = "DELETE_LESSON"
 
-
 export const createLesson = (dispatch, moduleId, newLesson) =>
     LessonService.createLessonForModule(moduleId, newLesson)
         .then(actualLesson => dispatch({type: CREATE_LESSON, lesson: actualLesson}))

@@ -17,7 +17,8 @@ const lessonReducer = (state = initialState, action = action) => {
             return {
                 ...state,
                 lessons: action.lessons,
-                moduleId: action.moduleId
+                moduleId: action.moduleId,
+                courseId: action.courseId,
             }
         case UPDATE_LESSON:
             return {
