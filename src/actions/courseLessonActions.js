@@ -1,6 +1,4 @@
 import LessonService from "../services/LessonService";
-import ModuleService from "../services/ModuleService";
-import {DELETE_MODULE} from "./courseModuleActions";
 
 export const CREATE_LESSON = "CREATE_LESSON"
 export const READ_LESSONS = "READ_LESSON"
@@ -19,16 +17,12 @@ export const editLesson = (dispatch, lesson) =>
             lesson: {...lesson, editing: true}
         }))
 
-
-    // dispatch({type: UPDATE_LESSON, lesson: {...lesson, editing: true}})
-
 export const saveLesson = (dispatch, lesson) =>
     LessonService.updateLesson(lesson._id, {...lesson, editing: false})
         .then(status => dispatch({
             type: UPDATE_LESSON,
             lesson: {...lesson, editing: false}
         }))
-
 
 export const updateLesson = (dispatch, lesson) =>
     dispatch({type: UPDATE_LESSON, lesson})
