@@ -1,24 +1,7 @@
-import {CREATE_TOPIC, DELETE_TOPIC, UPDATE_TOPIC} from "../actions/courseTopicActions";
+import {CREATE_TOPIC, READ_TOPICS, UPDATE_TOPIC, DELETE_TOPIC} from "../actions/courseTopicActions";
 
 const initialState = {
-    topics: [
-        {
-            _id: 1,
-            topicname: 'Topic 1'
-        },
-        {
-            _id: 2,
-            topicname: 'Topic 2'
-        },
-        {
-            _id: 3,
-            topicname: 'Topic 3'
-        },
-        {
-            _id: 4,
-            topicname: 'Topic 4'
-        }
-    ]
+    topics: []
 }
 
 const topicReducer = (state = initialState, action = action) => {
@@ -30,6 +13,7 @@ const topicReducer = (state = initialState, action = action) => {
                     topicname: "New Topic"
                 }]
             }
+        case READ_TOPICS:
         case UPDATE_TOPIC:
             return {
                 topics: state.topics.map(
