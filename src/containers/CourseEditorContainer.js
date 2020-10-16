@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 import moduleService from "../services/ModuleService"
 import lessonService from "../services/LessonService"
 import {READ_MODULES} from "../actions/courseModuleActions";
-import {READ_LESSON} from "../actions/courseLessonActions";
+import {READ_LESSONS} from "../actions/courseLessonActions";
 
 //({showEditor, modules, lessons, topics, widgets})
 
@@ -30,6 +30,13 @@ class CourseEditorContainer extends React.Component {
     componentDidMount() {
         // console.log(this.props)
         this.refreshCourse();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const moduleId = this.props.match.params.moduleId
+        if(moduleId !== prevProps.match.params.module) {
+            this.props.findLessonsForModule(moduleId)
+        }
     }
 
     refreshCourse() {
@@ -99,7 +106,8 @@ const propertyToDispatchMapper = (dispatch) => ({
     findLessonsForModule: (moduleId) => lessonService.findLessonsForModule(moduleId)
         .then(lessons => dispatch({
             type: READ_LESSONS,
-            lessons: lessons
+            lessons: lessons,
+            moduleId: moduleId
         }))
 })
 

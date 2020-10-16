@@ -8,7 +8,7 @@ const CourseModuleItemComponent = ({course, module, deleteModule, updateModule, 
             {
                 !module.editing &&
                     <span>
-                        <Link to={`${course._id}/modules/${module._id}`}>
+                        <Link to={`/course_editor/${course._id}/modules/${module._id}`}>
                             {module.title}
                         </Link>
                         <a href="#" className="float-right font-white wbdv-module-item-edit-btn"

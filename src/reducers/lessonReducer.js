@@ -1,43 +1,23 @@
-import {CREATE_LESSON, READ_LESSON, UPDATE_LESSON, DELETE_LESSON} from "../actions/courseLessonActions";
+import {CREATE_LESSON, READ_LESSONS, UPDATE_LESSON, DELETE_LESSON} from "../actions/courseLessonActions";
 
 const initialState = {
-    lessons: [
-        {
-            _id: 1,
-            lessonname: 'Lesson 1'
-        },
-        {
-            _id: 2,
-            lessonname: 'Lesson 2'
-        },
-        {
-            _id: 3,
-            lessonname: 'Lesson 3'
-        },
-        {
-            _id: 4,
-            lessonname: 'Lesson 4'
-        },
-        {
-            _id: 5,
-            lessonname: 'Lesson 5'
-        }
-    ]
+    lessons: []
 }
 
 const lessonReducer = (state = initialState, action = action) => {
     switch (action.type) {
         case CREATE_LESSON:
             return {
-                lessons: [...state.lessons, {
-                    _id: Date.now()+"",
-                    lessonname: "New Lesson"
-                }]
+                ...state,
+                lessons: [...state.lessons,
+                    action.lesson
+                ]
             }
-        case READ_LESSON:
+        case READ_LESSONS:
             return {
                 ...state,
-                lessons: action.lessons
+                lessons: action.lessons,
+                moduleId: action.moduleId
             }
         case UPDATE_LESSON:
             return {

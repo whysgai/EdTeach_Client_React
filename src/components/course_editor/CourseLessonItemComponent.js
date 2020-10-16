@@ -5,7 +5,7 @@ const CourseLessonItemComponent = ({lesson, deleteLesson, updateLesson, editLess
         {
             !lesson.editing &&
             <span>
-                <span className="text-primary">{lesson.lessonname}</span>
+                <span className="text-primary">{lesson.title}</span>
                 <a href="#" className="float-right text-primary wbdv-lesson-item-edit-btn ml-2"
                    onClick={() => editLesson(lesson)}>
                     <i className="fa fa-pencil" aria-hidden="true"/>
@@ -18,10 +18,10 @@ const CourseLessonItemComponent = ({lesson, deleteLesson, updateLesson, editLess
                     <input
                         className="form-control"
                         type="text"
-                        value={lesson.lessonname}
+                        value={lesson.title}
                         onChange={(event) => updateLesson({
                             ...lesson,
-                            lessonname: event.target.value
+                            title: event.target.value
                         })}
                     />
                     <div className="input-group-append">

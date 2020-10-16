@@ -7,7 +7,7 @@ const CourseModuleListComponent = ({course, modules, createModule, deleteModule,
             {
                 modules.map((module, index) =>
                     <CourseModuleItemComponent
-                        course={{course}}
+                        course={course}
                         module={module}
                         deleteModule={deleteModule}
                         updateModule={updateModule}
@@ -17,8 +17,10 @@ const CourseModuleListComponent = ({course, modules, createModule, deleteModule,
                 )
             }
         </ul>
-        <button className="btn btn-primary btn-block wbdv-module-item-add-btn" onClick={() =>
-            createModule(course._id, {title: "New Module"})}>Add Module</button>
+        <button className="btn btn-primary btn-block wbdv-module-item-add-btn"
+                onClick={() => createModule(course._id, {title: "New Module"})}>
+            Add Module
+        </button>
     </div>
 
 export default CourseModuleListComponent

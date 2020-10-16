@@ -1,7 +1,7 @@
 import React from "react";
 import CourseLessonItemComponent from "./CourseLessonItemComponent";
 
-const CourseLessonListComponent = ({module, lessons=[], createLesson, deleteLesson, updateLesson, editLesson, saveLesson}) =>
+const CourseLessonListComponent = ({module, moduleId, lessons, createLesson, deleteLesson, updateLesson, editLesson, saveLesson}) =>
     <div>
         <ul className="marg-below nav nav-tabs wbdv-lesson-tabs d-none d-md-flex">
             {
@@ -18,7 +18,7 @@ const CourseLessonListComponent = ({module, lessons=[], createLesson, deleteLess
             }
             <li className="nav-item">
                 <a href="#" className="nav-link wbdv-lesson-add-btn"
-                   onClick={createLesson}>
+                   onClick={() => createLesson(moduleId, {title: "New Lesson"})}>
                     <i className="fa fa-plus-circle" aria-hidden="true"/>
                 </a>
             </li>
