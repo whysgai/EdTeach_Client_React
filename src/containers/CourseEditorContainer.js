@@ -30,23 +30,45 @@ class CourseEditorContainer extends React.Component {
     componentDidMount() {
         // console.log(this.props)
         this.refreshCourse();
+
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         const moduleId = this.props.match.params.moduleId
-        if(moduleId !== prevProps.match.params.module) {
+        const lessonId = this.props.match.params.lessonId
+        if(moduleId !== prevProps.match.params.moduleId) {
             this.props.findLessonsForModule(moduleId)
+            if(lessonId !== prevProps.match.params.lessonId) {
+                this.props.findTopicsForLesson(lessonId)
+            }
+
         }
     }
+
+    // refreshView(moduleId, lessonId) {
+    //     if(moduleId !== prevProps.match.params.module) {
+    //         this.props.findLessonsForModule(moduleId)
+    //         if(lessonId !== prevProps.mathc.params.lesson) {
+    //             this.props.findTopicsForLesson(lessonId)
+    //         }
+    //
+    //     }
+    // }
 
     refreshCourse() {
         // console.log(this.props.match.params.courseId)
         const courseId = this.props.match.params.courseId
         const moduleId = this.props.match.params.moduleId
+        const lessonId = this.props.match.params.lessonId
+        const topicId = this.props.match.params.topicId
         this.props.findCourseById(courseId)
         this.props.findModulesForCourse(courseId)
         if(moduleId) {
             this.props.findLessonsForModule(moduleId)
+
+            if(lessonId) {
+                this.props.findTopicsForLesson(lessonId)
+            }
         }
 
     }

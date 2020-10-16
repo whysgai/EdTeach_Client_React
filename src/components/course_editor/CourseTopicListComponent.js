@@ -8,6 +8,7 @@ const CourseTopicListComponent = ({topics=[], createTopic, deleteTopic, editTopi
             {
                 topics.map((topic, index) =>
                     <CourseTopicItemComponent
+                        lesson={lesson}
                         topic={topic}
                         deleteTopic={deleteTopic}
                         updateTopic={updateTopic}
