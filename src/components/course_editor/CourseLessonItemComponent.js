@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 const CourseLessonItemComponent = ({course, courseId, moduleId, lesson, deleteLesson, updateLesson, editLesson, saveLesson}) =>
-    <li className="nav-item nav-link">
+    <li key={lesson._id} className="nav-item nav-link">
         {
             !lesson.editing &&
             <span>

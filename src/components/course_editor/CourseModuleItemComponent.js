@@ -3,8 +3,7 @@ import {Link} from "react-router-dom";
 
 const CourseModuleItemComponent = ({course, module, deleteModule, updateModule, editModule, saveModule}) =>
     <div>
-        <li className="btn btn-dark btn-block wbdv-module-item btn-align-veritcal">
-
+        <li key={module._id} className="btn btn-dark btn-block wbdv-module-item btn-align-veritcal">
             {
                 !module.editing &&
                     <span>
@@ -32,7 +31,7 @@ const CourseModuleItemComponent = ({course, module, deleteModule, updateModule, 
                             <i className="fa fa-times-circle" aria-hidden="true"/>
                         </a>
                         <a href="#" className="float-right font-white wbdv-module-item-save-btn"
-                            onClick={() => saveModule(module)}>
+                            onClick={() => saveModule(module)}>+
                             <i className="fa fa-check" aria-hidden="true"/>
                         </a>
                     </span>
