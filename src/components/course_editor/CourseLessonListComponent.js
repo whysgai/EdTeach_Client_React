@@ -4,8 +4,6 @@ import CourseLessonItemComponent from "./CourseLessonItemComponent";
 const CourseLessonListComponent = ({course, courseId, moduleId, lessons, createLesson, deleteLesson, updateLesson, editLesson, saveLesson}) =>
     <div>
         <ul className="marg-below nav nav-tabs wbdv-lesson-tabs d-none d-md-flex">
-        <h3>{course.title}</h3>
-        <h3>{moduleId}</h3>
             {
                 lessons.map((lesson, index) =>
                     <CourseLessonItemComponent

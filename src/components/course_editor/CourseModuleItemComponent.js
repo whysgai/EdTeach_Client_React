@@ -26,13 +26,13 @@ const CourseModuleItemComponent = ({course, module, deleteModule, updateModule, 
                                    title: event.target.value
                                })}
                         />
-                        <a href="#" className="float-right font-white wbdv-module-item-delete-btn"
+                        <a href="#" className="float-right font-white wbdv-module-item-save-btn ml-2"
+                           onClick={() => saveModule(module)}>
+                            <i className="fa fa-check" aria-hidden="true"/>
+                        </a>
+                        <a href="#" className="float-right font-white wbdv-module-item-delete-btn ml-2"
                             onClick={() => deleteModule(module)}>
                             <i className="fa fa-times-circle" aria-hidden="true"/>
-                        </a>
-                        <a href="#" className="float-right font-white wbdv-module-item-save-btn"
-                            onClick={() => saveModule(module)}>+
-                            <i className="fa fa-check" aria-hidden="true"/>
                         </a>
                     </span>
             }

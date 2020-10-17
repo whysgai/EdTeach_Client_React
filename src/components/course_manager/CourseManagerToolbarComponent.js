@@ -24,7 +24,6 @@ const CourseManagerToolbarComponent = ({term, view, captureNewCourseTitle, addCo
                                 onClick={changeView}>
                             <i className="fa fa-list" aria-hidden="true"/>
                         </button>
-
                     }
                     {
                         view === 'table' &&
