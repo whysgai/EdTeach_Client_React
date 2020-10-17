@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const CourseManagerToolbarComponent = ({term, view, captureNewCourseTitle, addCourse, changeView}) =>
     <div>
@@ -20,17 +21,19 @@ const CourseManagerToolbarComponent = ({term, view, captureNewCourseTitle, addCo
                     </button>
                     {
                         view === 'cards' &&
-                        <button className="wbdv-button wbdv-grid-layout btn btn-primary mx-1 col-12 col-sm-5 col-md-4"
-                                onClick={changeView}>
-                            <i className="fa fa-list" aria-hidden="true"/>
-                        </button>
+                            <Link to="/course_manager/table">
+                                <button className="wbdv-button wbdv-grid-layout btn btn-primary mx-1 col-12 col-sm-5 col-md-4">
+                                    <i className="fa fa-list" aria-hidden="true"/>
+                                </button>
+                            </Link>
                     }
                     {
                         view === 'table' &&
-                        <button className="wbdv-button btn btn-primary mx-1 col-12 col-sm-5 col-md-4"
-                                onClick={changeView}>
-                            <i className="fa fa-th " aria-hidden="true"/>
-                        </button>
+                            <Link to="/course_manager/grid">
+                                <button className="wbdv-button btn btn-primary mx-1 col-12 col-sm-5 col-md-4">
+                                    <i className="fa fa-th " aria-hidden="true"/>
+                                </button>
+                            </Link>
                     }
                 </div>
             </div>

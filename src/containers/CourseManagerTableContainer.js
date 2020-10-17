@@ -1,5 +1,4 @@
 import React from "react";
-import CourseEditorContainer from "./CourseEditorContainer";
 import CourseTableComponent from "../components/course_manager/CourseTableComponent";
 import CourseDeckComponent from "../components/course_manager/CourseDeckComponent";
 import {findAllCourses, createCourse, deleteCourse, updateCourse,} from "../services/CourseService"
@@ -14,9 +13,9 @@ class CourseManagerContainer extends React.Component {
         super();
         this.state = {
             courses: [],
-            modules: [{modname: 'Module 1'}, {modname: 'Module 2'}, {modname: 'Module 3'}, {modname: 'Module 4'}, {modname: 'Module 5'}],
-            lessons: [{lessonname: 'Lesson 1'},{lessonname: 'Lesson 2'},{lessonname: 'Lesson 3'}],
-            topics: [{topicname: 'Topic 1'}, {topicname: 'Topic 2'}, {topicname: 'Topic 3'}],
+            // modules: [{modname: 'Module 1'}, {modname: 'Module 2'}, {modname: 'Module 3'}, {modname: 'Module 4'}, {modname: 'Module 5'}],
+            // lessons: [{lessonname: 'Lesson 1'},{lessonname: 'Lesson 2'},{lessonname: 'Lesson 3'}],
+            // topics: [{topicname: 'Topic 1'}, {topicname: 'Topic 2'}, {topicname: 'Topic 3'}],
             widgets: [{widgetname: 'Widget 1', widgettype: 'Heading'}],
             view: 'table',
             newTitle: '',
@@ -41,11 +40,6 @@ class CourseManagerContainer extends React.Component {
         this.setState({ newTitle: e.target.value });
     };
 
-    // showEditor = (editorView) => {
-    //     console.log("Switch editor display");
-    //     this.setState({showEditor: editorView})
-    // }
-
     changeView = () => {
         if (this.state.view === 'cards') {
             this.setState({view: 'table'})
@@ -57,7 +51,7 @@ class CourseManagerContainer extends React.Component {
     addCourse = (e) => {
         e.preventDefault();
         console.log(this.state.newTitle);
-        if (this.state.newTitle != "") {
+        if (this.state.newTitle !== "") {
             const newCourse = {
                 title: this.state.newTitle,
                 owner: this.props.instructor,
@@ -135,30 +129,14 @@ class CourseManagerContainer extends React.Component {
                     addCourse={this.addCourse}
                     changeView={this.changeView}
                 />
-                <div>
-                    {
-                        this.state.view === 'table' &&
-                            <CourseTableComponent
-                                courses={this.state.courses}
-                                deleteCourse={this.deleteCourse}
-                                renameCourse={this.renameCourse}
-                                courseBeingRenamed={this.state.courseBeingRenamed}
-                                captureRenamedCourseTitle={this.captureRenamedCourseTitle}
-                                saveRenamedCourseTitle={this.saveRenamedCourseTitle}
-                            />
-                    }
-                    {
-                        this.state.view === 'cards' &&
-                            <CourseDeckComponent
-                                courses={this.state.courses}
-                                deleteCourse={this.deleteCourse}
-                                renameCourse={this.renameCourse}
-                                courseBeingRenamed={this.state.courseBeingRenamed}
-                                captureRenamedCourseTitle={this.captureRenamedCourseTitle}
-                                saveRenamedCourseTitle={this.saveRenamedCourseTitle}
-                            />
-                    }
-                </div>
+                <CourseTableComponent
+                    courses={this.state.courses}
+                    deleteCourse={this.deleteCourse}
+                    renameCourse={this.renameCourse}
+                    courseBeingRenamed={this.state.courseBeingRenamed}
+                    captureRenamedCourseTitle={this.captureRenamedCourseTitle}
+                    saveRenamedCourseTitle={this.saveRenamedCourseTitle}
+                />
             </div>
         );
     }

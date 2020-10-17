@@ -79,7 +79,7 @@ class LandingPageContainer extends React.Component {
                             <div className="card-body">
                                 <h5 className="card-title">Course Manager</h5>
                                 <p className="card-text">View a list of courses and add new ones</p>
-                                <Link to={`/course_manager`} className="btn btn-primary">Manage
+                                <Link to={`/course_manager/table`} className="btn btn-primary">Manage
                                     Courses</Link>
                             </div>
                         </div>
