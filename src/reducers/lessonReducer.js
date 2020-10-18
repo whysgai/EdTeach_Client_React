@@ -1,7 +1,8 @@
-import {CREATE_LESSON, READ_LESSONS, UPDATE_LESSON, DELETE_LESSON} from "../actions/courseLessonActions";
+import {CREATE_LESSON, READ_LESSONS, UPDATE_LESSON, DELETE_LESSON, SELECT_LESSON} from "../actions/courseLessonActions";
 
 const initialState = {
     lessons: [],
+    activelesson: {},
     moduleId: ""
 }
 
@@ -31,6 +32,11 @@ const lessonReducer = (state = initialState, action = action) => {
             return {
                 ...state,
                 lessons: state.lessons.filter(lesson => lesson !== action.lesson)
+            }
+        case SELECT_LESSON:
+            return {
+                ...state,
+                activelesson: action.lesson
             }
         default:
             return state;

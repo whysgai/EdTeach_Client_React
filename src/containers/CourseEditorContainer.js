@@ -52,6 +52,9 @@ class CourseEditorContainer extends React.Component {
         //const topicId = this.props.match.params.topicId
         if(moduleId !== prevProps.match.params.moduleId) {
             this.props.findLessonsForModule(moduleId)
+            if(lessonId) {
+                this.props.findTopicsForLesson(lessonId)
+            }
         } else if(lessonId !== prevProps.match.params.lessonId) {
             this.props.findTopicsForLesson(lessonId)
         }
