@@ -4,6 +4,7 @@ export const CREATE_MODULE = "CREATE_MODULE"
 export const READ_MODULES = "READ_MODULE"
 export const UPDATE_MODULE = "UPDATE_MODULE"
 export const DELETE_MODULE = "DELETE_MODULE"
+export const SELECT_MODULE = "SELECT_MODULE"
 
 export const createModule = (dispatch, courseId, newModule) =>
     ModuleService.createModuleForCourse(courseId, newModule)
@@ -32,5 +33,8 @@ export const updateModule = (dispatch, module) =>
 export const deleteModule = (dispatch, module) =>
     ModuleService.deleteModule(module._id)
         .then(status => dispatch({type: DELETE_MODULE, module}))
+
+export const selectModule = (dispatch, module) =>
+    dispatch({type: SELECT_MODULE, module})
 
 

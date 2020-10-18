@@ -1,7 +1,8 @@
-import {CREATE_MODULE, READ_MODULES, UPDATE_MODULE, DELETE_MODULE} from "../actions/courseModuleActions";
+import {CREATE_MODULE, READ_MODULES, UPDATE_MODULE, DELETE_MODULE, SELECT_MODULE} from "../actions/courseModuleActions";
 
 const initialState = {
-    modules: []
+    modules: [],
+    activemodule: {}
 }
 
 // Finite state machine
@@ -30,6 +31,11 @@ const moduleReducer = (state = initialState, action) => {
             return {
                 ...state,
                 modules: state.modules.filter(module => module !== action.module)
+            }
+        case SELECT_MODULE:
+            return {
+                ...state,
+                activemodule: action.module
             }
         default:
             return state;
