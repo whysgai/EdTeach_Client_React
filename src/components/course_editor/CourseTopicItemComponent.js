@@ -1,15 +1,16 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const CourseTopicItemComponent = ({course, moduleId, lessonId, topic, deleteTopic, editTopic, updateTopic, saveTopic}) =>
-    <li key={topic._id} className="nav-item mr-1 nav-link active wbdv-topic-pill">
+const CourseTopicItemComponent = ({course, moduleId, lessonId, topic, activetopic, activelesson, activemodule, deleteTopic, editTopic, updateTopic, saveTopic, selectTopic}) =>
+    <li key={topic._id} className={`nav-item mr-1 nav-link wbdv-topic-pill ${activetopic._id === topic._id? "active" : ""}`}>
         {
             !topic.editing &&
                 <span>
-                    <Link to={`/course_editor/${course._id}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}>
-                        <span className="text-white">{topic.title}</span>
+                    <Link to={`/course_editor/${course._id}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}
+                        onClick={() => selectTopic(topic)}>
+                        <span className={`${activetopic._id === topic._id? "text-white" : "text-primary"}`}>{topic.title}</span>
                     </Link>
-                    <a href="#" className="float-right text-white wbdv-lesson-item-edit-btn ml-2"
+                    <a href="#" className={`float-right wbdv-lesson-item-edit-btn ml-2 ${activetopic._id === topic._id? "text-white" : "text-primary"}`}
                        onClick={() => editTopic(topic)}>
                         <i className="fa fa-pencil" aria-hidden="true"/>
                     </a>

@@ -1,8 +1,7 @@
 import React from "react";
 import CourseTopicItemComponent from "./CourseTopicItemComponent";
-import CourseLessonItemComponent from "./CourseLessonItemComponent";
 
-const CourseTopicListComponent = ({course, courseId, moduleId, lessonId, topics, createTopic, deleteTopic, editTopic, updateTopic, saveTopic}) =>
+const CourseTopicListComponent = ({course, courseId, moduleId, lessonId, topics, activetopic, activelesson, activemodule, createTopic, deleteTopic, editTopic, updateTopic, saveTopic, selectTopic}) =>
     <div>
         <ul className="marg-below nav nav-pills wbdv-topic-pill-list d-none d-md-flex">
             {
@@ -13,10 +12,14 @@ const CourseTopicListComponent = ({course, courseId, moduleId, lessonId, topics,
                         moduleId={moduleId}
                         lessonId={lessonId}
                         topic={topic}
+                        activetopic={activetopic}
+                        activelesson={activelesson}
+                        activemodule={activemodule}
                         deleteTopic={deleteTopic}
                         updateTopic={updateTopic}
                         editTopic={editTopic}
                         saveTopic={saveTopic}
+                        selectTopic={selectTopic}
                     />
                 )
             }
