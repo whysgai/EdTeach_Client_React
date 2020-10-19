@@ -27,13 +27,13 @@ class CourseEditorContainer extends React.Component {
         const courseId = this.props.match.params.courseId
         const moduleId = this.props.match.params.moduleId
         const lessonId = this.props.match.params.lessonId
-        //const topicId = this.props.match.params.topicId
+        const topicId = this.props.match.params.topicId
         this.props.findCourseById(courseId)
         this.props.findModulesForCourse(courseId)
         if(moduleId) {
             this.props.findLessonsForModule(moduleId)
             if(lessonId) {
-                this.props.findTopicsForLesson(lessonId)
+                this.props.findTopicsForLesson(topicId, lessonId, moduleId, courseId)
             }
         }
 
@@ -44,15 +44,20 @@ class CourseEditorContainer extends React.Component {
         const courseId = this.props.match.params.courseId
         const moduleId = this.props.match.params.moduleId
         const lessonId = this.props.match.params.lessonId
-        //const topicId = this.props.match.params.topicId
+        const topicId = this.props.match.params.topicId
         if(moduleId && moduleId !== prevProps.match.params.moduleId) {
             this.props.findLessonsForModule(moduleId)
             if(lessonId) {
-                this.props.findTopicsForLesson(lessonId)
+                this.props.findTopicsForLesson(topicId, lessonId, moduleId, courseId)
+            } else {
+                this.props.findTopicsForLesson("aaaaaaa", "bbbbbb", moduleId, courseId)
             }
         }
         if(lessonId && lessonId !== prevProps.match.params.lessonId) {
-            this.props.findTopicsForLesson(lessonId)
+            this.props.findTopicsForLesson(topicId, lessonId, moduleId, courseId)
+        }
+        if(topicId && topicId !== prevProps.match.params.topicId) {
+            this.props.findTopicsForLesson(topicId, lessonId, moduleId, courseId)
         }
     }
 
@@ -108,31 +113,31 @@ const propertyToDispatchMapper = (dispatch) => ({
             type: READ_MODULES,
             modules: modules
         })),
+    // findLessonsForModule: (moduleId) => lessonService.findLessonsForModule(moduleId)
+    //     .then(lessons => dispatch({
+    //         type: READ_LESSONS,
+    //         lessons: lessons
+    //     })),
+    // findTopicsForLesson: (lessonId) => topicService.findTopicsForLesson(lessonId)
+    //     .then(topics => dispatch({
+    //         type: READ_TOPICS,
+    //         topics: topics
+    //     }))
     findLessonsForModule: (moduleId) => lessonService.findLessonsForModule(moduleId)
         .then(lessons => dispatch({
             type: READ_LESSONS,
-            lessons: lessons
+            lessons: lessons,
+            moduleId: moduleId
         })),
-    findTopicsForLesson: (lessonId) => topicService.findTopicsForLesson(lessonId)
+    findTopicsForLesson: (topicId, lessonId, moduleId, courseId) => topicService.findTopicsForLesson(lessonId)
         .then(topics => dispatch({
             type: READ_TOPICS,
-            topics: topics
+            topics: topics,
+            lessonId: lessonId,
+            topicId: topicId,
+            // moduleId: moduleId,
+            // courseId: courseId
         }))
-    // findLessonsForModule: (moduleId, courseId) => lessonService.findLessonsForModule(moduleId)
-    //     .then(lessons => dispatch({
-    //         type: READ_LESSONS,
-    //         lessons: lessons,
-    //         moduleId: moduleId
-    //     })),
-    // findTopicsForLesson: (lessonId, moduleId, courseId) => topicService.findTopicsForLesson(lessonId)
-    //     .then(topics => dispatch({
-    //         type: READ_TOPICS,
-    //         topics: topics,
-    //         lessonId: lessonId,
-    //         moduleId: moduleId,
-    //         courseId: courseId
-    //     }))
-
 })
 
 export default connect

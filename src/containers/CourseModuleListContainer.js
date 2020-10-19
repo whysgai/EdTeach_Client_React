@@ -8,6 +8,7 @@ import {selectTopic} from "../actions/courseTopicActions";
 const stateToPropertyMapper = (state) => ({
   modules: state.moduleReducer.modules,
   activemodule: state.moduleReducer.activemodule,
+  moduleId: state.lessonReducer.moduleId,
   course: state.courseReducer.course
 })
 

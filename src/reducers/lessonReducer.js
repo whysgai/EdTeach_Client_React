@@ -3,8 +3,8 @@ import {CREATE_LESSON, READ_LESSONS, UPDATE_LESSON, DELETE_LESSON, SELECT_LESSON
 const initialState = {
     lessons: [],
     activelesson: {}
-    // ,
-    // moduleId: ""
+    ,
+    moduleId: ""
 }
 
 const lessonReducer = (state = initialState, action = action) => {
@@ -20,8 +20,8 @@ const lessonReducer = (state = initialState, action = action) => {
             return {
                 ...state,
                 lessons: action.lessons
-                // ,
-                // moduleId: action.moduleId
+                ,
+                moduleId: action.moduleId
             }
         case UPDATE_LESSON:
             return {

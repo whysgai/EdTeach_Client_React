@@ -3,8 +3,10 @@ import {CREATE_TOPIC, READ_TOPICS, UPDATE_TOPIC, DELETE_TOPIC, SELECT_TOPIC} fro
 const initialState = {
     topics: [],
     activetopic: {}
-    // ,
-    // lessonId: ""
+    ,
+    lessonId: ""
+    ,
+    topicId: ""
 }
 
 const topicReducer = (state = initialState, action = action) => {
@@ -20,8 +22,10 @@ const topicReducer = (state = initialState, action = action) => {
             return {
                 ...state,
                 topics: action.topics
-                // ,
-                // lessonId: action.lessonId
+                ,
+                lessonId: action.lessonId
+                ,
+                topicId: action.topicId
             }
         case UPDATE_TOPIC:
             console.log("Update from reducer")
