@@ -33,7 +33,7 @@ class CourseEditorContainer extends React.Component {
         if(moduleId) {
             this.props.findLessonsForModule(moduleId)
             if(lessonId) {
-                this.props.findTopicsForLesson(topicId, lessonId, moduleId, courseId)
+                this.props.findTopicsForLesson(topicId, lessonId)
             }
         }
 
@@ -45,19 +45,25 @@ class CourseEditorContainer extends React.Component {
         const moduleId = this.props.match.params.moduleId
         const lessonId = this.props.match.params.lessonId
         const topicId = this.props.match.params.topicId
+
         if(moduleId && moduleId !== prevProps.match.params.moduleId) {
             this.props.findLessonsForModule(moduleId)
             if(lessonId) {
-                this.props.findTopicsForLesson(topicId, lessonId, moduleId, courseId)
+                if(topicId) {
+                    this.props.findTopicsForLesson(lessonId, topicId)
+                } else {
+                    this.props.findTopicsForLesson(lessonId, "a")
+                }
             } else {
-                this.props.findTopicsForLesson("aaaaaaa", "bbbbbb", moduleId, courseId)
+                this.props.findTopicsForLesson("b", "c")
             }
-        }
-        if(lessonId && lessonId !== prevProps.match.params.lessonId) {
-            this.props.findTopicsForLesson(topicId, lessonId, moduleId, courseId)
-        }
-        if(topicId && topicId !== prevProps.match.params.topicId) {
-            this.props.findTopicsForLesson(topicId, lessonId, moduleId, courseId)
+        } else if((lessonId && lessonId !== prevProps.match.params.lessonId) ||
+            (topicId !== prevProps.match.params.topicId)) {
+            if(topicId) {
+                this.props.findTopicsForLesson(lessonId, topicId)
+            } else {
+                this.props.findTopicsForLesson(lessonId, "d")
+            }
         }
     }
 
@@ -129,7 +135,7 @@ const propertyToDispatchMapper = (dispatch) => ({
             lessons: lessons,
             moduleId: moduleId
         })),
-    findTopicsForLesson: (topicId, lessonId, moduleId, courseId) => topicService.findTopicsForLesson(lessonId)
+    findTopicsForLesson: (lessonId, topicId) => topicService.findTopicsForLesson(lessonId)
         .then(topics => dispatch({
             type: READ_TOPICS,
             topics: topics,
@@ -138,6 +144,7 @@ const propertyToDispatchMapper = (dispatch) => ({
             // moduleId: moduleId,
             // courseId: courseId
         }))
+        .then(status => console.log("Called find topics for lesson : Topic ID: " + topicId + " Lesson ID: " + lessonId))
 })
 
 export default connect
