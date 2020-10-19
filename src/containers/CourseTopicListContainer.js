@@ -8,8 +8,6 @@ const stateToPropertyMapper = (state) => ({
   activetopic: state.topicReducer.activetopic,
   activelesson: state.lessonReducer.activelesson,
   activemodule: state.moduleReducer.activemodule,
-  lessonId: state.topicReducer.lessonId,
-  moduleId: state.lessonReducer.moduleId,
   course: state.courseReducer.course
 })
 

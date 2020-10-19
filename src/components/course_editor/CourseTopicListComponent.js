@@ -1,16 +1,16 @@
 import React from "react";
 import CourseTopicItemComponent from "./CourseTopicItemComponent";
 
-const CourseTopicListComponent = ({course, courseId, moduleId, lessonId, topics, activetopic, activelesson, activemodule, createTopic, deleteTopic, editTopic, updateTopic, saveTopic, selectTopic}) =>
+const CourseTopicListComponent = ({course, topics, activetopic, activelesson, activemodule, createTopic, deleteTopic, editTopic, updateTopic, saveTopic, selectTopic}) =>
     <div>
+        <h3>Selected Module: {activemodule.title}</h3>
+        <h3>Selected Lesson: {activelesson.title}</h3>
+        <h3>Selected Topic: {activetopic.title}</h3>
         <ul className="marg-below nav nav-pills wbdv-topic-pill-list d-none d-md-flex">
             {
                 topics.map((topic, index) =>
                     <CourseTopicItemComponent
                         course={course}
-                        courseId={courseId}
-                        moduleId={moduleId}
-                        lessonId={lessonId}
                         topic={topic}
                         activetopic={activetopic}
                         activelesson={activelesson}
@@ -24,7 +24,7 @@ const CourseTopicListComponent = ({course, courseId, moduleId, lessonId, topics,
                 )
             }
             <li className="nav-item wbdv-topic-add-btn"
-                onClick={() => createTopic(lessonId, {title: "New Topic"})}>
+                onClick={() => createTopic(activelesson._id, {title: "New Topic"})}>
                 <a className="nav-link" href="#">Add Topic</a>
             </li>
         </ul>

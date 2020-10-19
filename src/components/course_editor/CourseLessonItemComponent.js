@@ -1,12 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const CourseLessonItemComponent = ({course, courseId, moduleId, lesson, activelesson, activemodule, deleteLesson, updateLesson, editLesson, saveLesson, selectLesson}) =>
+const CourseLessonItemComponent = ({course, lesson, activelesson, activemodule, deleteLesson, updateLesson, editLesson, saveLesson, selectLesson}) =>
     <li key={lesson._id} className={`nav-item nav-link ${activelesson._id === lesson._id? "active" : ""}`}>
         {
             !lesson.editing &&
                 <span>
-                    <Link to={`/course_editor/${course._id}/modules/${moduleId}/lessons/${lesson._id}`}
+                    <Link to={`/course_editor/${course._id}/modules/${activemodule._id}/lessons/${lesson._id}`}
                         onClick={() => selectLesson(lesson)}>
                         <span className="text-primary" >{lesson.title}</span>
                     </Link>

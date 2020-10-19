@@ -1,14 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const CourseModuleItemComponent = ({course, module, activemodule, deleteModule, updateModule, editModule, saveModule, selectModule}) =>
+const CourseModuleItemComponent = ({course, module, activemodule, deleteModule, updateModule, editModule, saveModule, selectModule, selectLesson, selectTopic}) =>
     <div>
         <li key={module._id} className={`btn btn-block wbdv-module-item btn-align-veritcal ${activemodule._id === module._id? "active btn-secondary" : "btn-outline-dark"}`}>
             {
                 !module.editing &&
                     <span>
                         <Link to={`/course_editor/${course._id}/modules/${module._id}`}
-                            onClick={()=> selectModule(module)}
+                            onClick={() => {selectModule(module); selectLesson({}); selectTopic({})}}
                             className={`text-reset ${activemodule._id === module._id? "font-white" : "font-black"}`}>
                             {module.title}
                         </Link>

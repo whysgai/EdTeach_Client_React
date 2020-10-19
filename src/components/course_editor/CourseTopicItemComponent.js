@@ -1,12 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const CourseTopicItemComponent = ({course, moduleId, lessonId, topic, activetopic, activelesson, activemodule, deleteTopic, editTopic, updateTopic, saveTopic, selectTopic}) =>
+const CourseTopicItemComponent = ({course, topic, activetopic, activelesson, activemodule, deleteTopic, editTopic, updateTopic, saveTopic, selectTopic}) =>
     <li key={topic._id} className={`nav-item mr-1 nav-link wbdv-topic-pill ${activetopic._id === topic._id? "active" : ""}`}>
         {
             !topic.editing &&
                 <span>
-                    <Link to={`/course_editor/${course._id}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}
+                    <Link to={`/course_editor/${course._id}/modules/${activemodule._id}/lessons/${activelesson._id}/topics/${topic._id}`}
                         onClick={() => selectTopic(topic)}>
                         <span className={`${activetopic._id === topic._id? "text-white" : "text-primary"}`}>{topic.title}</span>
                     </Link>
@@ -42,7 +42,6 @@ const CourseTopicItemComponent = ({course, moduleId, lessonId, topic, activetopi
                     </div>
                 </div>
         }
-        {/*<a className="nav-link active wbdv-topic-pill" href="#">{topic.topicname}</a>*/}
     </li>
 
 

@@ -2,8 +2,9 @@ import {CREATE_LESSON, READ_LESSONS, UPDATE_LESSON, DELETE_LESSON, SELECT_LESSON
 
 const initialState = {
     lessons: [],
-    activelesson: {},
-    moduleId: ""
+    activelesson: {}
+    // ,
+    // moduleId: ""
 }
 
 const lessonReducer = (state = initialState, action = action) => {
@@ -18,8 +19,9 @@ const lessonReducer = (state = initialState, action = action) => {
         case READ_LESSONS:
             return {
                 ...state,
-                lessons: action.lessons,
-                moduleId: action.moduleId
+                lessons: action.lessons
+                // ,
+                // moduleId: action.moduleId
             }
         case UPDATE_LESSON:
             return {

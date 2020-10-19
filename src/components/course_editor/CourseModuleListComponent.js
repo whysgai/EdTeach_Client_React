@@ -1,9 +1,8 @@
 import React from "react";
 import CourseModuleItemComponent from "./CourseModuleItemComponent";
 
-const CourseModuleListComponent = ({course, modules, activemodule, createModule, deleteModule, updateModule, editModule, saveModule, selectModule}) =>
+const CourseModuleListComponent = ({course, modules, activemodule, createModule, deleteModule, updateModule, editModule, saveModule, selectModule, selectLesson, selectTopic}) =>
     <div className="border col-sm-4 wbdv-module-list d-none d-md-block">
-        <h3>Selected Module: {activemodule.title}</h3>
         <ul className="list-of-btns ">
             {
                 modules.map((module, index) =>
@@ -16,6 +15,8 @@ const CourseModuleListComponent = ({course, modules, activemodule, createModule,
                         editModule={editModule}
                         saveModule={saveModule}
                         selectModule={selectModule}
+                        selectLesson={selectLesson}
+                        selectTopic={selectTopic}
                     />
                 )
             }
