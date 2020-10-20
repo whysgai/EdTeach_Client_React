@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Link, Route}
-    from 'react-router-dom'
-//import './index.css';
+import {BrowserRouter, Link, Route} from 'react-router-dom'
 import "font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/styles.css"
@@ -10,7 +8,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import NavbarComponent from "./components/NavbarComponent";
 import LandingPageContainer from "./containers/LandingPageContainer";
-import CourseManagerContainer from "./containers/CourseManagerContainer";
+import CourseManagerTableContainer from "./containers/CourseManagerTableContainer"
+import CourseManagerCardsContainer from "./containers/CourseManagerCardsContainer";
 import CourseEditorContainer from "./containers/CourseEditorContainer";
 import moduleReducer from "./reducers/moduleReducer";
 import lessonReducer from "./reducers/lessonReducer";
@@ -41,8 +40,11 @@ ReactDOM.render(
                     <Route path='/' exact>
                         <LandingPageContainer/>
                     </Route>
-                    <Route path='/course_manager' exact>
-                        <CourseManagerContainer instructor="Will" term="Fall 2020"/>
+                    <Route path='/course_manager/table' exact>
+                        <CourseManagerTableContainer instructor="Will" term="Fall 2020"/>
+                    </Route>
+                    <Route path='/course_manager/grid' exact>
+                        <CourseManagerCardsContainer instructor="Will" term="Fall 2020"/>
                     </Route>
                     <Route path={[
                         '/course_editor/:courseId',
