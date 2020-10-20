@@ -1,4 +1,4 @@
-import {CREATE_MODULE, READ_MODULES_FOR_COURSE, READ_MODULE, DELETE_MODULE} from "../actions/courseModuleActions";
+import {CREATE_MODULE, READ_MODULES_FOR_COURSE, READ_MODULE, UPDATE_MODULE, DELETE_MODULE} from "../actions/courseModuleActions";
 
 const initialState = {
     modules: []

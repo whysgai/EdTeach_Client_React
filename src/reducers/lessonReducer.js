@@ -1,4 +1,4 @@
-import {CREATE_LESSON, READ_LESSONS_FOR_MODULE, UPDATE_LESSON, DELETE_LESSON} from "../actions/courseLessonActions";
+import {CREATE_LESSON, READ_LESSONS_FOR_MODULE, READ_LESSON, UPDATE_LESSON, DELETE_LESSON} from "../actions/courseLessonActions";
 
 const initialState = {
     lessons: [],
