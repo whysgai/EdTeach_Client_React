@@ -72,7 +72,7 @@ class CourseEditorContainer extends React.Component {
             <div>
                 <div className="row">
                     <h1 className="col-11">{this.props.course.title}</h1>
-                    <Link className="btn btn-outline-dark col-1 btn-align-veritcal" to='/course_manager'>
+                    <Link className="btn btn-outline-dark col-1 btn-align-veritcal" to='/course_manager/table'>
                         <i className="fa fa-times-circle-o" aria-hidden="true"/>
                     </Link>
                 </div>

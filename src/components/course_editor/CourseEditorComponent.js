@@ -10,7 +10,7 @@ const CourseEditorComponent = ({course, modules, lessons, topics, widgets}) =>
     <div>
         <div className="row">
             <h1 className="col-11">{course.title}</h1>
-            <Link className="btn btn-outline-dark col-1 btn-align-veritcal" to='/course_manager/table'>
+            <Link className="foo btn btn-outline-dark col-1 btn-align-veritcal" to={'/course_manager/table'} exact>
                 <i className="fa fa-times-circle-o" aria-hidden="true"/>
             </Link>
         </div>
