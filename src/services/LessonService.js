@@ -15,6 +15,10 @@ export const findLessonsForModule = (moduleId) =>
     fetch(`${moduleUrl}/${moduleId}/lessons`)
         .then(response => response.json())
 
+export const findLesson = (lessonId) =>
+    fetch(`${lessonUrl}/${lessonId}`)
+        .then(response => response.json)
+
 export const updateLesson = (lessonId, newLesson) =>
     fetch(`${lessonUrl}/${lessonId}`, {
         method: "PUT",

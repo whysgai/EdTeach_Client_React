@@ -1,7 +1,8 @@
 import LessonService from "../services/LessonService";
 
 export const CREATE_LESSON = "CREATE_LESSON"
-export const READ_LESSONS = "READ_LESSON"
+export const READ_LESSONS_FOR_COURSE = "READ_LESSONS_FOR_COURSE"
+export const READ_LESSON = "READ_LESSON"
 export const UPDATE_LESSON = "UPDATE_LESSON"
 export const DELETE_LESSON = "DELETE_LESSON"
 
