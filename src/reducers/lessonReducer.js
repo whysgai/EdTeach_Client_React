@@ -1,4 +1,4 @@
-import {CREATE_LESSON, READ_LESSONS_FOR_COURSE, UPDATE_LESSON, DELETE_LESSON} from "../actions/courseLessonActions";
+import {CREATE_LESSON, READ_LESSONS_FOR_MODULE, UPDATE_LESSON, DELETE_LESSON} from "../actions/courseLessonActions";
 
 const initialState = {
     lessons: [],
@@ -14,7 +14,7 @@ const lessonReducer = (state = initialState, action = action) => {
                     action.lesson
                 ]
             }
-        case READ_LESSONS_FOR_COURSE:
+        case READ_LESSONS_FOR_MODULE:
             return {
                 ...state,
                 lessons: action.lessons

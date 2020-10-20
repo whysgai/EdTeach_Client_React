@@ -1,4 +1,4 @@
-import {CREATE_TOPIC, READ_TOPICS, UPDATE_TOPIC, DELETE_TOPIC} from "../actions/courseTopicActions";
+import {CREATE_TOPIC, READ_TOPICS_FOR_LESSON, READ_TOPIC, UPDATE_TOPIC, DELETE_TOPIC} from "../actions/courseTopicActions";
 
 const initialState = {
     topics: [],
@@ -15,7 +15,7 @@ const topicReducer = (state = initialState, action = action) => {
                     action.topic
                 ]
             }
-        case READ_TOPICS:
+        case READ_TOPICS_FOR_LESSON:
             return {
                 ...state,
                 topics: action.topics
@@ -24,6 +24,12 @@ const topicReducer = (state = initialState, action = action) => {
                 ,
                 topicId: action.topicId
             }
+        case READ_TOPIC:
+            return {
+                ...state,
+                topic: state.topic
+            }
+
         case UPDATE_TOPIC:
             return {
                 ...state,

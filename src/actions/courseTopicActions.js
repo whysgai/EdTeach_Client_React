@@ -1,7 +1,8 @@
 import TopicService from "../services/TopicService";
 
 export const CREATE_TOPIC = "CREATE_TOPIC"
-export const READ_TOPICS = "READ_TOPICS"
+export const READ_TOPICS_FOR_LESSON = "READ_TOPICS_FOR_LESSON"
+export const READ_TOPIC = "READ_TOPIC"
 export const UPDATE_TOPIC = "UPDATE_TOPIC"
 export const DELETE_TOPIC = "DELETE_TOPIC"
 

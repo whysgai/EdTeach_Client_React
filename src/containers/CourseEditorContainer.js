@@ -11,8 +11,8 @@ import moduleService from "../services/ModuleService"
 import lessonService from "../services/LessonService"
 import topicService from "../services/TopicService"
 import {READ_MODULES_FOR_COURSE} from "../actions/courseModuleActions";
-import {READ_LESSONS_FOR_COURSE} from "../actions/courseLessonActions";
-import {READ_TOPICS} from "../actions/courseTopicActions";
+import {READ_LESSONS_FOR_MODULE} from "../actions/courseLessonActions";
+import {READ_TOPICS_FOR_LESSON} from "../actions/courseTopicActions";
 import CourseEditorMobileToolbarContainer from "./CourseEditorMobileToolbarContainer";
 
 class CourseEditorContainer extends React.Component {
@@ -126,13 +126,13 @@ const propertyToDispatchMapper = (dispatch) => ({
     //     }))
     findLessonsForModule: (moduleId) => lessonService.findLessonsForModule(moduleId)
         .then(lessons => dispatch({
-            type: READ_LESSONS_FOR_COURSE,
+            type: READ_LESSONS_FOR_MODULE,
             lessons: lessons,
             moduleId: moduleId
         })),
     findTopicsForLesson: (lessonId, topicId) => topicService.findTopicsForLesson(lessonId)
         .then(topics => dispatch({
-            type: READ_TOPICS,
+            type: READ_TOPICS_FOR_LESSON,
             topics: topics,
             lessonId: lessonId,
             topicId: topicId,
