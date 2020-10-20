@@ -1,6 +1,7 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-const CourseEditorMobileToolbarComponent = ({modules, lessons, topics}) =>
+const CourseEditorMobileToolbarComponent = ({course, modules, moduleId, lessons, lessonId, topics, topicId}) =>
     <form className="d-block d-md-none pad-clear col-md-8">
         <div className="row mb-2">
             <label htmlFor="module" className="d-none col-form-label">Module</label>
@@ -9,7 +10,11 @@ const CourseEditorMobileToolbarComponent = ({modules, lessons, topics}) =>
                     <option value="Modules">Modules</option>
                     {
                         modules.map((module, index) =>
-                            <option>{module.title}</option>
+                            <option>
+                                {/*<Link to={`/course_editor/${course._id}/modules/${module._id}`}>*/}
+                                    {module.title}
+                                {/*</Link>*/}
+                            </option>
                         )
                     }
                 </select>
@@ -30,7 +35,11 @@ const CourseEditorMobileToolbarComponent = ({modules, lessons, topics}) =>
                     <option value="Lessons">Lessons</option>
                     {
                         lessons.map((lesson, index) =>
-                            <option>{lesson.title}</option>
+                            <option>
+                                {/*<Link to={`/course_editor/${course._id}/modules/${moduleId}/lessons/${lesson._id}`}>*/}
+                                    {lesson.title}
+                                {/*</Link>*/}
+                            </option>
                         )
                     }
                 </select>
@@ -51,7 +60,11 @@ const CourseEditorMobileToolbarComponent = ({modules, lessons, topics}) =>
                     <option value="Topics">Topics</option>
                     {
                         topics.map((topic, index) =>
-                            <option>{topic.title}</option>
+                            <option>
+                                {/*<Link to={`/course_editor/${course._id}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}>*/}
+                                    {topic.title}
+                                {/*</Link>*/}
+                            </option>
                         )
                     }
                 </select>

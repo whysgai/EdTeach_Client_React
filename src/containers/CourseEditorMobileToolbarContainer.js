@@ -3,9 +3,13 @@ import {connect} from "react-redux";
 import CourseEditorMobileToolbarComponent from "../components/course_editor/CourseEditorMobileToolbarComponent";
 
 const stateToPropertyMapper = (state) => ({
+    course: state.courseReducer.course,
     modules: state.moduleReducer.modules,
+    moduleId: state.lessonReducer.moduleId,
     lessons: state.lessonReducer.lessons,
-    topics: state.topicReducer.topics
+    lessonId: state.topicReducer.lessonId,
+    topics: state.topicReducer.topics,
+    topicId: state.topicReducer.topicId
 })
 
 const propertyToDispatchMapper = (dispatch) => ({
