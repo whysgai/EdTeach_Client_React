@@ -76,15 +76,15 @@ class CourseEditorContainer extends React.Component {
                         <i className="fa fa-times-circle-o" aria-hidden="true"/>
                     </Link>
                 </div>
-                {/*<div className="editorMobileNav row">*/}
-                {/*    {*/}
-                {/*        <CourseEditorMobileNavComponent*/}
-                {/*            modules={this.props.modules}*/}
-                {/*            lessons={this.state.lessons}*/}
-                {/*            topics={this.state.topics}*/}
-                {/*        />*/}
-                {/*    }*/}
-                {/*</div>*/}
+                <div className="editorMobileNav row">
+                    {
+                        <CourseEditorMobileNavComponent
+                            modules={this.props.modules}
+                            lessons={this.state.lessons}
+                            topics={this.state.topics}
+                        />
+                    }
+                </div>
                 <div className="row">
                     <CourseModuleListContainer/>
                     <div className="col-md-8 border">
