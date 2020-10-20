@@ -2,7 +2,7 @@ import React from "react";
 import CourseEditorWidgetPaneComponent from "../components/course_editor/CourseEditorWidgetPaneComponent";
 import {Link} from "react-router-dom";
 import {findAllCourses, findCourseById} from "../services/CourseService";
-import CourseEditorMobileNavComponent from "../components/course_editor/CourseEditorMobileNavComponent";
+import CourseEditorMobileToolbarComponent from "../components/course_editor/CourseEditorMobileToolbarComponent";
 import CourseModuleListContainer from "./CourseModuleListContainer";
 import CourseLessonListContainer from "./CourseLessonListContainer";
 import CourseTopicListContainer from "./CourseTopicListContainer";
@@ -13,6 +13,7 @@ import topicService from "../services/TopicService"
 import {READ_MODULES} from "../actions/courseModuleActions";
 import {READ_LESSONS} from "../actions/courseLessonActions";
 import {READ_TOPICS} from "../actions/courseTopicActions";
+import CourseEditorMobileToolbarContainer from "./CourseEditorMobileToolbarContainer";
 
 class CourseEditorContainer extends React.Component {
 
@@ -77,13 +78,7 @@ class CourseEditorContainer extends React.Component {
                     </Link>
                 </div>
                 <div className="editorMobileNav row">
-                    {
-                        <CourseEditorMobileNavComponent
-                            modules={this.props.modules}
-                            lessons={this.state.lessons}
-                            topics={this.state.topics}
-                        />
-                    }
+                    <CourseEditorMobileToolbarContainer/>
                 </div>
                 <div className="row">
                     <CourseModuleListContainer/>

@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import CourseEditorMobileNavComponent from "./CourseEditorMobileNavComponent";
+import CourseEditorMobileToolbarComponent from "./CourseEditorMobileToolbarComponent";
 import CourseModuleListContainer from "../../containers/CourseModuleListContainer";
 import CourseLessonListContainer from "../../containers/CourseLessonListContainer";
 import CourseTopicListContainer from "../../containers/CourseTopicListContainer";
@@ -16,7 +16,7 @@ const CourseEditorComponent = ({course, modules, lessons, topics, widgets}) =>
         </div>
         <div className="editorMobileNav row">
             {
-                <CourseEditorMobileNavComponent
+                <CourseEditorMobileToolbarComponent
                     modules={modules}
                     lessons={lessons}
                     topics={topics}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const CourseEditorMobileNavComponent = ({modules, lessons, topics}) =>
+const CourseEditorMobileToolbarComponent = ({modules, lessons, topics}) =>
     <form className="d-block d-md-none pad-clear col-md-8">
         <div className="row mb-2">
             <label htmlFor="module" className="d-none col-form-label">Module</label>
@@ -9,7 +9,7 @@ const CourseEditorMobileNavComponent = ({modules, lessons, topics}) =>
                     <option value="Modules">Modules</option>
                     {
                         modules.map((module, index) =>
-                            <option>{module.modname}</option>
+                            <option>{module.title}</option>
                         )
                     }
                 </select>
@@ -30,7 +30,7 @@ const CourseEditorMobileNavComponent = ({modules, lessons, topics}) =>
                     <option value="Lessons">Lessons</option>
                     {
                         lessons.map((lesson, index) =>
-                            <option>{lesson.lessonname}</option>
+                            <option>{lesson.title}</option>
                         )
                     }
                 </select>
@@ -51,7 +51,7 @@ const CourseEditorMobileNavComponent = ({modules, lessons, topics}) =>
                     <option value="Topics">Topics</option>
                     {
                         topics.map((topic, index) =>
-                            <option>{topic.topicname}</option>
+                            <option>{topic.title}</option>
                         )
                     }
                 </select>
@@ -72,4 +72,4 @@ const CourseEditorMobileNavComponent = ({modules, lessons, topics}) =>
         </div>
     </form>
 
-export default CourseEditorMobileNavComponent;
+export default CourseEditorMobileToolbarComponent;
