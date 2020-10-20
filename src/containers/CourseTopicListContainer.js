@@ -1,13 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import CourseTopicListComponent from "../components/course_editor/CourseTopicListComponent";
-import {createTopic, deleteTopic, editTopic, updateTopic, saveTopic, selectTopic} from "../actions/courseTopicActions";
+import {createTopic, deleteTopic, editTopic, updateTopic, saveTopic} from "../actions/courseTopicActions";
 
 const stateToPropertyMapper = (state) => ({
   topics: state.topicReducer.topics,
-  activetopic: state.topicReducer.activetopic,
-  activelesson: state.lessonReducer.activelesson,
-  activemodule: state.moduleReducer.activemodule,
   topicId: state.topicReducer.topicId,
   lessonId: state.topicReducer.lessonId,
   moduleId: state.lessonReducer.moduleId,
@@ -20,7 +17,6 @@ const propertyToDispatchMapper = (dispatch) => ({
   updateTopic: (topic) => updateTopic(dispatch, topic),
   editTopic: (topic) => editTopic(dispatch, topic),
   saveTopic: (topic) => saveTopic(dispatch, topic),
-  selectTopic: (topic) => selectTopic(dispatch, topic)
 })
 
 export default connect(

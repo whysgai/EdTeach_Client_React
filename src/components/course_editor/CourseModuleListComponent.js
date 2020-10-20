@@ -1,14 +1,13 @@
 import React from "react";
 import CourseModuleItemComponent from "./CourseModuleItemComponent";
 
-const CourseModuleListComponent = ({course, modules, activemodule, moduleId, createModule, deleteModule, updateModule, editModule, saveModule, selectModule, selectLesson, selectTopic}) =>
+const CourseModuleListComponent = ({course, modules, moduleId, createModule, deleteModule, updateModule, editModule, saveModule, selectModule, selectLesson}) =>
     <div className="border col-sm-4 wbdv-module-list d-none d-md-block">
         <ul className="list-of-btns ">
             {
                 modules.map((module, index) =>
                     <CourseModuleItemComponent
                         course={course}
-                        activemodule={activemodule}
                         moduleId={moduleId}
                         module={module}
                         deleteModule={deleteModule}
@@ -17,7 +16,6 @@ const CourseModuleListComponent = ({course, modules, activemodule, moduleId, cre
                         saveModule={saveModule}
                         selectModule={selectModule}
                         selectLesson={selectLesson}
-                        selectTopic={selectTopic}
                     />
                 )
             }

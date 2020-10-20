@@ -4,7 +4,6 @@ export const CREATE_LESSON = "CREATE_LESSON"
 export const READ_LESSONS = "READ_LESSON"
 export const UPDATE_LESSON = "UPDATE_LESSON"
 export const DELETE_LESSON = "DELETE_LESSON"
-export const SELECT_LESSON = "SELECT_LESSON"
 
 export const createLesson = (dispatch, moduleId, newLesson) =>
     LessonService.createLessonForModule(moduleId, newLesson)
@@ -30,6 +29,3 @@ export const updateLesson = (dispatch, lesson) =>
 export const deleteLesson = (dispatch, lesson) =>
     LessonService.deleteLesson(lesson._id)
         .then(status => dispatch({type: DELETE_LESSON, lesson}))
-
-export const selectLesson = (dispatch, lesson) =>
-    dispatch({type: SELECT_LESSON, lesson})

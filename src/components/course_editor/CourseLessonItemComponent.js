@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const CourseLessonItemComponent = ({course, lesson, activelesson, lessonId, activemodule, moduleId, deleteLesson, updateLesson, editLesson, saveLesson, selectLesson}) =>
+const CourseLessonItemComponent = ({course, lesson, lessonId, moduleId, deleteLesson, updateLesson, editLesson, saveLesson}) =>
     <li key={lesson._id} className={`nav-item nav-link ${lessonId === lesson._id? "active" : ""}`}>
         {
             !lesson.editing &&

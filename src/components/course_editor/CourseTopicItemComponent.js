@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const CourseTopicItemComponent = ({course, topic, activetopic, topicId, activelesson, lessonId, activemodule, moduleId, deleteTopic, editTopic, updateTopic, saveTopic, selectTopic}) =>
+const CourseTopicItemComponent = ({course, topic, topicId, lessonId, moduleId, deleteTopic, editTopic, updateTopic, saveTopic,}) =>
     <li key={topic._id} className={`nav-item mr-1 nav-link wbdv-topic-pill ${topicId === topic._id? "active" : ""}`}>
         {
             !topic.editing &&

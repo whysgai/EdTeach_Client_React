@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const CourseModuleItemComponent = ({course, module, activemodule, moduleId, deleteModule, updateModule, editModule, saveModule, selectModule, selectLesson, selectTopic}) =>
+const CourseModuleItemComponent = ({course, module, moduleId, deleteModule, updateModule, editModule, saveModule}) =>
     <div>
         <li key={module._id} className={`btn btn-block wbdv-module-item btn-align-veritcal ${moduleId === module._id? "active btn-secondary" : "btn-outline-dark"}`}>
             {
