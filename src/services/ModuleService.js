@@ -15,6 +15,10 @@ export const findModulesForCourse = (courseId) =>
     fetch(`${courseUrl}/${courseId}/modules`)
         .then(response => response.json())
 
+export const findModule = (moduleId) =>
+    fetch(`${moduleUrl}/${moduleId}`)
+        .then(response => response.json())
+
 export const updateModule = (moduleId, newModule) =>
     fetch(`${moduleUrl}/${moduleId}`, {
         method: "PUT",

@@ -1,7 +1,8 @@
 import ModuleService from "../services/ModuleService";
 
 export const CREATE_MODULE = "CREATE_MODULE"
-export const READ_MODULES = "READ_MODULE"
+export const READ_MODULES_FOR_COURSE = "READ_MODULES_FOR_COURSE"
+export const READ_MODULE = "READ_MODULE"
 export const UPDATE_MODULE = "UPDATE_MODULE"
 export const DELETE_MODULE = "DELETE_MODULE"
 

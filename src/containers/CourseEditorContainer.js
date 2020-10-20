@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 import moduleService from "../services/ModuleService"
 import lessonService from "../services/LessonService"
 import topicService from "../services/TopicService"
-import {READ_MODULES} from "../actions/courseModuleActions";
+import {READ_MODULES_FOR_COURSE} from "../actions/courseModuleActions";
 import {READ_LESSONS} from "../actions/courseLessonActions";
 import {READ_TOPICS} from "../actions/courseTopicActions";
 import CourseEditorMobileToolbarContainer from "./CourseEditorMobileToolbarContainer";
@@ -111,7 +111,7 @@ const propertyToDispatchMapper = (dispatch) => ({
         })),
     findModulesForCourse: (courseId) => moduleService.findModulesForCourse(courseId)
         .then(modules => dispatch({
-            type: READ_MODULES,
+            type: READ_MODULES_FOR_COURSE,
             modules: modules
         })),
     // findLessonsForModule: (moduleId) => lessonService.findLessonsForModule(moduleId)
