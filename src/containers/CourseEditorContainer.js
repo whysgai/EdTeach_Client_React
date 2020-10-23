@@ -14,6 +14,7 @@ import {READ_MODULES_FOR_COURSE} from "../actions/courseModuleActions";
 import {READ_LESSONS_FOR_MODULE} from "../actions/courseLessonActions";
 import {READ_TOPICS_FOR_LESSON} from "../actions/courseTopicActions";
 import CourseEditorMobileToolbarContainer from "./CourseEditorMobileToolbarContainer";
+import CourseWidgetListContainer from "./CourseWidgetListContainer";
 
 class CourseEditorContainer extends React.Component {
 
@@ -85,11 +86,12 @@ class CourseEditorContainer extends React.Component {
                     <div className="col-md-8 border">
                         <CourseLessonListContainer/>
                         <CourseTopicListContainer/>
-                        {
-                            <CourseEditorWidgetPaneComponent
-                                widgets={this.state.widgets}
-                            />
-                        }
+                        <CourseWidgetListContainer/>
+                        {/*{*/}
+                        {/*    <CourseEditorWidgetPaneComponent*/}
+                        {/*        widgets={this.state.widgets}*/}
+                        {/*    />*/}
+                        {/*}*/}
                     </div>
                 </div>
             </div>

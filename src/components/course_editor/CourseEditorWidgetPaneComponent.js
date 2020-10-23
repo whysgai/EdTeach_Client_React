@@ -1,7 +1,7 @@
 import React from "react";
 import CourseEditorWidgetComponent from "./CourseEditorWidgetComponent";
 
-const CourseEditorWidgetPaneComponent = ({widgets}) =>
+const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, widgets, createWidget, editWidget, saveWidget, updateWidget, deleteWidget}) =>
     <div>
         <button className="btn btn-primary btn-block btn-align-veritcal">Add Widget</button>
         {
