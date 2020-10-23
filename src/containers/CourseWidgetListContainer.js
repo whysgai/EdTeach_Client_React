@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux"
-import {createWidget, deleteWidget, editWidget, updateWidget} from "../actions/courseWidgetActions"
+import {createWidget, deleteWidget, editWidget, saveWidget, updateWidget} from "../actions/courseWidgetActions"
 import CourseEditorWidgetPaneComponent from "../components/course_editor/CourseEditorWidgetPaneComponent";
 
 const stateToPropertyMapper = (state) => ({

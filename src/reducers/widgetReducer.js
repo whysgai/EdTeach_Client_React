@@ -2,7 +2,8 @@ import {CREATE_WIDGET, READ_WIDGETS_FOR_LESSON, READ_WIDGET, UPDATE_WIDGET, DELE
 
 const initialState = {
     widgets: [
-        {_id: 'Local1', title: 'LocalStaticWidget', type: 'HEADING'}
+        {_id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING'},
+        {_id: 'Local2', title: 'LocalStaticWidgetTwo', type: 'PARAGRAPH'}
     ],
     topicId: ""
 }

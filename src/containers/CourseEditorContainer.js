@@ -21,7 +21,7 @@ class CourseEditorContainer extends React.Component {
     constructor() {
         super();
         this.state = {
-            widgets: [{widgetname: 'Widget 1', widgettype: 'Heading'}],
+            // widgets: [{widgetname: 'Widget 1', widgettype: 'Heading'}],
         }
     }
 

@@ -8,7 +8,7 @@ export const DELETE_WIDGET = "DELETE_WIDGET"
 
 export const createWidget = (dispatch, topicId, newWidget) =>
     WidgetService.createWidgetForTopic(topicId, newWidget)
-        .then(actualWidget => dispath({type: CREATE_WIDGET, widget: actualWidget}))
+        .then(actualWidget => dispatch({type: CREATE_WIDGET, widget: actualWidget}))
 
 export const editWidget = (dispatch, widget) =>
     WidgetService.updateWidget(widget._id, {...widget, editing: true})
@@ -18,7 +18,7 @@ export const saveWidget = (dispatch, widget) =>
     WidgetService.updateWidget(widget._id, {...widget, editing: false})
         .then(status => dispatch({type: UPDATE_WIDGET, widget: {...widget, editing: false}}))
 
-export const updateWidget = (dispath, widget) =>
+export const updateWidget = (dispatch, widget) =>
     dispatch({type: UPDATE_WIDGET, widget})
 
 export const deleteWidget = (dispatch, widget) =>

@@ -7,7 +7,7 @@ const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, w
         {
             widgets.map((widget, index) =>
                 <CourseEditorWidgetComponent
-                    widget={{widget}}
+                    widget={widget}
                 />
             )
         }
