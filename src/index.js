@@ -11,12 +11,13 @@ import LandingPageContainer from "./containers/LandingPageContainer";
 import CourseManagerTableContainer from "./containers/CourseManagerTableContainer"
 import CourseManagerCardsContainer from "./containers/CourseManagerCardsContainer";
 import CourseEditorContainer from "./containers/CourseEditorContainer";
+import courseReducer from "./reducers/courseReducer";
 import moduleReducer from "./reducers/moduleReducer";
 import lessonReducer from "./reducers/lessonReducer";
 import topicReducer from "./reducers/topicReducer";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
-import courseReducer from "./reducers/courseReducer";
+
 
 const reducers = combineReducers({
     // Shorthand
