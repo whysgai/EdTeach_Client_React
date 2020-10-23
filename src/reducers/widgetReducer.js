@@ -1,7 +1,9 @@
 import {CREATE_WIDGET, READ_WIDGETS_FOR_LESSON, READ_WIDGET, UPDATE_WIDGET, DELETE_WIDGET} from "../actions/courseWidgetActions"
 
 const initialState = {
-    widgets: [],
+    widgets: [
+        {_id: 'Local1', title: 'LocalStaticWidget', type: 'HEADING'}
+    ],
     topicId: ""
 }
 
