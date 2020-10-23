@@ -41,3 +41,5 @@ const widgetReducer = (state = initialState, action = action) => {
             return state;
     }
 }
+
+export default widgetReducer;
