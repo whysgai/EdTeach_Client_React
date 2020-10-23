@@ -1,7 +1,7 @@
 import WidgetService from "../services/WidgetService";
 
 export const CREATE_WIDGET = "CREATE_WIDGET"
-export const READ_WIDGETS_FOR_LESSON = "READ_WIDGETS_FOR_LESSON"
+export const READ_WIDGETS_FOR_TOPIC = "READ_WIDGETS_FOR_TOPIC"
 export const READ_WIDGET = "READ_WIDGET"
 export const UPDATE_WIDGET = "UPDATE_WIDGET"
 export const DELETE_WIDGET = "DELETE_WIDGET"

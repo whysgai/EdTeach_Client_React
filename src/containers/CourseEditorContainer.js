@@ -10,9 +10,11 @@ import {connect} from "react-redux";
 import moduleService from "../services/ModuleService"
 import lessonService from "../services/LessonService"
 import topicService from "../services/TopicService"
+import widgetService from "../services/WidgetService"
 import {READ_MODULES_FOR_COURSE} from "../actions/courseModuleActions";
 import {READ_LESSONS_FOR_MODULE} from "../actions/courseLessonActions";
 import {READ_TOPICS_FOR_LESSON} from "../actions/courseTopicActions";
+import {READ_WIDGETS_FOR_TOPIC} from "../actions/courseWidgetActions"
 import CourseEditorMobileToolbarContainer from "./CourseEditorMobileToolbarContainer";
 import CourseWidgetListContainer from "./CourseWidgetListContainer";
 
@@ -36,10 +38,11 @@ class CourseEditorContainer extends React.Component {
             this.props.findLessonsForModule(moduleId)
             if(lessonId) {
                 this.props.findTopicsForLesson(topicId, lessonId)
+                if(topicId) {
+                    this.props.findWidgetsForTopic(topicId)
+                }
             }
         }
-
-
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -53,8 +56,10 @@ class CourseEditorContainer extends React.Component {
             if(lessonId) {
                 if(topicId) {
                     this.props.findTopicsForLesson(lessonId, topicId)
+                    this.props.findWidgetsForTopic(topicId)
                 } else {
                     this.props.findTopicsForLesson(lessonId, "a")
+                    this.props.findWidgetsForTopic("e")
                 }
             } else {
                 this.props.findTopicsForLesson("b", "c")
@@ -63,9 +68,13 @@ class CourseEditorContainer extends React.Component {
             (topicId !== prevProps.match.params.topicId)) {
             if(topicId) {
                 this.props.findTopicsForLesson(lessonId, topicId)
+                this.props.findWidgetsForTopic(topicId)
             } else {
                 this.props.findTopicsForLesson(lessonId, "d")
+                this.props.findWidgetsForTopic("f")
             }
+        } else if (topicId && topicId !== prevProps.match.params.topicId) {
+            this.props.findWidgetsForTopic(topicId)
         }
     }
 
@@ -140,8 +149,13 @@ const propertyToDispatchMapper = (dispatch) => ({
             topicId: topicId,
             // moduleId: moduleId,
             // courseId: courseId
+        })),
+    findWidgetsForTopic: (topicId) => widgetService.findWidgetsForTopic(topicId)
+        .then(widgets => dispatch({
+            type: READ_WIDGETS_FOR_TOPIC,
+            widgets: widgets,
+            topicId: topicId
         }))
-        .then(status => console.log("Called find topics for lesson : Topic ID: " + topicId + " Lesson ID: " + lessonId))
 })
 
 export default connect
