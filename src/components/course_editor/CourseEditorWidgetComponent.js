@@ -9,11 +9,11 @@ const CourseEditorWidgetComponent = ({widget}) =>
             <div className="border border-med pad-a-little">
                 <CourseEditorWidgetControlComponent widget={widget}/>
                 {
-                    widget.type === 'HEADING' &
+                    widget.type === 'HEADING' &&
                         <CourseEditorHeadingWidgetComponent widget={widget}/>
                 }
                 {
-                    widget.type === 'PARAGRAPH' &
+                    widget.type === 'PARAGRAPH' &&
                         <CourseEditorParagraphWidgetComponent widget={widget}/>
                 }
 
