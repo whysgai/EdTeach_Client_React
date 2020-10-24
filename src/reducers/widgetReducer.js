@@ -1,4 +1,4 @@
-import {CREATE_WIDGET, READ_WIDGETS_FOR_LESSON, READ_WIDGET, UPDATE_WIDGET, DELETE_WIDGET} from "../actions/courseWidgetActions"
+import {CREATE_WIDGET, READ_WIDGETS_FOR_TOPIC, READ_WIDGET, UPDATE_WIDGET, DELETE_WIDGET} from "../actions/courseWidgetActions"
 
 const initialState = {
     widgets: [
@@ -17,7 +17,9 @@ const widgetReducer = (state = initialState, action = action) => {
                     action.widget
                 ]
             }
-        case READ_WIDGETS_FOR_LESSON:
+        case READ_WIDGETS_FOR_TOPIC:
+            console.log("Read widgets for topic REDUCER")
+            console.log(action.widgets)
             return {
                 ...state,
                 widgets: action.widgets,

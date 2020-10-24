@@ -1,4 +1,4 @@
-const widgetUrl = "http://localhost:8080/api/"
+const widgetUrl = "http://localhost:8080/api"
 
 export const createWidgetForTopic = (topicId, newWidget) =>
     fetch(`${widgetUrl}/topics/${topicId}/widgets`, {
@@ -9,9 +9,17 @@ export const createWidgetForTopic = (topicId, newWidget) =>
         }
     })
 
+// export const findWidgetsForTopic = async (topicId) => {
+//     const response = await fetch(`${widgetUrl}/topics/${topicId}/widgets`)
+//     console.log("Read widgets for topic SERVICE")
+//     console.log(response)
+//     return await response.json()
+// }
+
 export const findWidgetsForTopic = (topicId) =>
     fetch(`${widgetUrl}/topics/${topicId}/widgets`)
         .then(response => response.json())
+        // .then(status => console.log("Read widgets for topic SERVICE"))
 
 export const findWidget = (widgetId) =>
     fetch(`${widgetUrl}/widgets/${widgetId}`)

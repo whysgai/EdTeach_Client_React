@@ -39,6 +39,7 @@ class CourseEditorContainer extends React.Component {
             if(lessonId) {
                 this.props.findTopicsForLesson(topicId, lessonId)
                 if(topicId) {
+                    console.log("Read widgets for topic EDITOR DID MOUNT")
                     this.props.findWidgetsForTopic(topicId)
                 }
             }
@@ -56,9 +57,11 @@ class CourseEditorContainer extends React.Component {
             if(lessonId) {
                 if(topicId) {
                     this.props.findTopicsForLesson(lessonId, topicId)
+                    console.log("Read widgets for topic EDITOR DID UPDATE !")
                     this.props.findWidgetsForTopic(topicId)
                 } else {
                     this.props.findTopicsForLesson(lessonId, "a")
+                    console.log("Read widgets for topic EDITOR DID UPDATE @")
                     this.props.findWidgetsForTopic("e")
                 }
             } else {
@@ -68,12 +71,15 @@ class CourseEditorContainer extends React.Component {
             (topicId !== prevProps.match.params.topicId)) {
             if(topicId) {
                 this.props.findTopicsForLesson(lessonId, topicId)
+                console.log("Read widgets for topic EDITOR DID UPDATE #")
                 this.props.findWidgetsForTopic(topicId)
             } else {
                 this.props.findTopicsForLesson(lessonId, "d")
+                console.log("Read widgets for topic EDITOR DID UPDATE $")
                 this.props.findWidgetsForTopic("f")
             }
         } else if (topicId && topicId !== prevProps.match.params.topicId) {
+            console.log("Read widgets for topic EDITOR DID UPDATE %")
             this.props.findWidgetsForTopic(topicId)
         }
     }
@@ -156,6 +162,7 @@ const propertyToDispatchMapper = (dispatch) => ({
             widgets: widgets,
             topicId: topicId
         }))
+        .then(console.log("Read widgets for topic EDITOR AFTER REDUCER"))
 })
 
 export default connect
