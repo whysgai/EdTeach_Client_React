@@ -4,6 +4,7 @@ export const CREATE_WIDGET = "CREATE_WIDGET"
 export const READ_WIDGETS_FOR_TOPIC = "READ_WIDGETS_FOR_TOPIC"
 export const READ_WIDGET = "READ_WIDGET"
 export const UPDATE_WIDGET = "UPDATE_WIDGET"
+export const UPDATE_WIDGETS_FOR_TOPIC = "UPDATE_WIDGETS_FOR_TOPIC"
 export const DELETE_WIDGET = "DELETE_WIDGET"
 
 export const createWidget = (dispatch, topicId, newWidget) =>
@@ -29,6 +30,10 @@ export const saveLocalWidget = (dispatch, widget) =>
 
 export const updateLocalWidget = (dispatch, widget) =>
     dispatch({type: UPDATE_WIDGET, widget})
+
+export const saveAllWidgets = (dispatch, topicId, widgets) =>
+    WidgetService.updateWidgetsForTopic(topicId, widgets)
+        .then(status => dispatch({type: UPDATE_WIDGETS_FOR_TOPIC, widgets}))
 
 export const deleteWidget = (dispatch, widget) =>
     WidgetService.deleteWidget(widget._id)

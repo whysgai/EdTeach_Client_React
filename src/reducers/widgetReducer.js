@@ -1,4 +1,11 @@
-import {CREATE_WIDGET, READ_WIDGETS_FOR_TOPIC, READ_WIDGET, UPDATE_WIDGET, DELETE_WIDGET} from "../actions/courseWidgetActions"
+import {
+    CREATE_WIDGET,
+    READ_WIDGETS_FOR_TOPIC,
+    READ_WIDGET,
+    UPDATE_WIDGET,
+    DELETE_WIDGET,
+    UPDATE_WIDGETS_FOR_TOPIC
+} from "../actions/courseWidgetActions"
 
 const initialState = {
     widgets: [
@@ -36,6 +43,11 @@ const widgetReducer = (state = initialState, action = action) => {
                 widgets: state.widgets.map(
                     widget => widget._id === action.widget._id ? action.widget : widget
                 )
+            }
+        case UPDATE_WIDGETS_FOR_TOPIC:
+            return {
+                ...state,
+                widgets: action.widgets
             }
         case DELETE_WIDGET:
             return {

@@ -35,6 +35,16 @@ export const updateWidget = (widgetId, newWidget) =>
     })
         .then(response => response.json())
 
+export const updateWidgetsForTopic = (topicId, widgets) =>
+    fetch(`${widgetUrl}/topics/${topicId}/widgets`, {
+        method: "PUT",
+        body: JSON.stringify(widgets),
+        headers: {
+            "content-type": "application/json"
+        }
+    })
+        .then(response => response.json())
+
 export const deleteWidget = (widgetId) =>
     fetch(`${widgetUrl}/widgets/${widgetId}`, {
         method: "DELETE"
@@ -44,6 +54,8 @@ export const deleteWidget = (widgetId) =>
 export default {
     createWidgetForTopic,
     findWidgetsForTopic,
+    findWidget,
+    updateWidgetsForTopic,
     updateWidget,
     deleteWidget,
 }
