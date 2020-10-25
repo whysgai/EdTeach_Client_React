@@ -9,7 +9,7 @@ import {
 
 const initialState = {
     widgets: [
-        {_id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING'},
+        {_id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING', text: 'Lorem ipsum'},
         {_id: 'Local2', title: 'LocalStaticWidgetTwo', type: 'PARAGRAPH'}
     ],
     topicId: ""

@@ -26,8 +26,6 @@ const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, update
                             updateLocalWidget={updateLocalWidget}
                         />
                 }
-
-
             </div>
         </form>
 
