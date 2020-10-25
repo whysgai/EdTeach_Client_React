@@ -17,7 +17,7 @@ const CourseEditorWidgetControlComponent = ({widget, deleteLocalWidget, updateLo
             <button type="button" className="btn btn-outline-dark ml-2">
                 <i className="fa fa-arrow-down" aria-hidden="true"/>
             </button>
-            <button type="button" className="btn btn-outline-danger ml-2">
+            <button type="button" className="btn btn-outline-danger ml-2" onClick={() => deleteLocalWidget(widget)}>
                 <i className="fa fa-trash" aria-hidden="true"/>
             </button>
         </div>
