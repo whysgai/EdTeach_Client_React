@@ -61,7 +61,7 @@ const widgetReducer = (state = initialState, action = action) => {
                 ...state,
                 preview: action.preview
             }
-        case POSITION_UP_WIDGET:
+        case ADVANCE_WIDGET:
             let moveWidget = action.widget
             let precedeWidget = {}
             for (let widget in state.widgets) {
