@@ -1,7 +1,7 @@
 import React from "react";
 import CourseEditorWidgetComponent from "./CourseEditorWidgetComponent";
 
-const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, widgets, createWidget, createLocalWidget, editWidget, editLocalWidget, saveWidget, saveLocalWidget, updateLocalWidget, deleteWidget, deleteLocalWidget}) =>
+const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, widgets, createWidget, createLocalWidget, editWidget, editLocalWidget, saveWidget, saveLocalWidget, updateLocalWidget, deleteWidget, deleteLocalWidget, saveAllWidgets}) =>
     <div>
         <button className="btn btn-primary btn-block btn-align-veritcal"
                 onClick={() => createLocalWidget(topicId,
@@ -24,7 +24,8 @@ const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, w
             )
         }
         <div className="float-right">
-            <button className="btn btn-success">Save</button>
+            <button className="btn btn-success"
+                    onClick={() => saveAllWidgets(topicId, widgets)}>Save</button>
             <button className="btn btn-outline-info ml-1">Preview</button>
         </div>
     </div>
