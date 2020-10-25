@@ -21,7 +21,7 @@ const stateToPropertyMapper = (state) => ({
 const propertyToDispatchMapper = (dispatch) => ({
     createWidget: (topicId, newWidget) => createWidget(dispatch, topicId, newWidget),
     createLocalWidget: (topicId, newWidget) => createLocalWidget(dispatch, topicId, newWidget),
-    updateWidget: (widget) => updateLocalWidget(dispatch, widget),
+    updateLocalWidget: (widget) => updateLocalWidget(dispatch, widget),
     editWidget: (widget) => editWidget(dispatch, widget),
     editLocalWidget: (widget) => editLocalWidget(dispatch, widget),
     saveWidget: (widget) => saveWidget(dispatch, widget),

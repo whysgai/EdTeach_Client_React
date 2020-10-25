@@ -1,6 +1,6 @@
 import React from "react";
 
-const CourseEditorParagraphWidgetComponent = ({widget}) =>
+const CourseEditorParagraphWidgetComponent = ({widget, updateLocalWidget}) =>
 
     <div className="">
         <div className="form-group">

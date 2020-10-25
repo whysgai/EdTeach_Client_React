@@ -1,13 +1,17 @@
 import React from "react";
 import CourseEditorWidgetComponent from "./CourseEditorWidgetComponent";
 
-const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, widgets, createWidget, editWidget, saveWidget, updateWidget, deleteWidget}) =>
+const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, widgets, createWidget, createLocalWidget, editWidget, editLocalWidget, saveWidget, saveLocalWidget, updateLocalWidget, deleteWidget, deleteLocalWidget}) =>
     <div>
         <button className="btn btn-primary btn-block btn-align-veritcal">Add Widget</button>
         {
             widgets.map((widget, index) =>
                 <CourseEditorWidgetComponent
                     widget={widget}
+                    topicId={topicId}
+                    createLocalWidget={createLocalWidget}
+                    updateLocalWidget={updateLocalWidget}
+                    deleteLocalWidget={deleteLocalWidget}
                     key={widget._id}
                 />
             )

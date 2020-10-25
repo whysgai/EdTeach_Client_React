@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const CourseEditorHeadingWidgetComponent = ({widget}) =>
+const CourseEditorHeadingWidgetComponent = ({widget, updateLocalWidget}) =>
     <div className="">
         <div className="form-group">
             <input className="form-control wbdv-field wbdv-username" id="username"

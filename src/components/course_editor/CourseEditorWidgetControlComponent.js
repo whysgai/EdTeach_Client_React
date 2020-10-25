@@ -1,6 +1,6 @@
 import React from "react";
 
-const CourseEditorWidgetControlComponent = ({widget}) =>
+const CourseEditorWidgetControlComponent = ({widget, deleteLocalWidget, updateLocalWidget}) =>
     <div className="form-inline form-group">
         <select className="form-control col-6 col-sm-7 col-lg-8 col-xl-9" defaultValue={widget.type}>
             <option value="HEADING">Heading</option>
