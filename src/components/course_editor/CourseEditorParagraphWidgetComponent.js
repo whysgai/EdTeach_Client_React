@@ -4,11 +4,13 @@ const CourseEditorParagraphWidgetComponent = ({widget, updateLocalWidget}) =>
 
     <div className="">
         <div className="form-group">
-            <input className="form-control wbdv-field" type="text"
-                   placeholder="Widget name"/>
+            <label htmlFor="widget-title" className="d-none">Widget Title</label>
+            <input className="form-control wbdv-field" id="widget-name"
+                   placeholder={widget.title}/>
         </div>
         <div className="form-group">
-            <textarea className="form-control wbdv-field"
+            <label htmlFor="paragraph-text" className="d-none">Paragraph Text</label>
+            <textarea className="form-control wbdv-field" id="paragraph-text"
                    placeholder="Text"/>
         </div>
         <div className="form-group">

@@ -13,7 +13,7 @@ const widgetReducer = (state = initialState, action = action) => {
         case CREATE_WIDGET:
             return {
                 ...state,
-                widgets: [...state.widget,
+                widgets: [...state.widgets,
                     action.widget
                 ]
             }
