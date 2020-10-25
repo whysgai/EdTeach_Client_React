@@ -16,6 +16,7 @@ const CourseTopicListComponent = ({course, topics, activetopic, topicId, activel
                         updateTopic={updateTopic}
                         editTopic={editTopic}
                         saveTopic={saveTopic}
+                        key={topic._id}
                     />
                 )
             }

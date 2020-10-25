@@ -15,6 +15,7 @@ const CourseLessonListComponent = ({course, lessons, lessonId, moduleId, createL
                         updateLesson={updateLesson}
                         editLesson={editLesson}
                         saveLesson={saveLesson}
+                        key={lesson._id}
                     />
                 )
             }

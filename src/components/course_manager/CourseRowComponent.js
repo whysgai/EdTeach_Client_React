@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 
 // className = {`$courseBeingEditied === course? "table-active" : ""}`}
 const CourseRowComponent = ({course, deleteCourse, renameCourse, courseBeingRenamed, captureRenamedCourseTitle, saveRenamedCourseTitle}) =>
-
     <tr className={`course wbdv-row wbdv-course d-table-row ${courseBeingRenamed === course? "bg-primary" : ""}`}>
         <td className="wbdv-row wbdv-icon d-table-cell">
             <i className={`fa fa-lg fa-file-text-o ${courseBeingRenamed === course? "text-white" : "text-info"}`} aria-hidden="true"></i>

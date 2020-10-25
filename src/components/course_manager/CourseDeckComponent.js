@@ -21,6 +21,7 @@ const CourseDeckComponent = ({courses, deleteCourse, renameCourse, courseBeingRe
                         captureRenamedCourseTitle={captureRenamedCourseTitle}
                         saveRenamedCourseTitle={saveRenamedCourseTitle}
                         editorShowHide={editorShowHide}
+                        key = {course._id}
                     />
                 )
             }

@@ -2,12 +2,13 @@ import React from "react";
 
 const CourseEditorWidgetControlComponent = ({widget}) =>
     <div className="form-inline form-group">
-        <h2><em>{widget.type}</em></h2>
-        <select className="form-control col-6 col-sm-7 col-lg-8 col-xl-9">
-            <option>Heading</option>
-            <option>Paragraph</option>
-            <option>Widget Type 3</option>
-            <option>Widget Type 4</option>
+        <select className="form-control col-6 col-sm-7 col-lg-8 col-xl-9" defaultValue={widget.type}>
+            <option value="HEADING">Heading</option>
+            <option value="PARAGRAPH">Paragraph</option>
+            <option value="LIST">List</option>
+            <option value="IMAGE">Image</option>
+            <option value="HYPERLINK">Hyperlink</option>
+            <option value="VIDEO">Video</option>
         </select>
         <div className="col-6 col-sm-5 col-lg-4 col-xl-3">
             <button type="button" className="btn btn-outline-dark">
