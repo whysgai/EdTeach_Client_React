@@ -10,8 +10,8 @@ import {
 
 const initialState = {
     widgets: [
-        {_id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING'},
-        {_id: 'Local2', title: 'LocalStaticWidgetTwo', type: 'PARAGRAPH'}
+        {_id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING', widgetOrder: 1},
+        {_id: 'Local2', title: 'LocalStaticWidgetTwo', type: 'PARAGRAPH', widgetOrder: 1}
     ],
     topicId: "",
     preview: false
@@ -61,6 +61,27 @@ const widgetReducer = (state = initialState, action = action) => {
                 ...state,
                 preview: action.preview
             }
+        case POSITION_UP_WIDGET:
+            let moveWidget = action.widget
+            let precedeWidget = {}
+            for (let widget in state.widgets) {
+                if (widget.widgetOrder === --moveWidget.widgetOrder) {
+                    precedeWidget = widget
+                }
+            }
+            moveWidget.widgetOrder = --moveWidget.widgetOrder
+            precedeWidget.widgetOrder = ++precedeWidget.widgetOrder
+            return {
+                ...state,
+                widgets: state.widgets.map(
+                    widget =>
+                        widget._id === moveWidget._id ?
+                            moveWidget : widget
+                        || widget._id === precedeWidget._id ?
+                            precedeWidget : widget
+                )
+            }
+
         default:
             return state;
     }
