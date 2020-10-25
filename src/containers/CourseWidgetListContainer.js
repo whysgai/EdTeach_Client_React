@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux"
-import {createWidget, deleteWidget, editWidget, saveWidget, updateWidget} from "../actions/courseWidgetActions"
+import {createWidget, deleteWidget, editWidget, saveWidget, updateLocalWidget} from "../actions/courseWidgetActions"
 import CourseEditorWidgetPaneComponent from "../components/course_editor/CourseEditorWidgetPaneComponent";
 
 const stateToPropertyMapper = (state) => ({
@@ -15,7 +15,7 @@ const stateToPropertyMapper = (state) => ({
 const propertyToDispatchMapper = (dispatch) => ({
     deleteWidget: (widget) => deleteWidget(dispatch, widget),
     createWidget: (topicId, newWidget) => createWidget(dispatch, topicId, newWidget),
-    updateWidget: (widget) => updateWidget(dispatch, widget),
+    updateWidget: (widget) => updateLocalWidget(dispatch, widget),
     editWidget: (widget) => editWidget(dispatch, widget),
     saveWidget: (widget) => saveWidget(dispatch, widget)
 })
