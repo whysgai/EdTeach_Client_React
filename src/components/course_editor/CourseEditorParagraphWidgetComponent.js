@@ -1,10 +1,10 @@
 import React from "react";
 
-const CourseEditorParagraphWidgetComponent = ({widget, updateLocalWidget}) =>
+const CourseEditorParagraphWidgetComponent = ({widget, updateLocalWidget, preview}) =>
 
     <div className="">
         {
-            !widget.preview &&
+            !preview &&
                 <div>
                     <div className="form-group">
                         <label htmlFor="widget-title" className="d-none">Widget Title</label>

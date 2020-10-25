@@ -3,7 +3,7 @@ import CourseEditorWidgetControlComponent from "./CourseEditorWidgetControlCompo
 import CourseEditorParagraphWidgetComponent from "./CourseEditorParagraphWidgetComponent";
 import CourseEditorHeadingWidgetComponent from "./CourseEditorHeadingWidgetComponent";
 
-const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, updateLocalWidget, deleteLocalWidget}) =>
+const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, updateLocalWidget, deleteLocalWidget, preview}) =>
         <form>
             <h3>{widget.title} - <em>{widget.type}</em></h3>
             <div className="border border-med pad-a-little">
@@ -17,6 +17,7 @@ const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, update
                         <CourseEditorHeadingWidgetComponent
                             widget={widget}
                             updateLocalWidget={updateLocalWidget}
+                            preview={preview}
                         />
                 }
                 {
@@ -24,6 +25,7 @@ const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, update
                         <CourseEditorParagraphWidgetComponent
                             widget={widget}
                             updateLocalWidget={updateLocalWidget}
+                            preview={preview}
                         />
                 }
 

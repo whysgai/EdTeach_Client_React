@@ -6,6 +6,7 @@ export const READ_WIDGET = "READ_WIDGET"
 export const UPDATE_WIDGET = "UPDATE_WIDGET"
 export const UPDATE_WIDGETS_FOR_TOPIC = "UPDATE_WIDGETS_FOR_TOPIC"
 export const DELETE_WIDGET = "DELETE_WIDGET"
+export const PREVIEW_WIDGETS = "PREVIEW_WIDGETS"
 
 export const createWidget = (dispatch, topicId, newWidget) =>
     WidgetService.createWidgetForTopic(topicId, newWidget)
@@ -41,3 +42,6 @@ export const deleteWidget = (dispatch, widget) =>
 
 export const deleteLocalWidget = (dispatch, widget) =>
     dispatch({type: DELETE_WIDGET, widget})
+
+export const previewWidgets = (dispatch, preview) =>
+    dispatch({type: PREVIEW_WIDGETS, preview})

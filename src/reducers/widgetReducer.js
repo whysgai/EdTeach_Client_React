@@ -4,7 +4,8 @@ import {
     READ_WIDGET,
     UPDATE_WIDGET,
     DELETE_WIDGET,
-    UPDATE_WIDGETS_FOR_TOPIC
+    UPDATE_WIDGETS_FOR_TOPIC,
+    PREVIEW_WIDGETS
 } from "../actions/courseWidgetActions"
 
 const initialState = {
@@ -12,7 +13,8 @@ const initialState = {
         {_id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING'},
         {_id: 'Local2', title: 'LocalStaticWidgetTwo', type: 'PARAGRAPH'}
     ],
-    topicId: ""
+    topicId: "",
+    preview: false
 }
 
 const widgetReducer = (state = initialState, action = action) => {
@@ -53,6 +55,11 @@ const widgetReducer = (state = initialState, action = action) => {
             return {
                 ...state,
                 widgets: state.widgets.filter(widget => widget !== action.widget)
+            }
+        case PREVIEW_WIDGETS:
+            return {
+                ...state,
+                preview: action.preview
             }
         default:
             return state;

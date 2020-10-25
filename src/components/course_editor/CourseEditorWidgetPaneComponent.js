@@ -1,7 +1,7 @@
 import React from "react";
 import CourseEditorWidgetComponent from "./CourseEditorWidgetComponent";
 
-const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, widgets, createWidget, createLocalWidget, editWidget, editLocalWidget, saveWidget, saveLocalWidget, updateLocalWidget, deleteWidget, deleteLocalWidget, saveAllWidgets}) =>
+const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, widgets, createWidget, createLocalWidget, editWidget, editLocalWidget, saveWidget, saveLocalWidget, updateLocalWidget, deleteWidget, deleteLocalWidget, saveAllWidgets, previewWidgets, preview}) =>
     <div>
         <button className="btn btn-primary btn-block btn-align-veritcal"
                 onClick={() => createLocalWidget(topicId,
@@ -19,6 +19,7 @@ const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, w
                     createLocalWidget={createLocalWidget}
                     updateLocalWidget={updateLocalWidget}
                     deleteLocalWidget={deleteLocalWidget}
+                    preview={preview}
                     key={widget._id}
                 />
             )
@@ -26,7 +27,21 @@ const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, w
         <div className="float-right">
             <button className="btn btn-success"
                     onClick={() => saveAllWidgets(topicId, widgets)}>Save</button>
-            <button className="btn btn-outline-info ml-1">Preview</button>
+            {
+                preview &&
+                    <button className="btn btn-outline-info ml-1"
+                            onClick={() => previewWidgets(false)}>
+                        Preview
+                    </button>
+            }
+            {
+                !preview &&
+                    <button className="btn btn-info ml-1"
+                            onClick={() => previewWidgets(true)}>
+                        Preview
+                    </button>
+            }
+
         </div>
     </div>
 
