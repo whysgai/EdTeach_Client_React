@@ -10,7 +10,8 @@ const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, w
                         type: "PARAGRAPH",
                         topicId: topicId,
                     })}>
-            Add Widget</button>
+            Add Widget
+        </button>
         {
             widgets.map((widget, index) =>
                 <CourseEditorWidgetComponent

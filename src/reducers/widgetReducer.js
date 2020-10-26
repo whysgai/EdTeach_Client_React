@@ -10,7 +10,7 @@ import {
 
 const initialState = {
     widgets: [
-        {_id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING'},
+        {_id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING', text: 'Lorem ipsum'},
         {_id: 'Local2', title: 'LocalStaticWidgetTwo', type: 'PARAGRAPH'}
     ],
     topicId: "",
@@ -43,7 +43,8 @@ const widgetReducer = (state = initialState, action = action) => {
             return {
                 ...state,
                 widgets: state.widgets.map(
-                    widget => widget._id === action.widget._id ? action.widget : widget
+                    // widget => widget._id === action.widget._id ? action.widget : widget
+                    widget => widget.id === action.widget.id ? action.widget : widget
                 )
             }
         case UPDATE_WIDGETS_FOR_TOPIC:
