@@ -9,6 +9,7 @@ const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, w
                         title: "NewWidget",
                         type: "PARAGRAPH",
                         topicId: topicId,
+                        widgetOrder: (widgets[widgets.length - 1].widgetOrder + 1)
                     })}>
             Add Widget
         </button>
