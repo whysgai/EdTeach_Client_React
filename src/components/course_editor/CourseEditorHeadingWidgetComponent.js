@@ -16,7 +16,7 @@ const CourseEditorHeadingWidgetComponent = ({widget, updateLocalWidget}) =>
         </div>
         <div className="form-group">
             <select className="form-control"
-                    defaultValue={widget.heading ? widget.heading : "H1"}
+                    defaultValue={widget.heading ? widget.text : "H1"}
                     onChange={(event) => updateLocalWidget({
                         ...widget,
                         heading: event.target.value
