@@ -5,6 +5,7 @@ import {
     UPDATE_WIDGET,
     DELETE_WIDGET,
     UPDATE_WIDGETS_FOR_TOPIC,
+    ADVANCE_WIDGET,
     PREVIEW_WIDGETS
 } from "../actions/courseWidgetActions"
 
@@ -63,21 +64,47 @@ const widgetReducer = (state = initialState, action = action) => {
             }
         case ADVANCE_WIDGET:
             let moveWidget = action.widget
+            console.log("Moving widget at spot " + moveWidget.widgetOrder)
+            console.log(state.widgets)
+            let x = moveWidget.widgetOrder
             let precedeWidget = {}
-            for (let widget in state.widgets) {
-                if (widget.widgetOrder === --moveWidget.widgetOrder) {
+            // let widget = {}
+            for (let w in state.widgets) {
+                let widget = state.widgets[w]
+                console.log(widget)
+                // console.log(widget.id)
+                if (widget.id !== moveWidget.id) {
+                    console.log("Widget " + widget.title + " is in position " + widget.widgetOrder)
+                }
+                if (widget.id !== moveWidget.id && widget.widgetOrder === (moveWidget.widgetOrder - 1)) {
+                    console.log("Widget " + widget.title + " is in position " + widget.widgetOrder)
                     precedeWidget = widget
                 }
             }
+            console.log("Found widget at spot " + precedeWidget.widgetOrder)
             moveWidget.widgetOrder = --moveWidget.widgetOrder
+            console.log("Primary moved up to spot " + moveWidget.widgetOrder)
             precedeWidget.widgetOrder = ++precedeWidget.widgetOrder
+            console.log("Secondary moved down to spot " + precedeWidget.widgetOrder)
+            // let rtn = {
+            //     ...state,
+            //     widgets: state.widgets.map(
+            //         widget =>
+            //             widget._id === moveWidget._id ?
+            //                 moveWidget : widget
+            //             || widget._id === precedeWidget._id ?
+            //                 precedeWidget : widget
+            //     )
+            // }
+            // console.log(state.widgets)
+            // return rtn
             return {
                 ...state,
                 widgets: state.widgets.map(
                     widget =>
                         widget._id === moveWidget._id ?
                             moveWidget : widget
-                        || widget._id === precedeWidget._id ?
+                            || widget._id === precedeWidget._id ?
                             precedeWidget : widget
                 )
             }
