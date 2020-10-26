@@ -4,7 +4,7 @@ import React from "react";
 const CourseEditorHeadingWidgetComponent = ({widget, updateLocalWidget}) =>
     <div className="">
         <div className="form-group">
-            <label for="widget-title" className="d-none">Widget Title</label>
+            <label htmlFor="widget-title" className="d-none">Widget Title</label>
             <input className="form-control wbdv-field" id="widget-name"
                    placeholder="Widget title"
                    value={widget.title}
@@ -15,7 +15,12 @@ const CourseEditorHeadingWidgetComponent = ({widget, updateLocalWidget}) =>
             />
         </div>
         <div className="form-group">
-            <select className="form-control" defaultValue={widget.heading}>
+            <select className="form-control"
+                    defaultValue={widget.heading ? widget.heading : "H1"}
+                    onChange={(event) => updateLocalWidget({
+                        ...widget,
+                        heading: event.target.value
+                    })}>
                 <option value="H1">Heading 1</option>
                 <option value="H2">Heading 2</option>
                 <option value="H3">Heading 3</option>
@@ -32,7 +37,6 @@ const CourseEditorHeadingWidgetComponent = ({widget, updateLocalWidget}) =>
                        ...widget,
                        text: event.target.value
                    })}
-
             />
         </div>
         <div className="form-group">
