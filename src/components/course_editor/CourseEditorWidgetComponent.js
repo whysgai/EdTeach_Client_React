@@ -9,6 +9,7 @@ const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, update
             <div className="border border-med pad-a-little">
                 <CourseEditorWidgetControlComponent
                     widget={widget}
+                    preview={preview}
                     updateLocalWidget={updateLocalWidget}
                     deleteLocalWidget={deleteLocalWidget}
                     sortWidgets={sortWidgets}
