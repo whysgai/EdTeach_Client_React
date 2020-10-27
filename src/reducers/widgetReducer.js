@@ -11,8 +11,8 @@ import {
 
 const initialState = {
     widgets: [
-        {_id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING', widgetOrder: 1},
-        {_id: 'Local2', title: 'LocalStaticWidgetTwo', type: 'PARAGRAPH', widgetOrder: 1}
+        {id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING', widgetOrder: 1},
+        {id: 'Local2', title: 'LocalStaticWidgetTwo', type: 'PARAGRAPH', widgetOrder: 1}
     ],
     topicId: "",
     preview: false
@@ -94,8 +94,16 @@ const widgetReducer = (state = initialState, action = action) => {
                     widget =>
                     {
                         if (widget.id === moveWidget.id) {
+                            console.log("Replacing")
+                            console.log(widget)
+                            console.log("... with ...")
+                            console.log(moveWidget)
                             widget = moveWidget
                         } else if (widget.id === precedeWidget.id) {
+                            console.log("Replacing")
+                            console.log(widget)
+                            console.log("... with ...")
+                            console.log(precedeWidget)
                             widget = precedeWidget
                         }
                     }
@@ -105,9 +113,9 @@ const widgetReducer = (state = initialState, action = action) => {
             //     ...state,
             //     widgets: state.widgets.map(
             //         widget =>
-            //             widget._id === moveWidget._id ?
+            //             widget.id === moveWidget.id ?
             //                 moveWidget : widget
-            //             || widget._id === precedeWidget._id ?
+            //             || widget.id === precedeWidget.id ?
             //                 precedeWidget : widget
             //     )
             // }

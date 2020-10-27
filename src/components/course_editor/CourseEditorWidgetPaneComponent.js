@@ -23,7 +23,7 @@ const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, w
                     deleteLocalWidget={deleteLocalWidget}
                     advanceWidget={advanceWidget}
                     preview={preview}
-                    key={widget._id}
+                    key={widget.id}
                 />
             )
         }
