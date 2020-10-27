@@ -7,7 +7,7 @@ import {
     saveWidget, saveLocalWidget,
     updateLocalWidget, saveAllWidgets,
     deleteWidget, deleteLocalWidget,
-    advanceWidget,
+    advanceWidget, regressWidget,
     sortWidgets, previewWidgets
 } from "../actions/courseWidgetActions"
 import CourseEditorWidgetPaneComponent from "../components/course_editor/CourseEditorWidgetPaneComponent";
@@ -33,6 +33,7 @@ const propertyToDispatchMapper = (dispatch) => ({
     deleteWidget: (widget) => deleteWidget(dispatch, widget),
     deleteLocalWidget: (widget) => deleteLocalWidget(dispatch, widget),
     advanceWidget: (widget) => advanceWidget(dispatch, widget),
+    regressWidget: (widget) => regressWidget(dispatch, widget),
     sortWidgets: () => sortWidgets(dispatch),
     previewWidgets: (preview) => previewWidgets(dispatch, preview)
 })

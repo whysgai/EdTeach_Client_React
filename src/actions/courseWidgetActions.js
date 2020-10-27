@@ -9,6 +9,7 @@ export const DELETE_WIDGET = "DELETE_WIDGET"
 export const PREVIEW_WIDGETS = "PREVIEW_WIDGETS"
 export const SORT_WIDGETS = "SORT_WIDGETS"
 export const ADVANCE_WIDGET = "ADVANCE_WIDGET"
+export const REGRESS_WIDGET = "REGRESS_WIDGET"
 
 export const createWidget = (dispatch, topicId, newWidget) =>
     WidgetService.createWidgetForTopic(topicId, newWidget)
@@ -53,3 +54,6 @@ export const sortWidgets = (dispatch) =>
 
 export const advanceWidget = (dispatch, widget) =>
     dispatch({type: ADVANCE_WIDGET, widget})
+
+export const regressWidget = (dispatch, widget) =>
+    dispatch({type: REGRESS_WIDGET, widget})

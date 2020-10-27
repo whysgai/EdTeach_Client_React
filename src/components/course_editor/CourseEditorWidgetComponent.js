@@ -3,7 +3,7 @@ import CourseEditorWidgetControlComponent from "./CourseEditorWidgetControlCompo
 import CourseEditorParagraphWidgetComponent from "./CourseEditorParagraphWidgetComponent";
 import CourseEditorHeadingWidgetComponent from "./CourseEditorHeadingWidgetComponent";
 
-const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, updateLocalWidget, deleteLocalWidget, preview, sortWidgets, advanceWidget}) =>
+const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, updateLocalWidget, deleteLocalWidget, preview, sortWidgets, advanceWidget, regressWidget}) =>
         <form>
             <h3>{widget.title} - <em>{widget.type}</em></h3>
             <div className="border border-med pad-a-little">
@@ -13,6 +13,7 @@ const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, update
                     deleteLocalWidget={deleteLocalWidget}
                     sortWidgets={sortWidgets}
                     advanceWidget={advanceWidget}
+                    regressWidget={regressWidget}
                 />
                 {
                     widget.type === 'HEADING' &&
