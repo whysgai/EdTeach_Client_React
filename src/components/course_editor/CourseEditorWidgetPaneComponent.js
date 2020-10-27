@@ -25,6 +25,7 @@ const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, w
                     advanceWidget={advanceWidget}
                     regressWidget={regressWidget}
                     preview={preview}
+                    lastWidget={widgets.length - 1}
                     key={widget.id}
                 />
             )
