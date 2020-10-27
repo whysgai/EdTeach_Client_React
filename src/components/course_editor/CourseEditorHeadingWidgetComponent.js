@@ -19,7 +19,7 @@ const CourseEditorHeadingWidgetComponent = ({widget, updateLocalWidget, preview}
                     </div>
                     <div className="form-group">
                         <select className="form-control"
-                                defaultValue={widget.heading ? widget.text : "h1"}
+                                defaultValue={widget.heading ? widget.heading : "h1"}
                                 onChange={(event) => updateLocalWidget({
                                     ...widget,
                                     heading: event.target.value
@@ -29,6 +29,7 @@ const CourseEditorHeadingWidgetComponent = ({widget, updateLocalWidget, preview}
                             <option value="h3">Heading 3</option>
                             <option value="h4">Heading 4</option>
                             <option value="h5">Heading 5</option>
+                            <option value="h6">Heading 6</option>
                         </select>
                     </div>
                     <div className="form-group">
