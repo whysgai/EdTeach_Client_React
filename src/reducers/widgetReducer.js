@@ -5,6 +5,7 @@ import {
     UPDATE_WIDGET,
     DELETE_WIDGET,
     UPDATE_WIDGETS_FOR_TOPIC,
+    SORT_WIDGETS,
     ADVANCE_WIDGET,
     PREVIEW_WIDGETS
 } from "../actions/courseWidgetActions"
@@ -62,6 +63,14 @@ const widgetReducer = (state = initialState, action = action) => {
             return {
                 ...state,
                 preview: action.preview
+            }
+        case SORT_WIDGETS:
+            console.log("Sorting widgets...")
+            return {
+                ...state,
+                widgets: state.widgets.sort(
+                    (a, b) => a.widgetOrder - b.widgetOrder
+                )
             }
         case ADVANCE_WIDGET:
             let moveWidget = action.widget

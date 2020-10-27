@@ -1,6 +1,6 @@
 import React from "react";
 
-const CourseEditorWidgetControlComponent = ({widget, deleteLocalWidget, updateLocalWidget, advanceWidget}) =>
+const CourseEditorWidgetControlComponent = ({widget, deleteLocalWidget, updateLocalWidget, sortWidgets, advanceWidget}) =>
     <div className="form-inline form-group">
         <select className="form-control col-6 col-sm-7 col-lg-8 col-xl-9" defaultValue={widget.type}>
             <option value="HEADING">Heading</option>
@@ -12,7 +12,10 @@ const CourseEditorWidgetControlComponent = ({widget, deleteLocalWidget, updateLo
         </select>
         <div className="col-6 col-sm-5 col-lg-4 col-xl-3">
             <button type="button" className="btn btn-outline-dark"
-                    onClick={() => advanceWidget(widget)}
+                    onClick={() => {
+                        advanceWidget(widget);
+                        sortWidgets()
+                    }}
             >
                 <i className="fa fa-arrow-up" aria-hidden="true"/>
             </button>

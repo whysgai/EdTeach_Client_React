@@ -7,6 +7,7 @@ export const UPDATE_WIDGET = "UPDATE_WIDGET"
 export const UPDATE_WIDGETS_FOR_TOPIC = "UPDATE_WIDGETS_FOR_TOPIC"
 export const DELETE_WIDGET = "DELETE_WIDGET"
 export const PREVIEW_WIDGETS = "PREVIEW_WIDGETS"
+export const SORT_WIDGETS = "SORT_WIDGETS"
 export const ADVANCE_WIDGET = "ADVANCE_WIDGET"
 
 export const createWidget = (dispatch, topicId, newWidget) =>
@@ -46,6 +47,9 @@ export const deleteLocalWidget = (dispatch, widget) =>
 
 export const previewWidgets = (dispatch, preview) =>
     dispatch({type: PREVIEW_WIDGETS, preview})
+
+export const sortWidgets = (dispatch) =>
+    dispatch({type: SORT_WIDGETS})
 
 export const advanceWidget = (dispatch, widget) =>
     dispatch({type: ADVANCE_WIDGET, widget})
