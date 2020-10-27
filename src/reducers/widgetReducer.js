@@ -96,15 +96,15 @@ const widgetReducer = (state = initialState, action = action) => {
                         if (widget.id === moveWidget.id) {
                             console.log("Replacing")
                             console.log(widget)
-                            console.log("... with ...")
+                            console.log("... with move widget...")
                             console.log(moveWidget)
-                            widget = moveWidget
+                            return moveWidget
                         } else if (widget.id === precedeWidget.id) {
                             console.log("Replacing")
                             console.log(widget)
-                            console.log("... with ...")
+                            console.log("... with precede widget...")
                             console.log(precedeWidget)
-                            widget = precedeWidget
+                            return precedeWidget
                         }
                     }
                 )
