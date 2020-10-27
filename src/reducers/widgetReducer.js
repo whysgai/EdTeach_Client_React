@@ -74,9 +74,9 @@ const widgetReducer = (state = initialState, action = action) => {
                 let widget = state.widgets[w]
                 console.log(widget)
                 // console.log(widget.id)
-                if (widget.id !== moveWidget.id) {
-                    console.log("Widget " + widget.title + " is in position " + widget.widgetOrder)
-                }
+                // if (widget.id !== moveWidget.id) {
+                //     console.log("Widget " + widget.title + " is in position " + widget.widgetOrder)
+                // }
                 if (widget.id !== moveWidget.id && widget.widgetOrder === (moveWidget.widgetOrder - 1)) {
                     console.log("Widget " + widget.title + " is in position " + widget.widgetOrder)
                     precedeWidget = widget
@@ -87,6 +87,20 @@ const widgetReducer = (state = initialState, action = action) => {
             console.log("Primary moved up to spot " + moveWidget.widgetOrder)
             precedeWidget.widgetOrder = ++precedeWidget.widgetOrder
             console.log("Secondary moved down to spot " + precedeWidget.widgetOrder)
+            console.log(state.widgets)
+            return {
+                ...state,
+                widgets: state.widgets.map(
+                    widget =>
+                    {
+                        if (widget.id === moveWidget.id) {
+                            widget = moveWidget
+                        } else if (widget.id === precedeWidget.id) {
+                            widget = precedeWidget
+                        }
+                    }
+                )
+            }
             // let rtn = {
             //     ...state,
             //     widgets: state.widgets.map(
@@ -99,16 +113,7 @@ const widgetReducer = (state = initialState, action = action) => {
             // }
             // console.log(state.widgets)
             // return rtn
-            return {
-                ...state,
-                widgets: state.widgets.map(
-                    widget =>
-                        widget._id === moveWidget._id ?
-                            moveWidget : widget
-                            || widget._id === precedeWidget._id ?
-                            precedeWidget : widget
-                )
-            }
+
 
         default:
             return state;
