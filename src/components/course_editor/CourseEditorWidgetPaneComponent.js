@@ -7,7 +7,8 @@ const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, w
                 onClick={() => createLocalWidget(topicId,
                     {
                         title: "NewWidget",
-                        type: "PARAGRAPH",
+                        type: "HEADING",
+                        heading: "h1",
                         topicId: topicId,
                         widgetOrder: (widgets[widgets.length - 1].widgetOrder + 1)
                     })}>
