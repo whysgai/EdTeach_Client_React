@@ -42,11 +42,11 @@ const CourseEditorHeadingWidgetComponent = ({widget, updateLocalWidget, preview}
                                })}
                         />
                     </div>
+                    <div className="form-group">
+                        <h4>Preview</h4>
+                    </div>
                 </div>
         }
-        <div className="form-group">
-            <h4>Preview</h4>
-        </div>
         <div className="form-group">
             <span className={widget.heading}>{!widget.text ? "Heading Text" : widget.text}</span>
         </div>

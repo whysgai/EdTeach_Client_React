@@ -29,10 +29,10 @@ const CourseEditorParagraphWidgetComponent = ({widget, updateLocalWidget, previe
                         />
                     </div>
                 </div>
+            <div className="form-group">
+                <h4>Preview</h4>
+            </div>
         }
-        <div className="form-group">
-            <h4>Preview</h4>
-        </div>
         <div className="form-group">
             <p>{!widget.text ? "Text..." : widget.text}</p>
         </div>
