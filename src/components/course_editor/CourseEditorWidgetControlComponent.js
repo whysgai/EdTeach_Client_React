@@ -5,7 +5,12 @@ const CourseEditorWidgetControlComponent = ({widget, deleteLocalWidget, preview,
         {
             !preview &&
                 <div className="form-inline form-group">
-                    <select className="form-control col-6 col-sm-7 col-lg-8 col-xl-9" defaultValue={widget.type}>
+                    <select className="form-control col-6 col-sm-7 col-lg-8 col-xl-9"
+                            defaultValue={widget.type ? widget.type : "HEADING"}
+                            onChange={(event) => updateLocalWidget({
+                                ...widget,
+                                type: event.target.value
+                            })}>
                         <option value="HEADING">Heading</option>
                         <option value="PARAGRAPH">Paragraph</option>
                         <option value="LIST">List</option>
