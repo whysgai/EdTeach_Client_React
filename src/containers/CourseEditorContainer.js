@@ -1,5 +1,5 @@
 import React from "react";
-import CourseEditorWidgetPaneComponent from "../components/course_editor/CourseEditorWidgetPaneComponent";
+import CourseEditorWidgetPaneComponent from "../components/course_widget/CourseEditorWidgetPaneComponent";
 import {Link} from "react-router-dom";
 import {findAllCourses, findCourseById} from "../services/CourseService";
 import CourseEditorMobileToolbarComponent from "../components/course_editor/CourseEditorMobileToolbarComponent";

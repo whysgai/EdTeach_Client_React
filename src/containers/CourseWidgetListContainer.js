@@ -9,7 +9,7 @@ import {
     advanceWidget, regressWidget,
     sortWidgets, previewWidgets
 } from "../actions/courseWidgetActions"
-import CourseEditorWidgetPaneComponent from "../components/course_editor/CourseEditorWidgetPaneComponent";
+import CourseEditorWidgetPaneComponent from "../components/course_widget/CourseEditorWidgetPaneComponent";
 
 const stateToPropertyMapper = (state) => ({
     widgets: state.widgetReducer.widgets,
