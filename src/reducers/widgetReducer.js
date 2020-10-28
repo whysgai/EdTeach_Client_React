@@ -13,8 +13,8 @@ import {
 
 const initialState = {
     widgets: [
-        {id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING', widgetOrder: 0},
-        {id: 'Local2', title: 'LocalStaticWidgetTwo', type: 'PARAGRAPH', widgetOrder: 1}
+        // {id: 'Local1', title: 'LocalStaticWidgetOne', type: 'HEADING', widgetOrder: 0},
+        // {id: 'Local2', title: 'LocalStaticWidgetTwo', type: 'PARAGRAPH', widgetOrder: 1}
     ],
     topicId: "",
     preview: false
