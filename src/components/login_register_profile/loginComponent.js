@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const loginComponent = () =>
     <div>
@@ -18,18 +19,16 @@ const loginComponent = () =>
                 </div>
             </div>
             <div className="form-group row">
-                <!--                    <label class="col-sm-2 col-form-label"></label>-->
                 <div className="col-sm-12">
-                    <!--<button class="btn btn-primary btn-block wbdv-login">Sign in</button>-->
-                    <a href="../course_manager/coursemanager.template.client.html"
-                       className="btn btn-primary btn-block wbdv-login">Log In</a>
+                    <Link to="/course_manager"
+                       className="btn btn-primary btn-block wbdv-login">Log In</Link>
                     <div className="row">
                         <div className="col-6">
-                            <a href="#" className="wbdv-link wbdv-forgot-password">Forgot Password?</a>
+                            <Link to="#" className="wbdv-link wbdv-forgot-password">Forgot Password?</Link>
                         </div>
                         <div className="col-6">
-                            <a href="../register/register.template.client.html"
-                               className="float-right wbdv-link wbdv-register">Register</a>
+                            <Link to="/register"
+                               className="float-right wbdv-link wbdv-register">Register</Link>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const profileComponent = () =>
     <div>
@@ -49,12 +50,10 @@ const profileComponent = () =>
             </div>
             <div className="form-group row">
                 <div className="col-sm-12">
-                    <!--<button class="btn btn-primary btn-block wbdv-button wbdv-update">Update</button>-->
-                    <a href="../profile/profile.template.client.html"
-                       className="btn btn-outline-success btn-block wbdv-button wbdv-update">Update</a>
-                    <!--<button class="btn btn-primary btn-block wbdv-button wbdv-logout">Logout</button>-->
-                    <a href="../index.html"
-                       className="btn btn-outline-danger btn-block wbdv-button wbdv-logout">Logout</a>
+                    <Link to="/profile"
+                       className="btn btn-outline-success btn-block wbdv-button wbdv-update">Update</Link>
+                    <Link to="/"
+                       className="btn btn-outline-danger btn-block wbdv-button wbdv-logout">Logout</Link>
                     <div className="row">
                         <div className="alertFld wbdv-message"></div>
                     </div>

@@ -61,9 +61,9 @@ ReactDOM.render(
                         '/course_editor/:courseId/modules/:moduleId/lessons/:lessonId',
                         '/course_editor/:courseId/modules/:moduleId/lessons/:lessonId/topics/:topicId',
                     ]} exact component={CourseEditorContainer}/>
-                    <Route path='/login' component={loginComponent()}/>
-                    <Route path='/register' component={registerUserComponent()}/>
-                    <Route path='/profile' component={profileComponent()}/>
+                    <Route path='/login' component={loginComponent}/>
+                    <Route path='/register' component={registerUserComponent}/>
+                    <Route path='/profile' component={profileComponent}/>
                 </div>
             </BrowserRouter>
         </div>
