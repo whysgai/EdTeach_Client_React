@@ -34,7 +34,7 @@ class LandingPageContainer extends React.Component {
                                 <h5 className="card-title">Register</h5>
                                 <p className="card-text">Create a new account--registering directs users to the profile
                                     page, also links to the login page</p>
-                                <Link href="/register"
+                                <Link to="/register"
                                    className="btn btn-primary">Register</Link>
                             </div>
                         </div>
