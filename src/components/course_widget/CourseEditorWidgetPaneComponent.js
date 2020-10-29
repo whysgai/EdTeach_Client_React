@@ -6,6 +6,7 @@ const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, w
         <button className="btn btn-primary btn-block btn-align-veritcal"
                 onClick={() => createLocalWidget(topicId,
                     {
+                        id: new Date().getTime(),
                         title: "NewWidget",
                         type: "HEADING",
                         heading: "h1",
