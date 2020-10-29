@@ -57,13 +57,13 @@ const widgetReducer = (state = initialState, action = action) => {
             }
         case DELETE_WIDGET:
             let widgetList = state.widgets.filter(widget => widget !== action.widget)
-            // widgetList = widgetList.sort(
-            //     (a, b) => a.widgetOrder - b.widgetOrder
-            // )
-            // let w = 0
-            // for (w in widgetList) {
-            //     widgetList[w].widgetOrder = w
-            // }
+            widgetList = widgetList.sort(
+                (a, b) => a.widgetOrder - b.widgetOrder
+            )
+            let w = 0
+            for (w in widgetList) {
+                widgetList[w].widgetOrder = w
+            }
             return {
                 ...state,
                 widgets: widgetList
@@ -76,7 +76,12 @@ const widgetReducer = (state = initialState, action = action) => {
         case SORT_WIDGETS:
             console.log("Sorting widgets...")
             console.log(state.widgets)
-            // return state
+            return {
+                ...state,
+                widgets: state.widgets.sort(
+                    (a, b) => a.widgetOrder - b.widgetOrder
+                )
+            }
         case ADVANCE_WIDGET:
             let moveWidgetUp = action.widget
             console.log("Moving widget at spot " + moveWidgetUp.widgetOrder)
