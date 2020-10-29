@@ -24,7 +24,7 @@ class LandingPageContainer extends React.Component {
                                 <h5 className="card-title">Log In</h5>
                                 <p className="card-text">Log in with an existing account--logging in takes users to the
                                     course manager page, also links to the register page</p>
-                                <a href="#" className="btn btn-primary">Log in</a>
+                                <Link to="/login" className="btn btn-primary">Log in</Link>
                             </div>
                         </div>
                     </div>
@@ -34,8 +34,8 @@ class LandingPageContainer extends React.Component {
                                 <h5 className="card-title">Register</h5>
                                 <p className="card-text">Create a new account--registering directs users to the profile
                                     page, also links to the login page</p>
-                                <a href="#"
-                                   className="btn btn-primary">Register</a>
+                                <Link to="/register"
+                                   className="btn btn-primary">Register</Link>
                             </div>
                         </div>
                     </div>
@@ -46,8 +46,8 @@ class LandingPageContainer extends React.Component {
                             <div className="card-body">
                                 <h5 className="card-title">Profile</h5>
                                 <p className="card-text">View and update your profile</p>
-                                <a href="#" className="btn btn-primary">See
-                                    profile</a>
+                                <Link to="/profile" className="btn btn-primary">See
+                                    profile</Link>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ class LandingPageContainer extends React.Component {
                                 <h5 className="card-title">User Administration</h5>
                                 <p className="card-text">View and update user profiles</p>
                                 <a href="#" className="btn btn-primary">View
-                                    profile</a>
+                                    profiles</a>
                             </div>
                         </div>
                     </div>

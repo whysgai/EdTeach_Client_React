@@ -4,7 +4,7 @@ import CourseEditorMobileToolbarComponent from "./CourseEditorMobileToolbarCompo
 import CourseModuleListContainer from "../../containers/CourseModuleListContainer";
 import CourseLessonListContainer from "../../containers/CourseLessonListContainer";
 import CourseTopicListContainer from "../../containers/CourseTopicListContainer";
-import CourseEditorWidgetPaneComponent from "./CourseEditorWidgetPaneComponent";
+import CourseEditorWidgetPaneComponent from "../course_widget/CourseEditorWidgetPaneComponent";
 
 const CourseEditorComponent = ({course, modules, lessons, topics, widgets}) =>
     <div>

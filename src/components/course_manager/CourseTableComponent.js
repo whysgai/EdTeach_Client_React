@@ -25,6 +25,7 @@ const CourseTableComponent = ({courses, deleteCourse, renameCourse, courseBeingR
                                 courseBeingRenamed={courseBeingRenamed}
                                 captureRenamedCourseTitle={captureRenamedCourseTitle}
                                 saveRenamedCourseTitle={saveRenamedCourseTitle}
+                                key={course._id}
                             />
                         )
                     }

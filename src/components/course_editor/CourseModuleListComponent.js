@@ -16,6 +16,7 @@ const CourseModuleListComponent = ({course, modules, moduleId, createModule, del
                         saveModule={saveModule}
                         selectModule={selectModule}
                         selectLesson={selectLesson}
+                        key={module._id}
                     />
                 )
             }

@@ -10,7 +10,7 @@ const CourseEditorMobileToolbarComponent = ({course, modules, moduleId, lessons,
                     <option value="Modules">Modules</option>
                     {
                         modules.map((module, index) =>
-                            <option>
+                            <option key={module._id}>
                                 {/*<Link to={`/course_editor/${course._id}/modules/${module._id}`}>*/}
                                     {module.title}
                                 {/*</Link>*/}
@@ -35,7 +35,7 @@ const CourseEditorMobileToolbarComponent = ({course, modules, moduleId, lessons,
                     <option value="Lessons">Lessons</option>
                     {
                         lessons.map((lesson, index) =>
-                            <option>
+                            <option key={lesson._id}>
                                 {/*<Link to={`/course_editor/${course._id}/modules/${moduleId}/lessons/${lesson._id}`}>*/}
                                     {lesson.title}
                                 {/*</Link>*/}
@@ -60,7 +60,7 @@ const CourseEditorMobileToolbarComponent = ({course, modules, moduleId, lessons,
                     <option value="Topics">Topics</option>
                     {
                         topics.map((topic, index) =>
-                            <option>
+                            <option key={topic._id}>
                                 {/*<Link to={`/course_editor/${course._id}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}>*/}
                                     {topic.title}
                                 {/*</Link>*/}
