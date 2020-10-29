@@ -56,9 +56,17 @@ const widgetReducer = (state = initialState, action = action) => {
                 widgets: action.widgets
             }
         case DELETE_WIDGET:
+            let widgetList = state.widgets.filter(widget => widget !== action.widget)
+            // widgetList = widgetList.sort(
+            //     (a, b) => a.widgetOrder - b.widgetOrder
+            // )
+            // let w = 0
+            // for (w in widgetList) {
+            //     widgetList[w].widgetOrder = w
+            // }
             return {
                 ...state,
-                widgets: state.widgets.filter(widget => widget !== action.widget)
+                widgets: widgetList
             }
         case PREVIEW_WIDGETS:
             return {
@@ -67,12 +75,8 @@ const widgetReducer = (state = initialState, action = action) => {
             }
         case SORT_WIDGETS:
             console.log("Sorting widgets...")
-            return {
-                ...state,
-                widgets: state.widgets.sort(
-                    (a, b) => a.widgetOrder - b.widgetOrder
-                )
-            }
+            console.log(state.widgets)
+            // return state
         case ADVANCE_WIDGET:
             let moveWidgetUp = action.widget
             console.log("Moving widget at spot " + moveWidgetUp.widgetOrder)
@@ -114,6 +118,8 @@ const widgetReducer = (state = initialState, action = action) => {
                             console.log("... with precede widget...")
                             console.log(precedeWidget)
                             return precedeWidget
+                        } else {
+                            return widget
                         }
                     }
                 )
@@ -172,6 +178,8 @@ const widgetReducer = (state = initialState, action = action) => {
                             console.log("... with succeed widget...")
                             console.log(suceedWidget)
                             return suceedWidget
+                        } else {
+                            return widget
                         }
                     }
                 )
