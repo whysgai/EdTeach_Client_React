@@ -5,7 +5,7 @@ import CourseEditorHeadingWidgetComponent from "./CourseEditorHeadingWidgetCompo
 
 const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, updateLocalWidget, deleteLocalWidget, preview, sortWidgets, advanceWidget, regressWidget, lastWidget}) =>
         <form>
-            {/*<h3>{widget.title} - <em>{widget.type}</em></h3>*/}
+            {/*<h3>{widget.title} - <em>{widget.type}</em> - {widget.widgetOrder}</h3>*/}
             <div className="border border-med pad-a-little">
                 <CourseEditorWidgetControlComponent
                     widget={widget}
