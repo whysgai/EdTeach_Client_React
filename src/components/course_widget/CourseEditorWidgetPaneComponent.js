@@ -11,7 +11,7 @@ const CourseEditorWidgetPaneComponent = ({course, topicId, lessonId, moduleId, w
                         type: "HEADING",
                         heading: "h1",
                         topicId: topicId,
-                        widgetOrder: (widgets[widgets.length - 1].widgetOrder + 1)
+                        widgetOrder: (widgets.length === 0 ? 0 : widgets[widgets.length - 1].widgetOrder + 1)
                     })}>
             Add Widget
         </button>
