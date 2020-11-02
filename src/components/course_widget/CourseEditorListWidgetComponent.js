@@ -61,7 +61,13 @@ const CourseEditorListWidgetComponent = ({widget, updateLocalWidget, preview}) =
                         }
                         {
                             widget.list === 'UL' &&
-                            <ul></ul>
+                            <ul>
+                                {
+                                    widget.text.split('\n').map((line, index) =>
+                                        <li>{line}</li>
+                                    )
+                                }
+                            </ul>
                         }
                     </div>
             }
