@@ -18,17 +18,14 @@ const CourseEditorListWidgetComponent = ({widget, updateLocalWidget, preview}) =
                 </div>
                 <div className="form-group">
                     <select className="form-control"
-                            defaultValue={widget.list ? widget.list : "h1"}
+                            defaultValue={widget.list ? widget.list : "NA"}
                             onChange={(event) => updateLocalWidget({
                                 ...widget,
                                 list: event.target.value
                             })}>
-                        <option value="h1">Heading 1</option>
-                        <option value="h2">Heading 2</option>
-                        <option value="h3">Heading 3</option>
-                        <option value="h4">Heading 4</option>
-                        <option value="h5">Heading 5</option>
-                        <option value="h6">Heading 6</option>
+                        <option value="NA">--Select a List Type--</option>
+                        <option value="OL">Ordered List</option>
+                        <option value="UL">Unordered List</option>
                     </select>
                 </div>
                 <div className="form-group">
@@ -50,7 +47,7 @@ const CourseEditorListWidgetComponent = ({widget, updateLocalWidget, preview}) =
         <div className="form-group">
             <p><pre>{!widget.text ? "Text..." : widget.text}</pre></p>
             {
-                widget.list === 'ordered' &&
+                widget.list === 'OL' &&
                     <ol>
                         {
                             widget.text.split('\n').map((line, index) =>
@@ -60,7 +57,7 @@ const CourseEditorListWidgetComponent = ({widget, updateLocalWidget, preview}) =
                     </ol>
             }
             {
-                widget.list === 'unordered' &&
+                widget.list === 'UL' &&
                     <ul></ul>
             }
         </div>
