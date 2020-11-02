@@ -1,6 +1,6 @@
 import React from "react";
 
-const CourseEditorListWidgetComponent = () =>
+const CourseEditorListWidgetComponent = ({widget, updateLocalWidget, preview}) =>
     <div className="">
         {
             !preview &&
@@ -18,10 +18,10 @@ const CourseEditorListWidgetComponent = () =>
                 </div>
                 <div className="form-group">
                     <select className="form-control"
-                            defaultValue={widget.heading ? widget.heading : "h1"}
+                            defaultValue={widget.list ? widget.list : "h1"}
                             onChange={(event) => updateLocalWidget({
                                 ...widget,
-                                heading: event.target.value
+                                list: event.target.value
                             })}>
                         <option value="h1">Heading 1</option>
                         <option value="h2">Heading 2</option>
@@ -33,8 +33,8 @@ const CourseEditorListWidgetComponent = () =>
                 </div>
                 <div className="form-group">
                     <label htmlFor="heading-text" className="d-none">Heading Text</label>
-                    <input className="form-control wbdv-field" id="heading-text"
-                           placeholder="Heading text"
+                    <input className="form-control wbdv-field" id="heading-text" type="textarea"
+                           placeholder="Enter one list item per line"
                            value={!widget.text ? "Text" : widget.text}
                            onChange={(event) => updateLocalWidget({
                                ...widget,
@@ -48,7 +48,21 @@ const CourseEditorListWidgetComponent = () =>
             </div>
         }
         <div className="form-group">
-            <span className={widget.heading ? widget.heading : "h1"}>{!widget.text ? "Heading Text" : widget.text}</span>
+            <p><pre>{!widget.text ? "Text..." : widget.text}</pre></p>
+            {
+                widget.list === 'ordered' &&
+                    <ol>
+                        {
+                            widget.text.split('\n').map((line, index) =>
+                                <li>{line}</li>
+                            )
+                        }
+                    </ol>
+            }
+            {
+                widget.list === 'unordered' &&
+                    <ul></ul>
+            }
         </div>
 
     </div>
