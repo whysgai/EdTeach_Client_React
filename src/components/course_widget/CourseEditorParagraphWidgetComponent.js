@@ -34,7 +34,7 @@ const CourseEditorParagraphWidgetComponent = ({widget, updateLocalWidget, previe
                 </div>
         }
         <div className="form-group">
-            <p>{!widget.text ? "Text..." : widget.text}</p>
+            <p><pre>{!widget.text ? "Text..." : widget.text}</pre></p>
         </div>
     </div>
 
