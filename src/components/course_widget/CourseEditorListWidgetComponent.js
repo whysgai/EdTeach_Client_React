@@ -29,14 +29,14 @@ const CourseEditorListWidgetComponent = ({widget, updateLocalWidget, preview}) =
                     </select>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="heading-text" className="d-none">Heading Text</label>
-                    <input className="form-control wbdv-field" id="heading-text" type="textarea"
-                           placeholder="Enter one list item per line"
-                           value={!widget.text ? "Text" : widget.text}
-                           onChange={(event) => updateLocalWidget({
-                               ...widget,
-                               text: event.target.value
-                           })}
+                    <label htmlFor="list-text" className="d-none">List Text</label>
+                    <textarea className="form-control wbdv-field" id="list-text"
+                              placeholder="Text"
+                              value={!widget.text ? "Text" : widget.text}
+                              onChange={(event) => updateLocalWidget({
+                                  ...widget,
+                                  text: event.target.value
+                              })}
                     />
                 </div>
                 <div className="form-group">
@@ -47,19 +47,25 @@ const CourseEditorListWidgetComponent = ({widget, updateLocalWidget, preview}) =
         <div className="form-group">
             <p><pre>{!widget.text ? "Text..." : widget.text}</pre></p>
             {
-                widget.list === 'OL' &&
-                    <ol>
+                widget.text &&
+                    <div>
                         {
-                            widget.text.split('\n').map((line, index) =>
-                                <li>{line}</li>
-                            )
+                            widget.list === 'OL' &&
+                                <ol>
+                                    {
+                                        widget.text.split('\n').map((line, index) =>
+                                            <li>{line}</li>
+                                        )
+                                    }
+                                </ol>
                         }
-                    </ol>
+                        {
+                            widget.list === 'UL' &&
+                            <ul></ul>
+                        }
+                    </div>
             }
-            {
-                widget.list === 'UL' &&
-                    <ul></ul>
-            }
+
         </div>
 
     </div>
