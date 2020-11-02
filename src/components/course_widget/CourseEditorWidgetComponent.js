@@ -2,6 +2,7 @@ import React from "react";
 import CourseEditorWidgetControlComponent from "./CourseEditorWidgetControlComponent";
 import CourseEditorParagraphWidgetComponent from "./CourseEditorParagraphWidgetComponent";
 import CourseEditorHeadingWidgetComponent from "./CourseEditorHeadingWidgetComponent";
+import CourseEditorListWidgetComponent from "./CourseEditorListWidgetComponent";
 
 const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, updateLocalWidget, deleteLocalWidget, preview, sortWidgets, advanceWidget, regressWidget, lastWidget}) =>
         <form>
@@ -32,6 +33,14 @@ const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, update
                             updateLocalWidget={updateLocalWidget}
                             preview={preview}
                         />
+                }
+                {
+                    widget.type === 'LIST' &&
+                    <CourseEditorListWidgetComponent
+                        widget={widget}
+                        updateLocalWidget={updateLocalWidget}
+                        preview={preview}
+                    />
                 }
             </div>
         </form>
