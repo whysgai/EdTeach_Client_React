@@ -21,7 +21,7 @@ const CourseEditorImageWidgetComponent = ({widget, updateLocalWidget, preview}) 
                     <label htmlFor="image-url" className="d-none">Image URL</label>
                     <input className="form-control wbdv-field" id="image-url"
                            placeholder="Image url"
-                           value={!widget.text ? "www..." : widget.text}
+                           value={!widget.text ? "Image URL: http://www.example.com/picture.jpeg" : widget.text}
                            onChange={(event) => updateLocalWidget({
                                ...widget,
                                text: event.target.value
@@ -34,7 +34,6 @@ const CourseEditorImageWidgetComponent = ({widget, updateLocalWidget, preview}) 
             </div>
         }
         <div className="form-group">
-            <p><pre>{!widget.text ? "URL..." : widget.text}</pre></p>
             <img className="img-fluid"
                 src={!widget.text ? "#" : widget.text}
                 alt="Widget image designated by user"/>
