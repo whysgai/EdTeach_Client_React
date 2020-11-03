@@ -34,7 +34,8 @@ const CourseEditorImageWidgetComponent = ({widget, updateLocalWidget, preview}) 
             </div>
         }
         <div className="form-group">
-            <p><pre>{!widget.text ? "Text..." : widget.text}</pre></p>
+            <p><pre>{!widget.text ? "URL..." : widget.text}</pre></p>
+            <img src={!widget.text ? "#" : widget.text} alt="Widget image designated by user"/>
         </div>
     </div>
 
