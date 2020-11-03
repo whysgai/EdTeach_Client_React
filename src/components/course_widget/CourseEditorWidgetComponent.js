@@ -3,6 +3,7 @@ import CourseEditorWidgetControlComponent from "./CourseEditorWidgetControlCompo
 import CourseEditorParagraphWidgetComponent from "./CourseEditorParagraphWidgetComponent";
 import CourseEditorHeadingWidgetComponent from "./CourseEditorHeadingWidgetComponent";
 import CourseEditorListWidgetComponent from "./CourseEditorListWidgetComponent";
+import CourseEditorImageWidgetComponent from "./CourseEditorImageWidgetComponent";
 
 const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, updateLocalWidget, deleteLocalWidget, preview, sortWidgets, advanceWidget, regressWidget, lastWidget}) =>
         <form>
@@ -37,6 +38,14 @@ const CourseEditorWidgetComponent = ({widget, topicId, createLocalWidget, update
                 {
                     widget.type === 'LIST' &&
                     <CourseEditorListWidgetComponent
+                        widget={widget}
+                        updateLocalWidget={updateLocalWidget}
+                        preview={preview}
+                    />
+                }
+                {
+                    widget.type === 'IMAGE' &&
+                    <CourseEditorImageWidgetComponent
                         widget={widget}
                         updateLocalWidget={updateLocalWidget}
                         preview={preview}
