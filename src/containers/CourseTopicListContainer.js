@@ -5,7 +5,7 @@ import {createTopic, deleteTopic, editTopic, updateTopic, saveTopic} from "../ac
 
 const stateToPropertyMapper = (state) => ({
   topics: state.topicReducer.topics,
-  topicId: state.topicReducer.topicId,
+  topicId: state.widgetReducer.topicId,
   lessonId: state.topicReducer.lessonId,
   moduleId: state.lessonReducer.moduleId,
   course: state.courseReducer.course

@@ -2,8 +2,9 @@ import {CREATE_TOPIC, READ_TOPICS_FOR_LESSON, READ_TOPIC, UPDATE_TOPIC, DELETE_T
 
 const initialState = {
     topics: [],
-    lessonId: "",
-    topicId: ""
+    lessonId: ""
+    // ,
+    // topicId: ""
 }
 
 const topicReducer = (state = initialState, action = action) => {
@@ -21,8 +22,8 @@ const topicReducer = (state = initialState, action = action) => {
                 topics: action.topics
                 ,
                 lessonId: action.lessonId
-                ,
-                topicId: action.topicId
+                // ,
+                // topicId: action.topicId
             }
         case READ_TOPIC:
             return {

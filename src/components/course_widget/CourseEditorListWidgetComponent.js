@@ -45,7 +45,6 @@ const CourseEditorListWidgetComponent = ({widget, updateLocalWidget, preview}) =
             </div>
         }
         <div className="form-group">
-            <p><pre>{!widget.text ? "Text..." : widget.text}</pre></p>
             {
                 widget.text &&
                     <div>

@@ -37,12 +37,24 @@ class CourseEditorContainer extends React.Component {
         if(moduleId) {
             this.props.findLessonsForModule(moduleId)
             if(lessonId) {
-                this.props.findTopicsForLesson(topicId, lessonId)
+                console.log("Read topics for lesson EDITOR DID MOUNT 1")
+                this.props.findTopicsForLesson(lessonId)
                 if(topicId) {
                     console.log("Read widgets for topic EDITOR DID MOUNT")
                     this.props.findWidgetsForTopic(topicId)
+                } else {
+                    this.props.findWidgetsForTopic('z')
                 }
+            } else {
+                console.log("Read topics for lesson EDITOR DID MOUNT 2")
+                this.props.findTopicsForLesson('y')
+                this.props.findWidgetsForTopic('x')
             }
+        } else {
+            this.props.findLessonsForModule('z')
+            console.log("Read topics for lesson EDITOR DID MOUNT 3")
+            this.props.findTopicsForLesson('y')
+            this.props.findWidgetsForTopic('x')
         }
     }
 
@@ -55,31 +67,36 @@ class CourseEditorContainer extends React.Component {
         if(moduleId && moduleId !== prevProps.match.params.moduleId) {
             this.props.findLessonsForModule(moduleId)
             if(lessonId) {
+                console.log(lessonId)
+                console.log("Read topics for lesson EDITOR DID UPDATE 1")
+                this.props.findTopicsForLesson(lessonId)
                 if(topicId) {
-                    this.props.findTopicsForLesson(lessonId, topicId)
                     console.log("Read widgets for topic EDITOR DID UPDATE !")
                     this.props.findWidgetsForTopic(topicId)
                 } else {
-                    this.props.findTopicsForLesson(lessonId, "a")
                     console.log("Read widgets for topic EDITOR DID UPDATE @")
-                    this.props.findWidgetsForTopic("e")
+                    this.props.findWidgetsForTopic(topicId)
                 }
             } else {
-                this.props.findTopicsForLesson("b", "c")
+                console.log("Read topics for lesson EDITOR DID UPDATE 2")
+                console.log(lessonId)
+                this.props.findTopicsForLesson(lessonId)
+                this.props.findWidgetsForTopic(topicId)
             }
         } else if((lessonId && lessonId !== prevProps.match.params.lessonId) ||
             (topicId !== prevProps.match.params.topicId)) {
+            console.log("Read topics for lesson EDITOR DID UPDATE 3")
+            console.log(lessonId)
+            this.props.findTopicsForLesson(lessonId)
             if(topicId) {
-                this.props.findTopicsForLesson(lessonId, topicId)
-                console.log("Read widgets for topic EDITOR DID UPDATE #")
+                // console.log("Read widgets for topic EDITOR DID UPDATE #")
                 this.props.findWidgetsForTopic(topicId)
             } else {
-                this.props.findTopicsForLesson(lessonId, "d")
-                console.log("Read widgets for topic EDITOR DID UPDATE $")
+                // console.log("Read widgets for topic EDITOR DID UPDATE $")
                 this.props.findWidgetsForTopic("f")
             }
         } else if (topicId && topicId !== prevProps.match.params.topicId) {
-            console.log("Read widgets for topic EDITOR DID UPDATE %")
+            // console.log("Read widgets for topic EDITOR DID UPDATE %")
             this.props.findWidgetsForTopic(topicId)
         }
     }
@@ -88,9 +105,10 @@ class CourseEditorContainer extends React.Component {
         return (
             <div>
                 <div className="row">
-                    <h1 className="col-11">{this.props.course.title}</h1>
-                    <Link className="btn btn-outline-dark col-1 btn-align-veritcal" to='/course_manager/table'>
-                        <i className="fa fa-times-circle-o" aria-hidden="true"/>
+                    <h2 className="col-10">{this.props.course.title}</h2>
+                    <Link className="btn btn-outline-dark col-2 btn-align-veritcal" to='/course_manager/table'>
+                        <i className="fa fa-arrow-circle-o-left mr-2" aria-hidden="true"/>
+                        Courses
                     </Link>
                 </div>
                 <div className="editorMobileNav row">
@@ -147,12 +165,12 @@ const propertyToDispatchMapper = (dispatch) => ({
             lessons: lessons,
             moduleId: moduleId
         })),
-    findTopicsForLesson: (lessonId, topicId) => topicService.findTopicsForLesson(lessonId)
+    findTopicsForLesson: (lessonId) => topicService.findTopicsForLesson(lessonId)
         .then(topics => dispatch({
             type: READ_TOPICS_FOR_LESSON,
             topics: topics,
             lessonId: lessonId,
-            topicId: topicId,
+            // topicId: topicId,
             // moduleId: moduleId,
             // courseId: courseId
         })),
