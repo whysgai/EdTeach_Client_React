@@ -43,18 +43,18 @@ class CourseEditorContainer extends React.Component {
                     console.log("Read widgets for topic EDITOR DID MOUNT")
                     this.props.findWidgetsForTopic(topicId)
                 } else {
-                    this.props.findWidgetsForTopic('z')
+                    this.props.findWidgetsForTopic(topicId)
                 }
             } else {
                 console.log("Read topics for lesson EDITOR DID MOUNT 2")
-                this.props.findTopicsForLesson('y')
-                this.props.findWidgetsForTopic('x')
+                this.props.findTopicsForLesson(lessonId)
+                this.props.findWidgetsForTopic(topicId)
             }
         } else {
-            this.props.findLessonsForModule('z')
+            this.props.findLessonsForModule(moduleId)
             console.log("Read topics for lesson EDITOR DID MOUNT 3")
-            this.props.findTopicsForLesson('y')
-            this.props.findWidgetsForTopic('x')
+            this.props.findTopicsForLesson(lessonId)
+            this.props.findWidgetsForTopic(topicId)
         }
     }
 
@@ -93,7 +93,7 @@ class CourseEditorContainer extends React.Component {
                 this.props.findWidgetsForTopic(topicId)
             } else {
                 // console.log("Read widgets for topic EDITOR DID UPDATE $")
-                this.props.findWidgetsForTopic("f")
+                this.props.findWidgetsForTopic(topicId)
             }
         } else if (topicId && topicId !== prevProps.match.params.topicId) {
             // console.log("Read widgets for topic EDITOR DID UPDATE %")
@@ -103,28 +103,30 @@ class CourseEditorContainer extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className="row">
-                    <h2 className="col-10">{this.props.course.title}</h2>
-                    <Link className="btn btn-outline-dark col-2 btn-align-veritcal" to='/course_manager/table'>
-                        <i className="fa fa-arrow-circle-o-left mr-2" aria-hidden="true"/>
-                        Courses
-                    </Link>
-                </div>
-                <div className="editorMobileNav row">
-                    <CourseEditorMobileToolbarContainer/>
-                </div>
-                <div className="row">
-                    <CourseModuleListContainer/>
-                    <div className="col-md-8 border">
-                        <CourseLessonListContainer/>
-                        <CourseTopicListContainer/>
-                        <CourseWidgetListContainer/>
-                        {/*{*/}
-                        {/*    <CourseEditorWidgetPaneComponent*/}
-                        {/*        widgets={this.state.widgets}*/}
-                        {/*    />*/}
-                        {/*}*/}
+            <div className="mt-2 mb-5">
+                <div className="">
+                    <div className="row">
+                        <h2 className="col-10">{this.props.course.title}</h2>
+                        <Link className="btn btn-outline-dark col-2 btn-align-veritcal" to='/course_manager/table'>
+                            <i className="fa fa-arrow-circle-o-left mr-2" aria-hidden="true"/>
+                            Courses
+                        </Link>
+                    </div>
+                    <div className="editorMobileNav row">
+                        <CourseEditorMobileToolbarContainer/>
+                    </div>
+                    <div className="row">
+                        <CourseModuleListContainer/>
+                        <div className="col-md-8">
+                            <CourseLessonListContainer/>
+                            <CourseTopicListContainer/>
+                            <CourseWidgetListContainer/>
+                            {/*{*/}
+                            {/*    <CourseEditorWidgetPaneComponent*/}
+                            {/*        widgets={this.state.widgets}*/}
+                            {/*    />*/}
+                            {/*}*/}
+                        </div>
                     </div>
                 </div>
             </div>

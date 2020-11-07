@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const CourseModuleItemComponent = ({course, module, moduleId, deleteModule, updateModule, editModule, saveModule}) =>
     <div>
-        <li key={module._id} className={`btn btn-block wbdv-module-item btn-align-veritcal ${moduleId === module._id? "active btn-secondary" : "btn-outline-dark"}`}>
+        <li key={module._id} className={`btn btn-block wbdv-module-item btn-align-veritcal ${moduleId === module._id? "active btn-secondary" : "btn-outline-dark btn-light"}`}>
             {
                 !module.editing &&
                     <div>
