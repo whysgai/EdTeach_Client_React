@@ -30,15 +30,15 @@ const CourseTopicItemComponent = ({course, topic, topicId, lessonId, moduleId, d
                         })}
                     />
                     <div className="input-group-append">
-                        <button className="btn btn-outline-light wbdv-topic-item-delete-btn"
+                        <button className={`btn ${topicId === topic._id? "btn-outline-light" : "btn-outline-primary"}  wbdv-topic-item-delete-btn`}
                                 type="button"
                                 onClick={() => deleteTopic(topic)}>
-                            <i className="text-white fa fa-times-circle" aria-hidden="true"/>
+                            <i className={`${topicId === topic._id? "text-white" : "text-primary"} fa fa-times-circle`} aria-hidden="true"/>
                         </button>
-                        <button className="btn btn-outline-light wbdv-topic-item-save-btn"
+                        <button className={`btn ${topicId === topic._id? "btn-outline-light" : "btn-outline-primary"}  wbdv-topic-item-save-btn`}
                                 type="button"
                                 onClick={() => saveTopic(topic)}>
-                            <i className="text-white fa fa-check" aria-hidden="true"/>
+                            <i className={`${topicId === topic._id? "text-white" : "text-primary"} fa fa-check`} aria-hidden="true"/>
                         </button>
                     </div>
                 </div>
