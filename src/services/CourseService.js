@@ -1,12 +1,14 @@
-const url = "https://wbdv-generic-server.herokuapp.com/api/cohenw/courses"
+import { courseUrl } from '../URLs'
+
+// const url = "https://wbdv-generic-server.herokuapp.com/api/cohenw/courses"
 
 export const findAllCourses = async () => {
-    const response = await fetch(url)
+    const response = await fetch(courseUrl)
     return await response.json()
 }
 
 export const findCourseById = (courseId) =>
-    fetch(`${url}/${courseId}`)
+    fetch(`${courseUrl}/${courseId}`)
         .then(response => response.json())
 
 export const createCourse = (newCourse) =>
@@ -20,13 +22,13 @@ export const createCourse = (newCourse) =>
         .then(response => response.json())
 
 export const deleteCourse = (course) =>
-    fetch(`${url}/${course._id}`, {
+    fetch(`${courseUrl}/${course._id}`, {
         method: 'DELETE'
     })
         .then(response => response.json())
 
 export const updateCourse = (oldCourse, newCourse) => {
-    return fetch(`${url}/${oldCourse._id}`, {
+    return fetch(`${courseUrl}/${oldCourse._id}`, {
         method: 'PUT',
         body: JSON.stringify(newCourse),
         headers: {
