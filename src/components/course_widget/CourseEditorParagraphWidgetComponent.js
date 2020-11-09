@@ -7,7 +7,7 @@ const CourseEditorParagraphWidgetComponent = ({widget, updateLocalWidget, previe
             !preview &&
                 <div>
                     <div className="form-group">
-                        <label htmlFor="widget-title" className="d-none">Widget Title</label>
+                        <label htmlFor="widgetindex-title" className="d-none">Widget Title</label>
                         <input className="form-control wbdv-field" id="widget-name"
                                placeholder="Widget title"
                                value={widget.title}
@@ -35,7 +35,6 @@ const CourseEditorParagraphWidgetComponent = ({widget, updateLocalWidget, previe
         }
         <div className="form-group">
             <p><pre className="text-wrap">{!widget.text ? "Text..." : widget.text}</pre></p>
-            {/*<pre className="text-wrap">{!widget.text ? "Text..." : widget.text}</pre>*/}
         </div>
     </div>
 

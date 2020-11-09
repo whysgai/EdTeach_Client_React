@@ -1,4 +1,8 @@
-const widgetUrl = "http://localhost:8080/api"
+import baseUrl from "../URLs";
+
+// const widgetUrl = "http://localhost:8080/api"
+
+const widgetUrl =`${baseUrl}/api`
 
 export const createWidgetForTopic = (topicId, newWidget) =>
     fetch(`${widgetUrl}/topics/${topicId}/widgets`, {
