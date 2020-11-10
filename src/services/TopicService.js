@@ -1,5 +1,5 @@
-const lessonUrl = "https://wbdv-generic-server.herokuapp.com/api/cohenw/lessons"
-const topicUrl = "https://wbdv-generic-server.herokuapp.com/api/cohenw/topics"
+import { lessonUrl } from '../URLs'
+import { topicUrl } from '../URLs'
 
 export const createTopicForLesson = (lessonId, newTopic) =>
     fetch(`${lessonUrl}/${lessonId}/topics`, {

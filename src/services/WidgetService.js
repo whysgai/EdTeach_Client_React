@@ -1,6 +1,4 @@
-import baseUrl from "../URLs";
-
-// const widgetUrl = "http://localhost:8080/api"
+import { baseUrl } from "../URLs";
 
 const widgetUrl =`${baseUrl}/api`
 

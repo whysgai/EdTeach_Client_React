@@ -1,7 +1,5 @@
 import { courseUrl } from '../URLs'
 
-// const url = "https://wbdv-generic-server.herokuapp.com/api/cohenw/courses"
-
 export const findAllCourses = async () => {
     const response = await fetch(courseUrl)
     return await response.json()
@@ -12,7 +10,7 @@ export const findCourseById = (courseId) =>
         .then(response => response.json())
 
 export const createCourse = (newCourse) =>
-    fetch(url, {
+    fetch(courseUrl, {
         method: 'POST',
         body: JSON.stringify(newCourse),
         headers: {

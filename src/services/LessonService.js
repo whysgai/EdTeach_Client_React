@@ -1,5 +1,5 @@
-const moduleUrl = "https://wbdv-generic-server.herokuapp.com/api/cohenw/modules"
-const lessonUrl = "https://wbdv-generic-server.herokuapp.com/api/cohenw/lessons"
+import { moduleUrl } from '../URLs'
+import { lessonUrl } from '../URLs'
 
 export const createLessonForModule = (moduleId, newLesson) =>
     fetch(`${moduleUrl}/${moduleId}/lessons`, {
