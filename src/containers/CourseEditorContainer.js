@@ -58,7 +58,7 @@ class CourseEditorContainer extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
+    componentDidUpdate(c) {
         const courseId = this.props.match.params.courseId
         const moduleId = this.props.match.params.moduleId
         const lessonId = this.props.match.params.lessonId
