@@ -1,6 +1,6 @@
 # EDTEACH - Learning Management Prototype
 ## Teacher Client
-## DEPLOYED TO: https://edteach-client.herokuapp.com/
+## DEPLOYED TO: https://edteach-client-teachers.herokuapp.com/
 
 ## What Is EdTeach?
 EdTeach: Teachers is a mock learning management app (like Canvas or Blackboard). The teachers portal is meant to allow educators to build and store lesson plans, dividing individual courses into Modules, Lessons, and Topics. These are comprised of Widgets, allowing for flexibility of functionality. These are stored on an external server (https://github.com/whysgai/EdTeach_Server_Java).  
