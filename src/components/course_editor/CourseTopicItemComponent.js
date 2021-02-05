@@ -7,7 +7,7 @@ const CourseTopicItemComponent = ({course, topic, topicId, lessonId, moduleId, d
             !topic.editing &&
                 <span>
                     <Link to={`/course_editor/${course._id}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}
-                        // onClick={() => selectTopic(topic)}
+                        onClick={() => console.log(topicId, topic._id)}
                         >
                         <span className={`${topicId === topic._id? "text-white" : "text-primary"}`}>{topic.title}</span>
                     </Link>
